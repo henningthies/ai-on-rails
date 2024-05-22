@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-a {
-  @apply underline text-stone-600 hover:text-stone-500 after:content-['_↗'];
-}
-
 #prose-content {
   @apply text-pretty prose-img:mb-2 prose-headings:tracking-tight;
 }

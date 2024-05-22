@@ -1,8 +1,8 @@
 # Template config
 #
-set :site_url, "https://ruby-middleman-tailwind-starter-blog.netlify.app/" # for sitemap.xml.builder
-set :site_title, "Ruby+Middleman+Tailwind Starter Kit"                     # site title for <title> meta tag
-set :trailing_slash, false                                                 # turn site.com/home/ -> site.com/home
+set :site_url, "https://ai-on-rails.com/" # for sitemap.xml.builder
+set :site_title, "AI on Rails"
+set :trailing_slash, false
 
 # Extensions
 #
@@ -14,8 +14,8 @@ end
 
 activate :blog do |blog|
   blog.layout = "markdown_layout"    # layout from source/layouts
-  blog.sources = "blog/{title}.html" # filename glob
-  blog.permalink = "{title}.html"    # format of the URLs middleman generates
+  blog.sources = "articles/{title}.html" # filename glob
+  blog.permalink = "articles/{title}.html" # format of the URLs middleman generates
   blog.default_extension = ".md" 		 # file extension
   blog.publish_future_dated = true   # by default only builds posts with future dates
   blog.new_article_template = File.expand_path("../source/template.erb", __FILE__)
@@ -28,7 +28,7 @@ end
 #
 # See 'Layouts' (https://middlemanapp.com/basics/layouts/)
 #
-markdown_pages = ["about", "blog"]
+markdown_pages = ["author", "articles", "imprint"]
 markdown_pages.each do |pge|
   page "/#{pge}.html", :layout => "markdown_layout"
 end

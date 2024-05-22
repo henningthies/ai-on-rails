@@ -1,6 +1,7 @@
 ---
 title: Hello blog! (an overview of markdown feature support)
 description: A short overview of the markdown features supported by this Middleman blog template, like markdown parsing, frontmatter, syntax-highlighted code blocks and more.
+teaser: A short overview of the markdown features supported by this Middleman blog template, like markdown parsing, frontmatter, syntax-highlighted code blocks and more.
 date: 2024-05-01 09:23
 ---
 

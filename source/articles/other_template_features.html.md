@@ -1,6 +1,7 @@
 ---
 title: Other features of this template
 description: A short breakdown of the other features I've included in this Middleman blog template.
+teaser: A short breakdown of the other features I've included in this Middleman blog template.
 date: 2024-05-03 09:23
 ---
 
