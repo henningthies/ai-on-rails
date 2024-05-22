@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en" class="h-full antialiased">
+  <head>
+    <meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Other features of this template · AI on Rails</title>
+<meta name="title" content="Other features of this template · AI on Rails" />
+<meta name="description" content="A short breakdown of the other features I've included in this Middleman blog template." />
+<link href="/images/favicon.ico" rel="icon" type="image/ico" />
+
+    <link href="/stylesheets/tailwind.css" rel="stylesheet" />
+    <link href="/stylesheets/code_highlighting.css" rel="stylesheet" />
+    <script src="/javascripts/site.js"></script>
+  </head>
+  <body class="flex h-full bg-zinc-50">
+    <div class="flex w-full">
+      <div class="fixed inset-0 flex justify-center sm:px-8">
+        <div class="flex w-full max-w-7xl lg:px-8">
+          <div class="w-full bg-white ring-1 ring-zinc-100"></div>
+        </div>
+      </div>
+      <div class="relative flex w-full flex-col">
+        <main clas="flex-auto">
+          <div class="sm:px-8 mt-12 lg:mt-16">
+            <div class="relative px-4 sm:px-8 lg:px-12">
+              <div class="mx-auto w-full max-w-7xl lg:px-8">
+                <div class="relative px-4 sm:px-8 lg:px-12">
+                  <div class="mx-auto max-w-2xl lg:max-w-5xl">
+                      <div id="prose-content" class="prose">
+    <h1 id="other-features-of-this-template-procfile-tailwindcss-extensions--sitemaps">Other features of this template (Procfile, TailwindCSS, Extensions &amp; Sitemaps)</h1>
+
+<p>Here’s a breakdown of the handy features I’ve included in this template.</p>
+
+<details class="italic" open=""><summary>Table of Contents</summary><aside>
+<ul id="markdown-toc">
+  <li><a href="#procfiledev-and-bindev" id="markdown-toc-procfiledev-and-bindev">Procfile.dev and bin/dev</a></li>
+  <li><a href="#tailwindcss" id="markdown-toc-tailwindcss">TailwindCSS</a></li>
+  <li><a href="#extensions-livereload-syntax-directory_indexes" id="markdown-toc-extensions-livereload-syntax-directory_indexes">Extensions (livereload, syntax, directory_indexes)</a></li>
+  <li><a href="#sitemaps" id="markdown-toc-sitemaps">Sitemaps</a></li>
+</ul>
+
+  </aside></details>
+
+<h2 id="procfiledev-and-bindev">Procfile.dev and bin/dev</h2>
+
+<p>Similar to Ruby on Rails, I’ve included a <code>Procfile.dev</code> and <code>bin/dev</code> script in this template. The <code>Procfile.dev</code> is handy for running multiple processes (since we need to run both <code>middleman server</code> and the <code>tailwindcss</code> parser).</p>
+
+<p>To start everthing locally, just run <code>bin/dev</code>. This will launch the processes in the <code>Procfile.dev</code> (you can add your own processes here):</p>
+
+<div class="highlight"><pre class="highlight shell"><code><span class="c"># Procfile.dev</span>
+
+server: middleman server
+css: npx tailwindcss <span class="nt">-i</span> ./source/stylesheets/main.css <span class="nt">-o</span> ./source/stylesheets/tailwind.css <span class="nt">--watch</span>
+</code></pre></div>
+<h2 id="tailwindcss">TailwindCSS</h2>
+
+<p><a href="https://tailwindcss.com/">TailwindCSS</a> is included in this template natively. You’ll need <code>nodejs</code> / <code>npx</code> available to install and run it locally.</p>
+
+<p>Within <code>tailwind.config.js</code> I’ve configured TailwindCSS with the correct <code>content:</code> paths to parse the files in this template. I’ve also included the <code>typography</code> plugin for rendering markdown (once parsed into HTML via kramdown) using the <code>prose</code> class in the <code>markdown_layout.erb</code>.</p>
+
+<div class="highlight"><pre class="highlight erb"><code><span class="c">&lt;%# layouts/markdown_layout.erb %&gt;</span>
+
+<span class="cp">&lt;%</span> <span class="n">wrap_layout</span> <span class="ss">:layout</span> <span class="k">do</span> <span class="cp">%&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"prose-content"</span> <span class="na">class=</span><span class="s">"prose"</span><span class="nt">&gt;</span>
+    <span class="cp">&lt;%=</span> <span class="k">yield</span> <span class="cp">%&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="cp">&lt;%</span> <span class="k">end</span> <span class="cp">%&gt;</span>
+</code></pre></div>
+<h2 id="extensions-livereload-syntax-directory_indexes">Extensions (livereload, syntax, directory_indexes)</h2>
+
+<p>I’ve included the <a href="https://github.com/middleman/middleman-livereload">middleman-livereload</a> and <a href="https://github.com/middleman/middleman-syntax">middleman-syntax</a> gems in the <code>Gemfile</code>, and activated them in <code>config.rb</code> alongside <code>directory_indexes</code>:</p>
+
+<div class="highlight"><pre class="highlight ruby"><code><span class="n">activate</span> <span class="ss">:livereload</span>                <span class="c1"># live-reloading in dev</span>
+<span class="n">activate</span> <span class="ss">:directory_indexes</span>         <span class="c1"># for pretty URLs</span>
+<span class="o">...</span>
+
+<span class="n">activate</span> <span class="ss">:syntax</span>                    <span class="c1"># code highlighting</span>
+<span class="o">...</span>
+</code></pre></div>
+<p>Everything should just work. When you save a file locally, the Middleman development server will automatically reload. Syntax highlighting should work without any configuration (see <a href="blog/blog_post_with_code">blog/blog_post_with_code</a> for more info).</p>
+
+<p>The <code>directory_indexes</code> extension is used for <a href="https://middlemanapp.com/advanced/pretty-urls/">pretty URLs</a>. With this activated, the URL paths Middleman generates look like <code>/blog</code> and <code>/about</code>, rather than <code>/blog.html</code> and <code>/about.html</code>.</p>
+
+<h2 id="sitemaps">Sitemaps</h2>
+
+<p>I’ve included a sitemap at <code>source/sitemap.xml.builder</code>. This uses the <code>builder</code> gem to automatically generate a sitemap for your site:</p>
+
+<div class="highlight"><pre class="highlight ruby"><code><span class="n">site_url</span> <span class="o">=</span> <span class="n">config</span><span class="p">.</span><span class="nf">site_url</span>
+
+<span class="n">xml</span><span class="p">.</span><span class="nf">instruct!</span>
+<span class="n">xml</span><span class="p">.</span><span class="nf">urlset</span> <span class="s2">"xmlns"</span> <span class="o">=&gt;</span> <span class="s2">"http://www.sitemaps.org/schemas/sitemap/0.9"</span> <span class="k">do</span>
+  <span class="n">sitemap</span><span class="p">.</span><span class="nf">resources</span><span class="p">.</span><span class="nf">select</span> <span class="p">{</span> <span class="o">|</span><span class="n">page</span><span class="o">|</span> <span class="n">page</span><span class="p">.</span><span class="nf">destination_path</span> <span class="o">=~</span> <span class="sr">/\.html/</span> <span class="p">}.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">page</span><span class="o">|</span>
+    <span class="n">xml</span><span class="p">.</span><span class="nf">url</span> <span class="k">do</span>
+		<span class="o">...</span>
+	<span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div>
+<p>Make sure you update <code>site_url</code> to match the production URL of your website. You can preview your sitemap at <code>localhost:4567/sitemap.xml</code>.</p>
+
+  </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="mx-auto w-full max-w-7xl lg:px-8"></div>
+          </div>
+        </main>
+        
+<footer class="mt-32 flex-none">
+  <div class="sm:px-8">
+    <div class="mx-auto w-full max-w-7xl lg:px-8">
+      <div class="border-t border-zinc-100 pb-16 pt-10">
+        <div class="relative px-4 sm:px-8 lg:px-12">
+          <div class="mx-auto max-w-2xl lg:max-w-5xl">
+            <div class="flex flex-col items-center justify-between gap-6 sm:flex-row">
+              <div class="flex flex-wrap justify-center gap-x-6 gap-y-1 text-sm font-medium text-zinc-800">
+                  <a class="hover:text-teal-500" href="/">Home</a>
+                  <a class="hover:text-teal-500" href="/articles">Articles</a>
+                  <a class="hover:text-teal-500" href="/author">Author</a>
+                  <a class="hover:text-teal-500" href="/imprint">Imprint</a>
+              </div>
+              <p class="text-sm text-zinc-400">© <!-- -->2024<!-- --> No rights reserved.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+      </div>
+    </div>
+  </body>
+</html>

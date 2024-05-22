@@ -1,0 +1,7 @@
+# 
+
+<!-- table of contents (html disclosure + kramdown {:toc}) -->
+<details class='italic' open><summary>Table of Contents</summary><aside markdown="1">
+* seed list
+{:toc}
+</aside></details>
