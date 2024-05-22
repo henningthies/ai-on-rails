@@ -6,6 +6,8 @@ gem "middleman", "~> 4.5"
 gem "middleman-autoprefixer", "~> 3.0"
 gem "middleman-blog", "~> 4.0.3"    # blog support
 gem "middleman-livereload"          # live dev reloading
+gem "net-ftp"
+gem 'middleman-deploy', git: 'https://github.com/middleman-contrib/middleman-deploy', branch: 'master'
 
 # Markdown support:
 #

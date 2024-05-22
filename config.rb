@@ -57,3 +57,8 @@ set :markdown,                      # config for :kramdown
 #   activate :minify_css
 #   activate :minify_javascript, compressor: Terser.new
 # end
+
+# deploy
+activate :deploy do |deploy|
+  deploy.deploy_method = :git
+end
