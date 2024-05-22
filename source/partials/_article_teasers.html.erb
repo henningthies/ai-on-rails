@@ -1,4 +1,4 @@
-<% blog.articles.last(3).each do |article| %>
+<% blog.articles[0...3].each do |article| %>
   <article class="md:grid md:grid-cols-4 md:items-baseline">
     <div class="md:col-span-3 group relative flex flex-col items-start">
       <h2 class="text-base font-semibold tracking-tight text-zinc-800">
