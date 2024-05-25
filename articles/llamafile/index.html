@@ -4,9 +4,9 @@
     <meta charset="utf-8">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>llamafile · AI on Rails</title>
-<meta name="title" content="llamafile · AI on Rails" />
-<meta name="description" content="Run llama.cpp with a single file." />
+<title>Setting Up a Local AI-Powered Ruby on Rails Environment · AI on Rails</title>
+<meta name="title" content="Setting Up a Local AI-Powered Ruby on Rails Environment · AI on Rails" />
+<meta name="description" content="Discover how to integrate AI into your Ruby on Rails application without the need for expensive API calls." />
 <link href="/images/favicon.ico" rel="icon" type="image/ico" />
 
     <link href="/stylesheets/tailwind.css" rel="stylesheet" />
@@ -28,19 +28,59 @@
                 <div class="relative px-4 sm:px-8 lg:px-12">
                   <div class="mx-auto max-w-2xl lg:max-w-5xl">
                       <div id="prose-content" class="prose">
-    <h1 id="llamafile">LLamafile</h1>
+    <h1 id="setting-up-a-local-ai-powered-ruby-on-rails-environment">Setting Up a Local AI-Powered Ruby on Rails Environment</h1>
 
-<h2 id="overview">Overview</h2>
-
-<p>The <code>llamafile</code> is a configuration file that defines the configuration of the <code>llama</code> tool. The <code>llama</code> tool is a command line tool that is used to manage the lifecycle of a project. The <code>llamafile</code> is a YAML file that defines the configuration of the <code>llama</code> tool. The <code>llamafile</code> is used to define the tasks that the <code>llama</code> tool can perform, as well as the configuration of those tasks.</p>
-
-<!-- table of contents (html disclosure + kramdown {:toc}) -->
-<details class="italic" open=""><summary>Table of Contents</summary><aside>
+<details class="italic"><summary>Table of Contents</summary><aside>
 <ul id="markdown-toc">
   <li><a href="#overview" id="markdown-toc-overview">Overview</a></li>
+  <li><a href="#step-1-download-llamafile" id="markdown-toc-step-1-download-llamafile">Step 1. Download llamafile</a></li>
+  <li><a href="#step-2-set-up-foreman" id="markdown-toc-step-2-set-up-foreman">Step 2. Set Up Foreman</a></li>
+  <li><a href="#step-3-start-your-rails-application" id="markdown-toc-step-3-start-your-rails-application">Step 3. Start Your Rails Application</a></li>
+  <li><a href="#step-4-happy-coding-and-ai-integrating" id="markdown-toc-step-4-happy-coding-and-ai-integrating">Step 4. Happy Coding and AI Integrating!</a></li>
 </ul>
 
   </aside></details>
+
+<h2 id="overview">Overview</h2>
+
+<p>Integrating AI into your Ruby on Rails application can enhance its capabilities, but relying on external APIs can be costly. This guide will show you how to set up a local AI environment using <a href="https://llamafile.ai/" target="_blank">llamafile</a> and Foreman to run your AI models alongside your Rails application.</p>
+
+<h2 id="step-1-download-llamafile">Step 1. Download llamafile</h2>
+
+<p>First, download the <code>Phi-3-mini-4k-instruct.Q4_0.llamafile</code> or a model of your choice from <a href="https://huggingface.co/Mozilla/Phi-3-mini-4k-instruct-llamafile/tree/main" target="_blank">huggingface.co</a> and save it in the <code>storage</code> directory within your Rails application.</p>
+
+<div class="highlight"><pre class="highlight shell"><code><span class="nb">cd </span>storage
+wget https://huggingface.co/Mozilla/Phi-3-mini-4k-instruct-llamafile/blob/main/Phi-3-mini-4k-instruct.Q4_0.llamafile
+</code></pre></div>
+<p>Make sure the downloaded llamafile is executable:</p>
+
+<div class="highlight"><pre class="highlight shell"><code><span class="nb">chmod</span> +x storage/Phi-3-mini-4k-instruct.Q4_0.llamafile
+</code></pre></div>
+<h2 id="step-2-set-up-foreman">Step 2. Set Up Foreman</h2>
+
+<p>Install Foreman, a tool to manage multiple processes for your Rails application:</p>
+
+<div class="highlight"><pre class="highlight shell"><code>gem <span class="nb">install </span>foreman
+</code></pre></div>
+<p>Create or update the <code>Procfile.dev</code> in your Rails application to include the web server and AI model:</p>
+
+<div class="highlight"><pre class="highlight shell"><code><span class="c"># Procfile.dev</span>
+web: bin/rails server
+ai: storage/Phi-3-mini-4k-instruct.Q4_0.llamafile
+</code></pre></div>
+<h2 id="step-3-start-your-rails-application">Step 3. Start Your Rails Application</h2>
+
+<p>Run your Rails application along with the AI model using Foreman:</p>
+
+<div class="highlight"><pre class="highlight shell"><code>foreman start <span class="nt">-f</span> Procfile.dev
+</code></pre></div>
+<p><strong>Note:</strong> The llamafile readme provides addional gotchas and tips for running the server locally.</p>
+
+<h2 id="step-4-happy-coding-and-ai-integrating">Step 4. Happy Coding and AI Integrating!</h2>
+
+<p>Your AI model will be available at <code>http://localhost:8080</code>, providing an API similar to OpenAI’s. You can use the <a href="https://github.com/alexrudall/ruby-openai" target="_blank">OpenAI Gem</a> by configuring it to point to your local llamafile API, or develop your own API client.<br />
+For more details on the API endpoints, refer to the <a href="https://github.com/Mozilla-Ocho/llamafile/blob/main/llama.cpp/server/README.md#api-endpoints" target="_blank">llamafile repository</a>.</p>
+
 
   </div>
 
@@ -63,7 +103,6 @@
                   <a class="hover:text-teal-500" href="/">Home</a>
                   <a class="hover:text-teal-500" href="/articles">Articles</a>
                   <a class="hover:text-teal-500" href="/author">Author</a>
-                  <a class="hover:text-teal-500" href="/imprint">Imprint</a>
               </div>
               <p class="text-sm text-zinc-400">© <!-- -->2024<!-- --> No rights reserved.</p>
             </div>
