@@ -3,6 +3,7 @@ title: A blog post with some code
 description: An example blog post showcasing the middleman-syntax plugin and code highlighting with Rouge.
 teaser: An example blog post showcasing the middleman-syntax plugin and code highlighting with Rouge.
 date: 2024-05-02 09:23
+published: false
 ---
 
 # A blog post with some code.

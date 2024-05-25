@@ -21,7 +21,18 @@ module.exports = {
       '8xl': ['6rem', { lineHeight: '1' }],
       '9xl': ['8rem', { lineHeight: '1' }],
     },
-    extend: {},
+    extend: {
+      typography: {
+        DEFAULT: {
+          css: {
+            pre: {
+              backgroundColor: '#f5f5f5',
+              color: '#333',
+            },
+          }
+        },
+      },
+    },
   },
   plugins: [require("@tailwindcss/typography")],
 };

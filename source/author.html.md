@@ -31,3 +31,4 @@ This blog is built using Middleman, a static site generator written in Ruby.
 Based on a template by [Harrison Broadbent](https://ruby-middleman-tailwind-starter-blog.netlify.app/){:target="_blank"}.
 The UI components are from [Spotlight Tailwind](https://spotlight.tailwindui.com/){:target="_blank"}.
 The source code for this blog is available on [GitHub](https://github.com/henningthies/ai-on-rails){:target="_blank"}.
+
