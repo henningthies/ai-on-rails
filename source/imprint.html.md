@@ -14,6 +14,6 @@ Lehmberg 7
 Germany
 
 [Website](http://www.henning-thies.de){:target="_blank"}
-[Email](mailto:info@ai-on-rails.com)
+[Email](mailto:info@henning-thies.de)
 
 
