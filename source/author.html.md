@@ -19,10 +19,11 @@ I hope you enjoy it!
 
 ## Contact
 
-If you have any questions or feedback, feel free to reach out to me via [email](mailto:mail@henning-thies.de){:targe="_blank") or [x.com](https://x.com/henningthies){:target="_blank"} or connect with me: 
+If you have any questions, feedback or need support, feel free to reach out to me via [email](mailto:mail@henning-thies.de){:targe="_blank") or [x.com](https://x.com/henningthies){:target="_blank"} or connect with me: 
 
 - [LinkedIn](https://www.linkedin.com/in/henningthies/){:target="_blank"}
 - [x.com/henningthies](https://x.com/henningthies){:target="_blank"}
+- [website](http://www.henning-thies.de){:target="_blank"}
 
 
 ## The blog

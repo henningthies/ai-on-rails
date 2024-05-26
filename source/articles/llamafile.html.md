@@ -17,6 +17,7 @@ date: 2024-05-26 00:24
 
 Integrating AI into your Ruby on Rails application can enhance its capabilities, but relying on external APIs can be costly. This guide will show you how to set up a local AI environment using [llamafile](https://llamafile.ai/){:target="_blank"} and Foreman to run your AI models alongside your Rails application.
 
+
 ## Step 1. Download llamafile
 
 First, download the `Phi-3-mini-4k-instruct.Q4_0.llamafile` or a model of your choice from [huggingface.co](https://huggingface.co/Mozilla/Phi-3-mini-4k-instruct-llamafile/tree/main){:target="_blank"} and save it in the `storage` directory within your Rails application.

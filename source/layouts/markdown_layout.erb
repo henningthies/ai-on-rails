@@ -3,7 +3,13 @@
   (this gets inserted into the "yield" in layout.erb)
 %>
 <% wrap_layout :layout do %>
-  <div id="prose-content" class="prose">
-    <%= yield %>
+  <div class="mx-auto max-w-2xl lg:max-w-5xl">
+    <div class="xl:relative">
+      <div class="mx-auto max-w-2xl">
+        <div id="prose-content" class="prose">
+          <%= yield %>
+        </div>
+      </div>
+    </div>
   </div>
 <% end %>
