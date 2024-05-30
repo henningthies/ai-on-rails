@@ -1,6 +1,6 @@
 # Template config
 #
-set :site_url, "https://ai-on-rails.com/" # for sitemap.xml.builder
+set :site_url, "https://ai-on-rails.com" # for sitemap.xml.builder
 set :site_title, "AI on Rails"
 set :trailing_slash, false
 
