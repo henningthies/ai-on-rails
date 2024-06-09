@@ -20,17 +20,17 @@ Integrating AI into your Ruby on Rails application can enhance its capabilities,
 
 ## Step 1. Download llamafile
 
-First, download the `Phi-3-mini-4k-instruct.Q4_0.llamafile` or a model of your choice from [huggingface.co](https://huggingface.co/Mozilla/Phi-3-mini-4k-instruct-llamafile/tree/main){:target="_blank"} and save it in the `storage` directory within your Rails application.
+First, download the `Meta-Llama-3-8B-Instruct.Q4_0.llamafile` or a model of your choice from [huggingface.co](https://huggingface.co/Mozilla/Meta-Llama-3-8B-Instruct-llamafile){:target="_blank"} and save it in the `storage` directory within your Rails application.
 
 ```sh
 cd storage
-wget https://huggingface.co/Mozilla/Phi-3-mini-4k-instruct-llamafile/resolve/main/Phi-3-mini-4k-instruct.Q4_0.llamafile?download=true
+wget https://huggingface.co/Mozilla/Meta-Llama-3-8B-Instruct-llamafile/resolve/main/Meta-Llama-3-8B-Instruct.Q4_0.llamafile?download=true
 ```
 
 Make sure the downloaded llamafile is executable:
 
 ```sh
-chmod +x storage/Phi-3-mini-4k-instruct.Q4_0.llamafile
+chmod +x storage/Meta-Llama-3-8B-Instruct.Q4_0.llamafile
 ```
 
 ## Step 2. Set Up Foreman
@@ -46,7 +46,7 @@ Create or update the `Procfile.dev` in your Rails application to include the web
 ```sh
 # Procfile.dev
 web: bin/rails server
-ai: storage/Phi-3-mini-4k-instruct.Q4_0.llamafile
+ai: storage/Meta-Llama-3-8B-Instruct.Q4_0.llamafile --nobrowser
 ```
 
 ## Step 3. Start Your Rails Application
