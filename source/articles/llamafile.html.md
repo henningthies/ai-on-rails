@@ -24,7 +24,7 @@ First, download the `Phi-3-mini-4k-instruct.Q4_0.llamafile` or a model of your c
 
 ```sh
 cd storage
-wget https://huggingface.co/Mozilla/Phi-3-mini-4k-instruct-llamafile/blob/main/Phi-3-mini-4k-instruct.Q4_0.llamafile
+wget https://huggingface.co/Mozilla/Phi-3-mini-4k-instruct-llamafile/resolve/main/Phi-3-mini-4k-instruct.Q4_0.llamafile?download=true
 ```
 
 Make sure the downloaded llamafile is executable:
