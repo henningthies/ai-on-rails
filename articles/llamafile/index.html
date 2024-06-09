@@ -87,14 +87,14 @@
 
 <h2 id="step-1-download-llamafile">Step 1. Download llamafile</h2>
 
-<p>First, download the <code>Phi-3-mini-4k-instruct.Q4_0.llamafile</code> or a model of your choice from <a href="https://huggingface.co/Mozilla/Phi-3-mini-4k-instruct-llamafile/tree/main" target="_blank">huggingface.co</a> and save it in the <code>storage</code> directory within your Rails application.</p>
+<p>First, download the <code>Meta-Llama-3-8B-Instruct.Q4_0.llamafile</code> or a model of your choice from <a href="https://huggingface.co/Mozilla/Meta-Llama-3-8B-Instruct-llamafile" target="_blank">huggingface.co</a> and save it in the <code>storage</code> directory within your Rails application.</p>
 
 <div class="highlight"><pre class="highlight shell"><code><span class="nb">cd </span>storage
-wget https://huggingface.co/Mozilla/Phi-3-mini-4k-instruct-llamafile/blob/main/Phi-3-mini-4k-instruct.Q4_0.llamafile
+wget https://huggingface.co/Mozilla/Meta-Llama-3-8B-Instruct-llamafile/resolve/main/Meta-Llama-3-8B-Instruct.Q4_0.llamafile?download<span class="o">=</span><span class="nb">true</span>
 </code></pre></div>
 <p>Make sure the downloaded llamafile is executable:</p>
 
-<div class="highlight"><pre class="highlight shell"><code><span class="nb">chmod</span> +x storage/Phi-3-mini-4k-instruct.Q4_0.llamafile
+<div class="highlight"><pre class="highlight shell"><code><span class="nb">chmod</span> +x storage/Meta-Llama-3-8B-Instruct.Q4_0.llamafile
 </code></pre></div>
 <h2 id="step-2-set-up-foreman">Step 2. Set Up Foreman</h2>
 
@@ -106,7 +106,7 @@ wget https://huggingface.co/Mozilla/Phi-3-mini-4k-instruct-llamafile/blob/main/P
 
 <div class="highlight"><pre class="highlight shell"><code><span class="c"># Procfile.dev</span>
 web: bin/rails server
-ai: storage/Phi-3-mini-4k-instruct.Q4_0.llamafile
+ai: storage/Meta-Llama-3-8B-Instruct.Q4_0.llamafile <span class="nt">--nobrowser</span>
 </code></pre></div>
 <h2 id="step-3-start-your-rails-application">Step 3. Start Your Rails Application</h2>
 
