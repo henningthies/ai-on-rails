@@ -1,163 +1,1645 @@
-<!doctype html>
-<html lang="en" class="h-full antialiased">
-  <head>
-    <meta charset="utf-8">
-<meta http-equiv="x-ua-compatible" content="ie=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Welcome! · AI on Rails</title>
-<meta name="title" content="Welcome! · AI on Rails" />
-<meta name="description" content="Welcome to AI on Rails. I write about integrating AI technology into Ruby on Rails applications." />
-<link href="/images/favicon.ico" rel="icon" type="image/ico" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI on Rails — Ship Production Software in Weeks | Ruby on Rails Development</title>
+  <meta name="description" content="AI-powered Ruby on Rails development with 15+ years of production experience. Ship in weeks what others build in months.">
 
-    <link href="/stylesheets/tailwind.css" rel="stylesheet" />
-    <link href="/stylesheets/code_highlighting.css" rel="stylesheet" />
-    <script src="/javascripts/site.js"></script>
-    <script defer src="https://cloud.umami.is/script.js" data-website-id="5dde56bc-9822-4d4c-a606-0bd521350c76"></script>
-  </head>
-  <body class="flex h-full bg-zinc-50">
-    <div class="flex w-full">
-      <div class="fixed inset-0 flex justify-center sm:px-8">
-        <div class="flex w-full max-w-7xl lg:px-8">
-          <div class="w-full bg-white ring-1 ring-zinc-100"></div>
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://ai-on-rails.com/">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="AI on Rails — Ship in Weeks, Not Months">
+  <meta property="og:description" content="AI-powered Ruby on Rails development with 15+ years of production experience.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ai-on-rails.com/">
+  <meta property="og:image" content="https://ai-on-rails.com/og-image.jpg">
+  <meta property="og:site_name" content="AI on Rails">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AI on Rails — Ship in Weeks, Not Months">
+  <meta name="twitter:description" content="AI-powered Ruby on Rails development with 15+ years of production experience.">
+  <meta name="twitter:image" content="https://ai-on-rails.com/og-image.jpg">
+
+  <!-- Hreflang for international targeting -->
+  <link rel="alternate" hreflang="en" href="https://ai-on-rails.com/">
+  <link rel="alternate" hreflang="de" href="https://mvp-development.de/">
+  <link rel="alternate" hreflang="x-default" href="https://ai-on-rails.com/">
+
+  <!-- Additional SEO -->
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#1C1917">
+  <meta name="author" content="Henning Thies">
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:wght@400;500;600&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --color-bg: #1C1917;
+      --color-surface: #231F1C;
+      --color-surface-elevated: #2C2724;
+      --color-border: #3D3530;
+      --color-text: #FAF7F5;
+      --color-text-muted: #A8A29E;
+      --color-ruby: #D97706;
+      --color-ruby-glow: rgba(217, 119, 6, 0.25);
+      --color-accent: #F59E0B;
+      --color-gold: #FBBF24;
+      --color-chrome: #E7E5E4;
+      --font-display: 'Bebas Neue', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --font-body: 'Source Sans 3', sans-serif;
+    }
+
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Skip link for accessibility */
+    .skip-link {
+      position: absolute;
+      top: -100%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--color-ruby);
+      color: white;
+      padding: 1rem 2rem;
+      font-family: var(--font-mono);
+      font-size: 0.9rem;
+      text-decoration: none;
+      z-index: 10000;
+      transition: top 0.3s ease;
+    }
+
+    .skip-link:focus {
+      top: 1rem;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--color-bg);
+      color: var(--color-text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Noise texture overlay */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+      opacity: 0.03;
+      pointer-events: none;
+      z-index: 9999;
+    }
+
+    /* Rail lines pattern */
+    .rail-lines {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: -1;
+      overflow: hidden;
+    }
+
+    .rail-line {
+      position: absolute;
+      width: 2px;
+      height: 200%;
+      background: linear-gradient(to bottom,
+        transparent 0%,
+        var(--color-border) 20%,
+        var(--color-border) 80%,
+        transparent 100%
+      );
+      opacity: 0.3;
+    }
+
+    .rail-line:nth-child(1) { left: 10%; transform: rotate(2deg); }
+    .rail-line:nth-child(2) { left: 30%; transform: rotate(-1deg); }
+    .rail-line:nth-child(3) { left: 70%; transform: rotate(1.5deg); }
+    .rail-line:nth-child(4) { left: 90%; transform: rotate(-2deg); }
+
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      padding: 1.5rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: linear-gradient(to bottom, var(--color-bg) 0%, transparent 100%);
+      backdrop-filter: blur(10px);
+    }
+
+    .logo {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      letter-spacing: 0.05em;
+      color: var(--color-text);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .logo-ruby {
+      color: var(--color-ruby);
+      text-shadow: 0 0 20px var(--color-ruby-glow);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--color-text-muted);
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--color-ruby);
+    }
+
+    .nav-cta {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.75rem 1.5rem;
+      background: var(--color-ruby);
+      color: white;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      clip-path: polygon(0 0, 100% 0, 95% 100%, 5% 100%);
+    }
+
+    .nav-cta:hover {
+      background: var(--color-accent);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px var(--color-ruby-glow);
+    }
+
+    /* Mobile hamburger menu */
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 10px;
+    }
+
+    .nav-toggle span {
+      width: 24px;
+      height: 2px;
+      background: var(--color-text);
+      transition: all 0.3s ease;
+    }
+
+    .nav-toggle.active span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .nav-toggle.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .nav-toggle.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    @media (max-width: 768px) {
+      .nav-toggle {
+        display: flex;
+      }
+
+      .nav-links {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: var(--color-bg);
+        flex-direction: column;
+        padding: 2rem;
+        gap: 1.5rem;
+        border-bottom: 1px solid var(--color-border);
+        transform: translateY(-100%);
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.3s ease;
+      }
+
+      .nav-links.active {
+        display: flex;
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .nav-cta {
+        display: none;
+      }
+    }
+
+    /* Hero Section */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 8rem 3rem 4rem;
+      position: relative;
+    }
+
+    .hero-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--color-ruby);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: 2rem;
+      padding: 0.5rem 1rem;
+      background: rgba(217, 119, 6, 0.1);
+      border: 1px solid rgba(217, 119, 6, 0.3);
+      animation: fadeInUp 0.8s ease-out;
+    }
+
+    .hero-badge::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      background: var(--color-ruby);
+      border-radius: 50%;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(1.2); }
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(3rem, 9vw, 7rem);
+      line-height: 0.95;
+      letter-spacing: -0.01em;
+      margin-bottom: 2rem;
+      animation: fadeInUp 0.8s ease-out 0.1s both;
+    }
+
+    .hero-title .line {
+      display: block;
+      overflow: hidden;
+    }
+
+    .hero-title .highlight {
+      color: var(--color-ruby);
+      text-shadow: 0 0 60px var(--color-ruby-glow);
+      position: relative;
+    }
+
+    .hero-title .speed-lines {
+      position: absolute;
+      right: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      gap: 4px;
+      padding-right: 20px;
+    }
+
+    .hero-title .speed-line {
+      width: 40px;
+      height: 3px;
+      background: linear-gradient(to left, var(--color-ruby), transparent);
+      animation: speedLine 1.5s ease-out infinite;
+    }
+
+    .hero-title .speed-line:nth-child(2) {
+      width: 60px;
+      animation-delay: 0.2s;
+    }
+
+    .hero-title .speed-line:nth-child(3) {
+      width: 30px;
+      animation-delay: 0.4s;
+    }
+
+    @keyframes speedLine {
+      0% { opacity: 0; transform: translateX(20px); }
+      20% { opacity: 1; }
+      100% { opacity: 0; transform: translateX(-100px); }
+    }
+
+    .hero-subtitle {
+      font-family: var(--font-body);
+      font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+      font-weight: 400;
+      color: var(--color-text-muted);
+      max-width: 700px;
+      margin-bottom: 3rem;
+      animation: fadeInUp 0.8s ease-out 0.2s both;
+    }
+
+    .hero-subtitle strong {
+      color: var(--color-text);
+      font-weight: 600;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      animation: fadeInUp 0.8s ease-out 0.3s both;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      letter-spacing: 0.05em;
+      padding: 1.25rem 2.5rem;
+      background: var(--color-ruby);
+      color: white;
+      text-decoration: none;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      clip-path: polygon(0 0, 100% 0, 95% 100%, 5% 100%);
+    }
+
+    .btn-primary::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: left 0.5s ease;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 20px 40px var(--color-ruby-glow);
+    }
+
+    .btn-primary:hover::before {
+      left: 100%;
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-family: var(--font-mono);
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      padding: 1.25rem 2rem;
+      background: transparent;
+      color: var(--color-text);
+      text-decoration: none;
+      border: 1px solid var(--color-border);
+      transition: all 0.3s ease;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--color-ruby);
+      color: var(--color-ruby);
+      background: rgba(217, 119, 6, 0.05);
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 4rem;
+      margin-top: 5rem;
+      padding-top: 3rem;
+      border-top: 1px solid var(--color-border);
+      animation: fadeInUp 0.8s ease-out 0.4s both;
+    }
+
+    .stat {
+      text-align: left;
+    }
+
+    .stat-value {
+      font-family: var(--font-display);
+      font-size: 3.5rem;
+      color: var(--color-text);
+      line-height: 1;
+    }
+
+    .stat-value span {
+      color: var(--color-ruby);
+    }
+
+    .stat-label {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--color-text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-top: 0.5rem;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Train animation in hero */
+    .train-track {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--color-border);
+      overflow: hidden;
+    }
+
+    .train-track::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -200px;
+      width: 200px;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, var(--color-ruby), transparent);
+      animation: trainMove 4s linear infinite;
+    }
+
+    @keyframes trainMove {
+      0% { left: -200px; }
+      100% { left: 100%; }
+    }
+
+    /* What I Build Section */
+    .what-section {
+      padding: 8rem 3rem;
+      background: var(--color-surface);
+      position: relative;
+    }
+
+    .what-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 1px;
+      height: 80px;
+      background: linear-gradient(to bottom, var(--color-ruby), transparent);
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 5rem;
+    }
+
+    .section-number {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--color-ruby);
+      letter-spacing: 0.2em;
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      letter-spacing: 0.02em;
+      margin-bottom: 1.5rem;
+    }
+
+    .section-desc {
+      font-size: 1.1rem;
+      color: var(--color-text-muted);
+    }
+
+    .meanings-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .meaning-card {
+      padding: 2.5rem;
+      background: var(--color-surface-elevated);
+      border: 1px solid var(--color-border);
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s ease;
+    }
+
+    .meaning-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: var(--color-ruby);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+
+    .meaning-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--color-ruby);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    }
+
+    .meaning-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .meaning-icon {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      background: rgba(217, 119, 6, 0.1);
+      border: 1px solid rgba(217, 119, 6, 0.2);
+    }
+
+    .meaning-title {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      letter-spacing: 0.02em;
+      margin-bottom: 1rem;
+    }
+
+    .meaning-desc {
+      font-size: 1rem;
+      color: var(--color-text-muted);
+      line-height: 1.7;
+    }
+
+    /* How It Works Section */
+    .process-section {
+      padding: 8rem 3rem;
+      position: relative;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .process-step {
+      padding: 3rem 2rem;
+      border-right: 1px solid var(--color-border);
+      position: relative;
+    }
+
+    .process-step:last-child {
+      border-right: none;
+    }
+
+    .process-step::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--color-border), transparent);
+    }
+
+    .step-number {
+      font-family: var(--font-display);
+      font-size: 4rem;
+      color: var(--color-surface-elevated);
+      -webkit-text-stroke: 1px var(--color-border);
+      line-height: 1;
+      margin-bottom: 1.5rem;
+      transition: all 0.3s ease;
+    }
+
+    .process-step:hover .step-number {
+      color: var(--color-ruby);
+      -webkit-text-stroke: 1px var(--color-ruby);
+    }
+
+    .step-title {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 1rem;
+      color: var(--color-text);
+    }
+
+    .step-desc {
+      font-size: 0.95rem;
+      color: var(--color-text-muted);
+      line-height: 1.6;
+    }
+
+    .step-time {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--color-ruby);
+      margin-top: 1.5rem;
+      padding-top: 1rem;
+      border-top: 1px dashed var(--color-border);
+    }
+
+    /* Case Study Section */
+    .case-study-section {
+      padding: 8rem 3rem;
+      background: var(--color-surface);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .case-study-section::after {
+      content: 'CASE STUDY';
+      position: absolute;
+      top: 50%;
+      right: -5%;
+      transform: translateY(-50%) rotate(90deg);
+      font-family: var(--font-display);
+      font-size: 8rem;
+      color: var(--color-border);
+      opacity: 0.3;
+      white-space: nowrap;
+      pointer-events: none;
+    }
+
+    .case-study-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .case-study-info {
+      position: relative;
+      z-index: 1;
+    }
+
+    .case-study-label {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--color-ruby);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: 1rem;
+    }
+
+    .case-study-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 1.5rem;
+    }
+
+    .case-study-desc {
+      font-size: 1.1rem;
+      color: var(--color-text-muted);
+      margin-bottom: 2rem;
+      line-height: 1.7;
+    }
+
+    .case-study-features {
+      list-style: none;
+      margin-bottom: 2.5rem;
+    }
+
+    .case-study-features li {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid var(--color-border);
+      font-family: var(--font-mono);
+      font-size: 0.9rem;
+    }
+
+    .case-study-features li::before {
+      content: '→';
+      color: var(--color-ruby);
+    }
+
+    .case-study-meta {
+      display: flex;
+      gap: 3rem;
+    }
+
+    .meta-item {
+      text-align: left;
+    }
+
+    .meta-value {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      color: var(--color-ruby);
+    }
+
+    .meta-label {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--color-text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .case-study-visual {
+      position: relative;
+    }
+
+    .browser-window {
+      background: var(--color-surface-elevated);
+      border: 1px solid var(--color-border);
+      border-radius: 8px 8px 0 0;
+      overflow: hidden;
+      box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+    }
+
+    .browser-bar {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 16px;
+      background: var(--color-bg);
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .browser-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--color-border);
+    }
+
+    .browser-dot:first-child { background: #ff5f57; }
+    .browser-dot:nth-child(2) { background: #ffbd2e; }
+    .browser-dot:nth-child(3) { background: #28c940; }
+
+    .browser-url {
+      flex: 1;
+      margin-left: 12px;
+      padding: 6px 12px;
+      background: var(--color-surface);
+      border-radius: 4px;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--color-text-muted);
+    }
+
+    .browser-content {
+      aspect-ratio: 16/10;
+      background: linear-gradient(135deg, var(--color-surface) 0%, var(--color-bg) 100%);
+      display: flex;
+      flex-direction: column;
+      padding: 2rem;
+    }
+
+    .mock-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+
+    .mock-logo {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      color: var(--color-text);
+    }
+
+    .mock-nav {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .mock-nav span {
+      width: 60px;
+      height: 8px;
+      background: var(--color-border);
+      border-radius: 4px;
+    }
+
+    .mock-dashboard {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 1rem;
+    }
+
+    .mock-sidebar {
+      background: var(--color-surface-elevated);
+      border-radius: 8px;
+      padding: 1rem;
+    }
+
+    .mock-menu-item {
+      height: 24px;
+      background: var(--color-border);
+      border-radius: 4px;
+      margin-bottom: 8px;
+      opacity: 0.5;
+    }
+
+    .mock-menu-item.active {
+      background: var(--color-ruby);
+      opacity: 1;
+    }
+
+    .mock-main {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .mock-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.75rem;
+    }
+
+    .mock-card {
+      background: var(--color-surface-elevated);
+      border-radius: 8px;
+      padding: 1rem;
+      height: 60px;
+    }
+
+    .mock-card-value {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      color: var(--color-text);
+    }
+
+    .mock-card-label {
+      font-size: 0.6rem;
+      color: var(--color-text-muted);
+      text-transform: uppercase;
+    }
+
+    .mock-chart {
+      flex: 1;
+      background: var(--color-surface-elevated);
+      border-radius: 8px;
+      padding: 1rem;
+      display: flex;
+      align-items: flex-end;
+      gap: 8px;
+    }
+
+    .mock-bar {
+      flex: 1;
+      background: var(--color-ruby);
+      border-radius: 4px 4px 0 0;
+      opacity: 0.7;
+    }
+
+    .mock-bar:nth-child(1) { height: 40%; }
+    .mock-bar:nth-child(2) { height: 65%; }
+    .mock-bar:nth-child(3) { height: 45%; }
+    .mock-bar:nth-child(4) { height: 80%; }
+    .mock-bar:nth-child(5) { height: 55%; }
+    .mock-bar:nth-child(6) { height: 90%; }
+    .mock-bar:nth-child(7) { height: 70%; }
+
+    /* About Section */
+    .about-section {
+      padding: 8rem 3rem;
+      background: var(--color-surface);
+    }
+
+    .about-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .about-image {
+      position: relative;
+    }
+
+    .about-photo {
+      width: 100%;
+      aspect-ratio: 3/4;
+      border: 1px solid var(--color-border);
+      overflow: hidden;
+    }
+
+    .about-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .about-badge {
+      position: absolute;
+      bottom: -20px;
+      right: -20px;
+      background: var(--color-ruby);
+      padding: 1rem 1.5rem;
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      color: white;
+      box-shadow: 0 10px 30px var(--color-ruby-glow);
+    }
+
+    .about-text h2 {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 1.5rem;
+    }
+
+    .about-text p {
+      font-size: 1.1rem;
+      color: var(--color-text-muted);
+      margin-bottom: 1.5rem;
+      line-height: 1.8;
+    }
+
+    .about-text p strong {
+      color: var(--color-text);
+    }
+
+    .credentials {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+      padding-top: 2.5rem;
+      border-top: 1px solid var(--color-border);
+    }
+
+    .credential {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .credential-icon {
+      width: 48px;
+      height: 48px;
+      background: rgba(217, 119, 6, 0.1);
+      border: 1px solid rgba(217, 119, 6, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+    }
+
+    .credential-text {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      color: var(--color-text-muted);
+    }
+
+    .credential-text strong {
+      display: block;
+      color: var(--color-text);
+      font-size: 1rem;
+    }
+
+    /* CTA Section */
+    .cta-section {
+      padding: 8rem 3rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, var(--color-ruby-glow) 0%, transparent 70%);
+      opacity: 0.3;
+      pointer-events: none;
+    }
+
+    .cta-content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .cta-title {
+      font-family: var(--font-display);
+      font-size: clamp(3rem, 8vw, 5rem);
+      margin-bottom: 1.5rem;
+    }
+
+    .cta-desc {
+      font-size: 1.2rem;
+      color: var(--color-text-muted);
+      margin-bottom: 3rem;
+    }
+
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    /* Footer */
+    footer {
+      padding: 4rem 3rem;
+      border-top: 1px solid var(--color-border);
+    }
+
+    .footer-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-logo {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      color: var(--color-text);
+    }
+
+    .footer-logo span {
+      color: var(--color-ruby);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .footer-links a {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--color-text-muted);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--color-ruby);
+    }
+
+    .footer-copy {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--color-text-muted);
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .meanings-grid {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+      }
+
+      .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .process-step {
+        border-bottom: 1px solid var(--color-border);
+      }
+
+      .process-step:nth-child(2) {
+        border-right: none;
+      }
+
+      .case-study-content,
+      .about-content {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        padding: 1rem 1.5rem;
+      }
+
+      .hero {
+        padding: 6rem 1.5rem 3rem;
+      }
+
+      .hero-stats {
+        flex-direction: column;
+        gap: 2rem;
+      }
+
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .process-step {
+        border-right: none;
+      }
+
+      section {
+        padding: 4rem 1.5rem;
+      }
+
+      .footer-content {
+        flex-direction: column;
+        gap: 2rem;
+        text-align: center;
+      }
+
+      .credentials {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "AI on Rails",
+    "description": "AI-powered Ruby on Rails development. Ship production software in weeks, not months.",
+    "url": "https://ai-on-rails.com",
+    "logo": "https://ai-on-rails.com/logo.png",
+    "founder": {
+      "@type": "Person",
+      "name": "Henning Thies",
+      "jobTitle": "Founder & Developer",
+      "knowsAbout": ["Ruby on Rails", "Web Development", "AI-Assisted Development"]
+    },
+    "areaServed": ["Germany", "Europe", "Worldwide"],
+    "serviceType": ["Web Development", "MVP Development", "SaaS Development", "Ruby on Rails Development"],
+    "knowsAbout": ["Ruby on Rails", "Hotwire", "PostgreSQL", "AI Development Tools"],
+    "priceRange": "$$$$",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "DE"
+    },
+    "sameAs": [
+      "https://mvp-development.de",
+      "https://www.linkedin.com/company/ai-on-rails"
+    ]
+  }
+  </script>
+</head>
+<body>
+  <!-- Skip link for accessibility -->
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- Rail lines background -->
+  <div class="rail-lines">
+    <div class="rail-line"></div>
+    <div class="rail-line"></div>
+    <div class="rail-line"></div>
+    <div class="rail-line"></div>
+  </div>
+
+  <!-- Navigation -->
+  <nav aria-label="Main navigation">
+    <a href="/" class="logo" aria-label="AI on Rails - Home">
+      <span class="logo-ruby">AI</span> ON RAILS
+    </a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#what">What I Do</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">Let's Talk</a>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="main">
+    <div class="hero-content">
+      <div class="hero-badge">Now accepting projects for Q1 2026</div>
+      <h1 class="hero-title">
+        <span class="line">THE ONE-PERSON</span>
+        <span class="line"><span class="highlight">FRAMEWORK<span class="speed-lines"><span class="speed-line"></span><span class="speed-line"></span><span class="speed-line"></span></span></span></span>
+        <span class="line">MEETS AI</span>
+      </h1>
+      <p class="hero-subtitle">
+        Ship in weeks what others build in months. <strong>AI-powered Rails development</strong>
+        with the quality that comes from <strong>15+ years</strong> of production experience.
+      </p>
+      <div class="hero-cta-group">
+        <a href="#contact" class="btn-primary">
+          Start a Conversation
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+        <a href="#work" class="btn-secondary">
+          View Case Study
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <div class="stat-value">15<span>+</span></div>
+          <div class="stat-label">Years Experience</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">3<span>–</span>5<span>×</span></div>
+          <div class="stat-label">Faster Than Traditional</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">10<span>+</span></div>
+          <div class="stat-label">Team Leadership</div>
         </div>
       </div>
-      <div class="relative flex w-full flex-col">
-        
-<header class="pointer-events-none relative z-50 flex flex-none flex-col">
-  <div class="top-0 z-10 h-16 pt-6">
-    <div class="sm:px-8 top-6 w-full">
-      <div class="mx-auto w-full max-w-7xl lg:px-8">
-        <div class="relative px-4 sm:px-8 lg:px-12">
-          <div class="mx-auto max-w-2xl lg:max-w-5xl">
-            <div class="relative flex gap-4">
-              <div class="flex flex-1">
-                <div class="h-10 w-10 p-0.5"><a aria-label="Home" class="pointer-events-auto" href="/"><img alt="ai-on-rails.com" fetchpriority="high" width="512" height="512" decoding="async" data-nimg="1" class="h-9 w-9" sizes="2.25rem" src="/images/ai-on-rails.png" style="color: transparent;"></a></div>
+    </div>
+    <div class="train-track"></div>
+  </section>
 
-              </div>
-              <div class="flex flex-1 justify-end md:justify-center">
-                <nav class="pointer-events-auto hidden md:block">
-                  <ul class="flex rounded-full bg-white/90 px-3 text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur">
-                    <li>
-                      <a class="relative block px-3 py-2 transition hover:text-teal-500" href="//">Home</a>
-                    </li>
-                    <li>
-                      <a class="relative block px-3 py-2 transition hover:text-teal-500" href="/articles/">Articles</a>
-                    </li>
-                    <li>
-                      <a class="relative block px-3 py-2 transition hover:text-teal-500" href="/author/">Author</a>
-                    </li>
-                  </ul>
-                </nav>
-              </div>
-              <div class="flex justify-end md:flex-1"></div>
-            </div>
+  <!-- What Section -->
+  <section class="what-section" id="what">
+    <div class="section-header">
+      <div class="section-number">// 01</div>
+      <h2 class="section-title">AI ON RAILS</h2>
+      <p class="section-desc">Three meanings. One mission: Ship your product faster without sacrificing quality.</p>
+    </div>
+    <div class="meanings-grid">
+      <div class="meaning-card">
+        <div class="meaning-icon">💎</div>
+        <h3 class="meaning-title">AI + RUBY ON RAILS</h3>
+        <p class="meaning-desc">The most productive web framework meets modern AI tools. Claude, Cursor, and battle-tested Rails patterns to generate production-grade code at unprecedented speed.</p>
+      </div>
+      <div class="meaning-card">
+        <div class="meaning-icon">🛡️</div>
+        <h3 class="meaning-title">AI ON GUARDRAILS</h3>
+        <p class="meaning-desc">AI writes 70–90% of boilerplate. A senior developer with 15 years experience reviews, architects, and ensures security. You get speed without the Frankenstein code.</p>
+      </div>
+      <div class="meaning-card">
+        <div class="meaning-icon">🚄</div>
+        <h3 class="meaning-title">SPEED LIKE A TRAIN</h3>
+        <p class="meaning-desc">What takes traditional agencies 4–8 months, I deliver in 2–6 weeks. Your product launches while competitors are still in discovery phases.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Section -->
+  <section class="process-section" id="process">
+    <div class="section-header">
+      <div class="section-number">// 02</div>
+      <h2 class="section-title">HOW IT WORKS</h2>
+      <p class="section-desc">From idea to production in four phases</p>
+    </div>
+    <div class="process-grid">
+      <div class="process-step">
+        <div class="step-number">01</div>
+        <h3 class="step-title">Discovery Call</h3>
+        <p class="step-desc">45-minute video call to understand your vision, define scope, and identify the smallest viable feature set that proves your concept.</p>
+        <div class="step-time">Day 0</div>
+      </div>
+      <div class="process-step">
+        <div class="step-number">02</div>
+        <h3 class="step-title">Architecture</h3>
+        <p class="step-desc">Database design, API structure, authentication strategy, deployment setup. Solid foundations built with Rails 8 + Hotwire + Kamal.</p>
+        <div class="step-time">Days 1–3</div>
+      </div>
+      <div class="process-step">
+        <div class="step-number">03</div>
+        <h3 class="step-title">AI-Accelerated Build</h3>
+        <p class="step-desc">Rapid development using AI tools for boilerplate while I focus on business logic, edge cases, and the details that matter.</p>
+        <div class="step-time">Days 4–18</div>
+      </div>
+      <div class="process-step">
+        <div class="step-number">04</div>
+        <h3 class="step-title">Ship & Iterate</h3>
+        <p class="step-desc">Deployed to production with monitoring, backups, and documentation. Ready for your first users and future iterations.</p>
+        <div class="step-time">Day 19–21</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Case Study Section -->
+  <section class="case-study-section" id="work">
+    <div class="case-study-content">
+      <div class="case-study-info">
+        <div class="case-study-label">Featured Project</div>
+        <h2 class="case-study-title">KUNDEN-COCKPIT</h2>
+        <p class="case-study-desc">
+          A multi-tenant client management dashboard built for German SMEs.
+          Invoicing, document management, task tracking, and DATEV-ready exports —
+          all in one clean interface.
+        </p>
+        <ul class="case-study-features">
+          <li>Multi-tenant architecture with role-based access</li>
+          <li>Dashboard with real-time analytics</li>
+          <li>Document management & task tracking</li>
+          <li>Invoice generation with DATEV export</li>
+          <li>Responsive design for mobile access</li>
+        </ul>
+        <div class="case-study-meta">
+          <div class="meta-item">
+            <div class="meta-value">19</div>
+            <div class="meta-label">Days to Build</div>
+          </div>
+          <div class="meta-item">
+            <div class="meta-value">1</div>
+            <div class="meta-label">Developer</div>
+          </div>
+          <div class="meta-item">
+            <div class="meta-value">∞</div>
+            <div class="meta-label">Scalability</div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</header>
-
-        <main clas="flex-auto">
-          <div class="sm:px-8 mt-12 lg:mt-16">
-            <div class="relative px-4 sm:px-8 lg:px-12">
-              <div class="mx-auto w-full max-w-7xl lg:px-8">
-                <div class="relative px-4 sm:px-8 lg:px-12">
-                  <div class="mx-auto max-w-2xl lg:max-w-5xl">
-                    <header class="max-w-2xl">
-  <h1 class="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl">Writing on integrating AI technology into Ruby on Rails applications.</h1>
-  <p class="mt-6 text-base text-zinc-600">
-  AI gets more powerful and easier to use every day. <b>LLMs</b> can be installed with a single line of code. Let's explore how to integrate different AI technologies into <a href="https://rubyonrails.org/" target="_blank"><b>Ruby on Rails</b></a> applications to make them more powerful and ready for the future.
-  </p>
-</header>
-
-<div class="mt-8 sm:mt-16">
-  <div class="mb-8">
-    <h2 class="text-2xl font-bold tracking-tight text-zinc-800">Latest articles</h2>
-  </div>
-  <div class="md:border-l md:border-zinc-100 md:pl-6">
-    <div class="flex max-w-3xl flex-col space-y-16">
-        <article class="md:grid md:grid-cols-4 md:items-baseline">
-    <div class="md:col-span-3 group relative flex flex-col items-start">
-      <h2 class="text-base font-semibold tracking-tight text-zinc-800">
-        <div class="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 sm:-inset-x-6 sm:rounded-2xl">
-        </div>
-        <a href="/articles/using-openai-in-rails-a-first-usecase/">
-          <span class="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl"></span>
-          <span class="relative z-10">Using OpenAI in Rails: A first usecase</span>
-        </a>
-      </h2>
-      <time class="md:hidden relative z-10 order-first mb-3 flex items-center text-sm text-zinc-400 pl-3.5" datetime="2024-06-18 06:00:00 UTC">
-        <span class="absolute inset-y-0 left-0 flex items-center" aria-hidden="true"><span class="h-4 w-0.5 rounded-full bg-zinc-200"></span></span>
-        Jun 18 2024
-      </time>
-      <p class="relative z-10 mt-2 text-sm text-zinc-600">
-        Learn how to integrate OpenAI into your Ruby on Rails application to generate dynamic content and enhance user experience.
-      </p>
-      <div aria-hidden="true" class="relative z-10 mt-4 flex items-center text-sm font-medium text-teal-500">
-          Read article<svg viewBox="0 0 16 16" fill="none" aria-hidden="true" class="ml-1 h-4 w-4 stroke-current"><path d="M6.75 5.75 9.25 8l-2.5 2.25" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-      </div>
-    </div>
-    <time class="mt-1 hidden md:block relative z-10 order-first mb-3 items-center text-sm text-zinc-400" datetime="2024-06-18 06:00:00 UTC">Jun 18 2024</time>
-  </article>
-  <article class="md:grid md:grid-cols-4 md:items-baseline">
-    <div class="md:col-span-3 group relative flex flex-col items-start">
-      <h2 class="text-base font-semibold tracking-tight text-zinc-800">
-        <div class="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 sm:-inset-x-6 sm:rounded-2xl">
-        </div>
-        <a href="/articles/llamafile/">
-          <span class="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl"></span>
-          <span class="relative z-10">Setting Up a Local AI-Powered Ruby on Rails Environment</span>
-        </a>
-      </h2>
-      <time class="md:hidden relative z-10 order-first mb-3 flex items-center text-sm text-zinc-400 pl-3.5" datetime="2024-05-26 00:24:00 UTC">
-        <span class="absolute inset-y-0 left-0 flex items-center" aria-hidden="true"><span class="h-4 w-0.5 rounded-full bg-zinc-200"></span></span>
-        May 26 2024
-      </time>
-      <p class="relative z-10 mt-2 text-sm text-zinc-600">
-        Discover how to integrate AI into your Ruby on Rails application without the need for expensive API calls. This guide walks you through setting up a local environment using Foreman and llamafile.
-      </p>
-      <div aria-hidden="true" class="relative z-10 mt-4 flex items-center text-sm font-medium text-teal-500">
-          Read article<svg viewBox="0 0 16 16" fill="none" aria-hidden="true" class="ml-1 h-4 w-4 stroke-current"><path d="M6.75 5.75 9.25 8l-2.5 2.25" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-      </div>
-    </div>
-    <time class="mt-1 hidden md:block relative z-10 order-first mb-3 items-center text-sm text-zinc-400" datetime="2024-05-26 00:24:00 UTC">May 26 2024</time>
-  </article>
-      
-    </div>
-  </div>
-</div>
-
+      <div class="case-study-visual">
+        <div class="browser-window">
+          <div class="browser-bar">
+            <div class="browser-dot"></div>
+            <div class="browser-dot"></div>
+            <div class="browser-dot"></div>
+            <div class="browser-url">kunden-cockpit.app</div>
+          </div>
+          <div class="browser-content">
+            <div class="mock-header">
+              <div class="mock-logo">KUNDEN-COCKPIT</div>
+              <div class="mock-nav">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+            <div class="mock-dashboard">
+              <div class="mock-sidebar">
+                <div class="mock-menu-item active"></div>
+                <div class="mock-menu-item"></div>
+                <div class="mock-menu-item"></div>
+                <div class="mock-menu-item"></div>
+                <div class="mock-menu-item"></div>
+              </div>
+              <div class="mock-main">
+                <div class="mock-cards">
+                  <div class="mock-card">
+                    <div class="mock-card-value">24</div>
+                    <div class="mock-card-label">Active Clients</div>
                   </div>
+                  <div class="mock-card">
+                    <div class="mock-card-value">€47K</div>
+                    <div class="mock-card-label">Revenue MTD</div>
+                  </div>
+                  <div class="mock-card">
+                    <div class="mock-card-value">12</div>
+                    <div class="mock-card-label">Open Tasks</div>
+                  </div>
+                </div>
+                <div class="mock-chart">
+                  <div class="mock-bar"></div>
+                  <div class="mock-bar"></div>
+                  <div class="mock-bar"></div>
+                  <div class="mock-bar"></div>
+                  <div class="mock-bar"></div>
+                  <div class="mock-bar"></div>
+                  <div class="mock-bar"></div>
                 </div>
               </div>
             </div>
-            <div class="mx-auto w-full max-w-7xl lg:px-8"></div>
           </div>
-        </main>
-        
-<footer class="mt-32 flex-none">
-  <div class="sm:px-8">
-    <div class="mx-auto w-full max-w-7xl lg:px-8">
-      <div class="border-t border-zinc-100 pb-16 pt-10">
-        <div class="relative px-4 sm:px-8 lg:px-12">
-          <div class="mx-auto max-w-2xl lg:max-w-5xl">
-            <div class="flex flex-col items-center justify-between gap-6 sm:flex-row">
-              <div class="flex flex-wrap justify-center gap-x-6 gap-y-1 text-sm font-medium text-zinc-800">
-                  <a class="hover:text-teal-500" href="/">Home</a>
-                  <a class="hover:text-teal-500" href="/articles">Articles</a>
-                  <a class="hover:text-teal-500" href="/author">Author</a>
-              </div>
-              <p class="text-sm text-zinc-400">© <!-- -->2024<!-- --> No rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about-section" id="about">
+    <div class="about-content">
+      <div class="about-image">
+        <div class="about-photo"><img src="henning-thies.jpeg" alt="Henning Thies"></div>
+        <div class="about-badge">15+ YEARS</div>
+      </div>
+      <div class="about-text">
+        <h2>HENNING THIES</h2>
+        <p>
+          I've spent <strong>over 15 years</strong> building production software — from startups to enterprise,
+          from solo projects to leading teams of 10+ developers. I've seen what works and what doesn't.
+        </p>
+        <p>
+          In 2024, AI changed everything. Suddenly, the tedious parts of development — boilerplate,
+          CRUD operations, basic integrations — could be generated in minutes instead of hours.
+          But AI alone produces Frankenstein code. <strong>You need experience to make it production-ready.</strong>
+        </p>
+        <p>
+          That's what AI on Rails offers: the speed of AI-accelerated development with the quality
+          that only comes from years of shipping real software to real users.
+        </p>
+        <div class="credentials">
+          <div class="credential">
+            <div class="credential-icon">💎</div>
+            <div class="credential-text">
+              <strong>Ruby on Rails</strong>
+              Expert since 2010
+            </div>
+          </div>
+          <div class="credential">
+            <div class="credential-icon">👥</div>
+            <div class="credential-text">
+              <strong>Team Leadership</strong>
+              Led teams up to 10 devs
+            </div>
+          </div>
+          <div class="credential">
+            <div class="credential-icon">🏢</div>
+            <div class="credential-text">
+              <strong>Enterprise & Startup</strong>
+              Both environments
+            </div>
+          </div>
+          <div class="credential">
+            <div class="credential-icon">🇩🇪</div>
+            <div class="credential-text">
+              <strong>Based in Germany</strong>
+              EU timezone, GDPR compliant
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</footer>
+  </section>
 
+  <!-- CTA Section -->
+  <section class="cta-section" id="contact">
+    <div class="cta-content">
+      <h2 class="cta-title">LET'S BUILD SOMETHING GREAT</h2>
+      <p class="cta-desc">
+        Whether you're a startup founder with a vision or an enterprise team looking
+        to accelerate development — let's have a conversation about your project.
+      </p>
+      <div class="cta-buttons">
+        <a href="https://calendar.app.google/VdnLNLqjpSR4MS6G7" class="btn-primary" target="_blank" rel="noopener">
+          Schedule a Call
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+        <a href="mailto:hello@ai-on-rails.com" class="btn-secondary">
+          hello@ai-on-rails.com
+        </a>
       </div>
     </div>
-  </body>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-logo"><span>AI</span> ON RAILS</div>
+      <ul class="footer-links">
+        <li><a href="#what">What I Do</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="mailto:hello@ai-on-rails.com">Contact</a></li>
+        <li><a href="/impressum">Impressum</a></li>
+        <li><a href="/datenschutz">Datenschutz</a></li>
+      </ul>
+      <div class="footer-copy">© 2025 AI on Rails. Henning Thies.</div>
+    </div>
+  </footer>
+
+  <script>
+    // Smooth reveal on scroll
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.meaning-card, .process-step').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(30px)';
+      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      observer.observe(el);
+    });
+
+    // Stagger animation for grid items
+    document.querySelectorAll('.meanings-grid .meaning-card').forEach((card, i) => {
+      card.style.transitionDelay = `${i * 0.1}s`;
+    });
+
+    document.querySelectorAll('.process-grid .process-step').forEach((step, i) => {
+      step.style.transitionDelay = `${i * 0.1}s`;
+    });
+
+    // Navigation background on scroll
+    const nav = document.querySelector('nav');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 100) {
+        nav.style.background = 'rgba(28, 25, 23, 0.95)';
+      } else {
+        nav.style.background = 'linear-gradient(to bottom, var(--color-bg) 0%, transparent 100%)';
+      }
+    });
+
+    // Mobile menu toggle
+    const navToggle = document.getElementById('nav-toggle');
+    const navLinks = document.getElementById('nav-links');
+
+    navToggle.addEventListener('click', () => {
+      navToggle.classList.toggle('active');
+      navLinks.classList.toggle('active');
+    });
+
+    // Close mobile menu when clicking a link
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navToggle.classList.remove('active');
+        navLinks.classList.remove('active');
+      });
+    });
+  </script>
+</body>
 </html>
