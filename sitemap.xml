@@ -19,6 +19,30 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://ai-on-rails.com/blog/speed-cost-quality-triangle.html</loc>
+    <lastmod>2025-12-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ai-on-rails.com/blog/mvp-doesnt-need-team.html</loc>
+    <lastmod>2025-12-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ai-on-rails.com/blog/ship-weeks-not-months.html</loc>
+    <lastmod>2025-12-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ai-on-rails.com/blog/one-person-team-advantage.html</loc>
+    <lastmod>2025-12-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://ai-on-rails.com/impressum.html</loc>
     <lastmod>2025-12-26</lastmod>
     <changefreq>yearly</changefreq>
