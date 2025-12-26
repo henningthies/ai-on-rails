@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The 70/30 Rule: What AI Can and Can't Do in Rails Development | AI on Rails Blog</title>
-  <meta name="description" content="AI handles 70% of the code, but humans handle 100% of the decisions. Learn why experienced developers are essential for AI-powered Rails development.">
+  <title>The 70/30 Rule: Why AI Needs an Experienced Pilot | AI on Rails Blog</title>
+  <meta name="description" content="AI handles 70% of the typing. Experience handles 100% of the decisions. That distinction changes everything.">
 
   <!-- Canonical URL -->
   <link rel="canonical" href="https://ai-on-rails.com/blog/the-70-30-rule">
@@ -15,8 +15,8 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="The 70/30 Rule: What AI Can and Can't Do in Rails Development">
-  <meta property="og:description" content="AI handles 70% of the code, but humans handle 100% of the decisions. Why experienced developers are essential for AI-powered development.">
+  <meta property="og:title" content="The 70/30 Rule: Why AI Needs an Experienced Pilot">
+  <meta property="og:description" content="AI handles 70% of the typing. Experience handles 100% of the decisions. That distinction changes everything.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://ai-on-rails.com/blog/the-70-30-rule">
   <meta property="og:image" content="https://ai-on-rails.com/og-image.png">
@@ -603,265 +603,126 @@
     <div class="article-meta">
       <span class="article-category">AI-Powered Development</span>
       <span class="article-date">December 26, 2025</span>
-      <span class="article-reading-time">8 min read</span>
+      <span class="article-reading-time">5 min read</span>
     </div>
     
     <h1 class="article-title">
-      THE <span class="highlight">70/30</span> RULE: WHAT AI CAN AND CAN'T DO IN RAILS DEVELOPMENT
+      THE <span class="highlight">70/30</span> RULE: WHY AI NEEDS AN EXPERIENCED PILOT
     </h1>
     
     <p class="article-subtitle">
-      After months of building production Rails applications with AI assistance, I've discovered a critical truth: AI handles 70% of the code, but humans handle 100% of the decisions. Here's why you need an experienced pilot at the controls.
+      AI handles 70% of the typing. Experience handles 100% of the decisions. That distinction changes everything.
     </p>
   </header>
 
-  <!-- Article Content -->
   <article class="article-content">
-    <div class="key-insight">
-      <p><strong>AI is a force multiplier, not a replacement.</strong> The same AI that makes a senior developer 5x more productive can lead a junior developer into a security nightmare. The difference isn't the AI—it's the pilot.</p>
-    </div>
+    <p>
+      There's a seductive narrative in tech right now: AI has democratized software development. Anyone can build an app. Describe what you want, the machine produces code. No experience necessary.
+    </p>
+    
+    <p>
+      I've spent the last year testing this by building production Rails applications with AI assistance. Real software, real customers, real infrastructure. And I've found that the narrative is half right—which makes it dangerous.
+    </p>
 
     <p>
-      The hype around AI coding tools is deafening. "AI will replace developers!" "No-code is the future!" "Anyone can build software now!"
-    </p>
-    
-    <p>
-      I've spent the last year testing this thesis by building production Rails applications using Claude, Cursor, and other AI tools. The reality is more nuanced—and more interesting—than either side claims.
+      AI genuinely transforms what's possible. I've delivered complete business applications in weeks that would have taken a traditional team months. But the productivity gain doesn't come from AI replacing judgment. It comes from AI amplifying judgment. That distinction changes everything.
     </p>
 
-    <h2>THE 70%: WHERE AI EXCELS</h2>
-    
+    <hr style="border: none; border-top: 1px solid var(--color-border); margin: 3rem 0;">
+
     <p>
-      Let me be clear: AI is <strong>extraordinarily good</strong> at certain types of development work. When I say AI handles 70% of the code, I mean it generates or substantially assists with the following:
+      The no-code movement promised something similar a few years ago. Drag and drop your way to a business. For certain use cases, these tools deliver real value—forms, simple CRMs, basic inventory tracking. They've gotten genuinely good at that layer.
     </p>
 
-    <h3>CRUD Operations</h3>
     <p>
-      Creating controllers, models, views, and forms for standard data operations is AI's sweet spot. Describe what you need in natural language, and you get correct, idiomatic Rails code:
-    </p>
-    
-    <pre><code>"Create a RESTful controller for Projects with index, show, 
-new, create, edit, update, and destroy actions. Projects 
-belong to a Client and have a name, description, status 
-enum, and due_date."</code></pre>
-    
-    <p>
-      AI generates this perfectly. What used to be 30 minutes of typing is now 2 minutes of review.
+      But then you need multi-tenancy, where each customer's data must be perfectly isolated. You need background jobs that don't block requests. You need queries that don't collapse at fifty thousand records. You need proper authorization that doesn't leak data between users.
     </p>
 
-    <h3>Database Migrations</h3>
     <p>
-      Tell AI what you need, get a correct migration every time:
-    </p>
-    
-    <pre><code>class AddStatusToProjects &lt; ActiveRecord::Migration[8.0]
-  def change
-    add_column :projects, :status, :integer, default: 0, null: false
-    add_index :projects, [:client_id, :status]
-  end
-end</code></pre>
-
-    <h3>Test Writing</h3>
-    <p>
-      Describing expected behavior and having AI write tests is incredibly efficient. I describe what I want to test, AI writes comprehensive RSpec tests that would take 20+ minutes manually.
+      This is where no-code hits a wall. Not because the tools are bad, but because the problems require judgment that no visual interface can encode. AI-assisted coding faces the same wall, just higher up. It generates vastly more sophisticated code. It understands frameworks, patterns, best practices. But it still can't make the judgment calls that determine whether software actually works in production.
     </p>
 
-    <h3>View Templates & CSS</h3>
+    <hr style="border: none; border-top: 1px solid var(--color-border); margin: 3rem 0;">
+
     <p>
-      ERB templates, Tailwind classes, responsive layouts—AI's output is often better than what I'd write because it's seen millions of examples. "Style this form with a card layout, proper spacing, and a prominent submit button" produces clean, working code.
+      Consider authentication. Ask AI to build it and you'll get something that works. Accounts, passwords, sessions. The code follows patterns correctly.
     </p>
 
-    <h3>Documentation & Boilerplate</h3>
     <p>
-      README files, inline comments, API documentation, configuration files—all the repetitive-but-necessary work that slows down development.
+      But will it handle the edge case where email delivery takes thirty seconds and blocks the request? Will it scope queries to the current tenant, or fetch users by ID directly—leaking data between customers? Will it use the hashing algorithm recommended today, or the one that was popular when the training data was collected?
     </p>
 
-    <h2>THE 30%: WHY YOU NEED AN EXPERIENCED PILOT</h2>
-    
     <p>
-      Here's where the "anyone can code with AI" narrative falls apart. The 30% that AI <strong>cannot</strong> handle well is the 30% that makes the difference between working software and a security breach, between maintainable code and technical debt, between a product that scales and one that collapses.
+      These aren't exotic concerns. They're the ordinary problems that separate software that works from software that survives production.
     </p>
 
-    <h3>Architecture Decisions</h3>
+    <hr style="border: none; border-top: 1px solid var(--color-border); margin: 3rem 0;">
+
     <p>
-      Should you use schema-per-tenant or row-level security for multi-tenancy? REST or GraphQL? Sidekiq or Solid Queue? PostgreSQL or MySQL?
-    </p>
-    
-    <p>
-      <strong>AI will give you pros and cons, but it won't make the decision.</strong> It doesn't know your team's experience level, your scale requirements, your existing infrastructure, or your business constraints. I've seen AI confidently recommend patterns that would fail spectacularly at scale.
+      I frame it as the 70/30 rule. AI handles about 70% of what I type—controller scaffolding, migrations, templates, tests, CSS. Patterns so well-represented in training data that AI produces them nearly perfectly.
     </p>
 
-    <h3>Security Review</h3>
-    
-    <div class="key-insight">
-      <p>This is the most critical gap. AI-generated code often has security vulnerabilities that look correct but aren't.</p>
-    </div>
-    
-    <p>Consider this common scenario:</p>
-    
-    <pre><code># AI might generate this
-def show
-  @user = User.find(params[:id])
-end
-
-# But it should be this
-def show
-  @user = current_tenant.users.find(params[:id])
-end</code></pre>
-    
     <p>
-      The first version <strong>leaks data across tenants</strong>. AI doesn't understand your authorization model unless you explicitly tell it every time. And you won't always remember to tell it.
-    </p>
-    
-    <p>
-      Every controller action, every query, every user input handling needs a human with security experience reviewing it. This isn't optional.
+      But humans handle 100% of the decisions. Architecture: monolith or services, which database, how to structure the data? Security: is this query scoped correctly, is this input sanitized? Business logic: does this workflow actually match what the client needs, what happens in this edge case?
     </p>
 
-    <h3>Business Logic Validation</h3>
     <p>
-      AI doesn't know your business. It doesn't know that German invoices require specific VAT calculations, that your client has an unusual approval workflow, or that certain data combinations should be impossible.
-    </p>
-    
-    <p>
-      When I built DATEV export functionality recently, AI gave me a starting point. I then spent hours validating against official documentation because <strong>getting German accounting data wrong has legal consequences</strong>.
+      <strong>The 70% isn't 70% of the value. It's 70% of the typing. Value lives in the decisions.</strong>
     </p>
 
-    <h3>Performance at Scale</h3>
+    <hr style="border: none; border-top: 1px solid var(--color-border); margin: 3rem 0;">
+
     <p>
-      AI optimizes for correctness, not performance. It doesn't automatically consider:
-    </p>
-    <ul>
-      <li>What happens when this table has 1 million rows?</li>
-      <li>Should this query be eager-loaded?</li>
-      <li>Does this need a database index?</li>
-      <li>Should this run in a background job?</li>
-    </ul>
-    
-    <p>
-      I review every database query in AI-generated code. N+1 queries slip through constantly.
+      There's an analogy I keep returning to. AI can generate architectural blueprints. Describe what you want—three bedrooms, open floor plan, modern kitchen—and you get professional-looking plans.
     </p>
 
-    <h3>User Experience Design</h3>
     <p>
-      AI can implement features but doesn't design experiences. The flow from registration to first value, error messages that help instead of frustrate, progressive disclosure of complexity—these require human empathy and design thinking.
+      But no one hands those plans to someone off the street expecting a livable house. You still need builders who know the blueprints don't show where walls need extra support. Who recognize the plumbing will cause pressure problems. Who understand local building codes.
     </p>
 
-    <h2>THE AI PILOT ANALOGY</h2>
-    
     <p>
-      Think of AI coding tools like a Tesla on autopilot. The car can handle 90% of highway driving perfectly. But you still need a licensed driver who:
-    </p>
-    <ul>
-      <li>Knows when to take over</li>
-      <li>Understands what the car can't see</li>
-      <li>Can handle edge cases and emergencies</li>
-      <li>Takes responsibility for outcomes</li>
-    </ul>
-    
-    <p>
-      The same applies to AI-assisted development. The AI handles the routine work. An experienced developer:
-    </p>
-    <ul>
-      <li>Makes architecture decisions the AI can't</li>
-      <li>Catches security vulnerabilities the AI misses</li>
-      <li>Validates business logic the AI doesn't understand</li>
-      <li>Optimizes for performance the AI ignores</li>
-    </ul>
-
-    <div class="comparison-grid">
-      <div class="comparison-col">
-        <h4>AI HANDLES WELL (70%)</h4>
-        <ul>
-          <li>CRUD controllers & views</li>
-          <li>Database migrations</li>
-          <li>Test writing</li>
-          <li>CSS/Tailwind styling</li>
-          <li>Documentation</li>
-          <li>Boilerplate code</li>
-          <li>Standard patterns</li>
-        </ul>
-      </div>
-      <div class="comparison-col">
-        <h4>REQUIRES EXPERIENCE (30%)</h4>
-        <ul>
-          <li>Architecture decisions</li>
-          <li>Security review</li>
-          <li>Business logic validation</li>
-          <li>Performance optimization</li>
-          <li>UX design</li>
-          <li>Gem/library selection</li>
-          <li>Edge case handling</li>
-        </ul>
-      </div>
-    </div>
-
-    <h2>THE PRODUCTIVITY MULTIPLIER</h2>
-    
-    <p>
-      Here's the key insight: <strong>AI is a multiplier, not a replacement.</strong>
-    </p>
-    
-    <p>
-      A senior developer with AI assistance isn't just 70% faster. They're 3-5x more productive because they can focus entirely on the high-value work—the 30% that actually matters.
-    </p>
-    
-    <p>
-      What takes a traditional development team 4 months, I deliver in 3-4 weeks. Not because AI is magic, but because:
-    </p>
-    <ul>
-      <li>15 years of experience tells me which architecture decisions to make</li>
-      <li>I know what security vulnerabilities to look for</li>
-      <li>I understand German business requirements and compliance</li>
-      <li>I can spot N+1 queries and performance issues</li>
-    </ul>
-    
-    <p>
-      AI handles the typing. Experience handles everything else.
+      Software works the same way. AI compresses mechanical coding into minutes instead of hours. That compression is real and valuable. But it's a starting point for skilled execution, not a substitute for skill.
     </p>
 
-    <h2>THE DANGER ZONE</h2>
-    
-    <p>
-      Where teams get into trouble with AI-assisted development:
-    </p>
-    
-    <ol>
-      <li><strong>Trusting AI output without review.</strong> AI code looks correct. It often isn't.</li>
-      <li><strong>Asking AI for architecture decisions.</strong> It will answer confidently. It will often be wrong.</li>
-      <li><strong>Skipping security review.</strong> AI doesn't understand your authorization model.</li>
-      <li><strong>Assuming AI-generated tests are sufficient.</strong> AI tests what you describe, not edge cases you didn't think of.</li>
-      <li><strong>Letting junior developers fly solo with AI.</strong> They don't know what they don't know.</li>
-    </ol>
+    <hr style="border: none; border-top: 1px solid var(--color-border); margin: 3rem 0;">
 
-    <h2>WHAT THIS MEANS FOR YOUR PROJECT</h2>
-    
     <p>
-      If you're building a production Rails application in 2025, the question isn't whether to use AI tools—they're too powerful to ignore. The question is: <strong>who's at the controls?</strong>
-    </p>
-    
-    <p>
-      The economics have shifted dramatically. You no longer need a 5-person team for 4 months. One senior developer with AI assistance can deliver faster, with fewer communication gaps, and often with better quality.
-    </p>
-    
-    <p>
-      But that developer needs to be experienced enough to know what AI gets wrong. Otherwise, you're building a house of cards.
+      What does this mean if you're trying to get software built?
     </p>
 
-    <!-- Author Box -->
+    <p>
+      The hype says anyone can build an app now. Technically true, practically useless. Anyone can generate code that looks like an app. Generating code that handles edge cases, scales under load, keeps data secure, and stays maintainable—that requires judgment AI doesn't have.
+    </p>
+
+    <p>
+      The realistic picture: experienced developers with AI assistance now deliver what used to require teams. A project that needed €80,000 over four months might now need €20,000 over four weeks. That's a genuine transformation in what's economically viable.
+    </p>
+
+    <p>
+      But the experienced developer part isn't optional. The same tools that make a senior developer dramatically more productive can lead an inexperienced team into security holes and architectural dead ends. AI assistance only works because someone with judgment is at the controls.
+    </p>
+
+    <p>
+      Programming skill isn't knowing what code should look like. It's intuition built through years of writing, debugging, and living with consequences. That intuition tells you something's wrong before you can articulate why. It makes you pause at an authorization check that passes tests but doesn't feel right. AI can't have that intuition—it has patterns, not judgment.
+    </p>
+
+    <p>
+      The winning formula right now is clear: experienced developers using AI to eliminate mechanical work, focusing entirely on the decisions that determine success. That's the 70/30 rule. AI handles the typing. Experience handles everything else.
+    </p>
+
     <div class="author-box">
       <img src="/henning-thies.jpeg" alt="Henning Thies" class="author-photo">
       <div class="author-info">
         <h4>Henning Thies</h4>
-        <p>15+ years building production Rails applications. Now combining that experience with AI tools to deliver MVPs in weeks instead of months. Based in Germany, working with clients worldwide.</p>
+        <p>15+ years building production Rails applications. Now using AI to deliver in weeks what used to take months.</p>
       </div>
     </div>
 
-    <!-- CTA -->
     <div class="article-cta">
-      <h3>READY TO BUILD YOUR MVP?</h3>
-      <p>I use the 70/30 approach to deliver production Rails applications in 2-6 weeks at fixed prices. The AI writes the boilerplate. I handle everything that matters.</p>
+      <h3>READY TO BUILD?</h3>
+      <p>I build production Rails applications in 2-6 weeks at fixed prices. AI handles the boilerplate. Fifteen years of experience handles architecture, security, and business logic.</p>
       <a href="https://calendar.app.google/VdnLNLqjpSR4MS6G7" class="btn-primary" target="_blank" rel="noopener">
-        Schedule a Free Call
+        Book a Call
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <path d="M5 12h14M12 5l7 7-7 7"/>
         </svg>
