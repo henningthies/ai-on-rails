@@ -86,7 +86,7 @@
     .article-content hr { border: none; border-top: 1px solid var(--color-border); margin: 3rem 0; }
 
     .author-box { display: flex; gap: 2rem; align-items: center; padding: 2rem; background: var(--color-surface); border: 1px solid var(--color-border); margin: 4rem 0; }
-    .author-photo { width: 100px; height: 100px; border-radius: 50%; object-fit: cover; border: 2px solid var(--color-ruby); }
+    .author-photo { width: 100px; height: 100px; min-width: 100px; min-height: 100px; border-radius: 50%; object-fit: cover; object-position: center top; border: 3px solid var(--color-surface-elevated); box-shadow: 0 0 0 1px var(--color-border); }
     .author-info h4 { font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 0.5rem; }
     .author-info p { font-size: 1rem; color: var(--color-text-muted); margin: 0; }
 
@@ -197,7 +197,7 @@
     <p><strong>The old triangle asked you to pick two. The new geometry lets you optimize all three.</strong></p>
 
     <div class="author-box">
-      <img src="/henning-thies.jpeg" alt="Henning Thies" class="author-photo">
+      <img src="/henning-thies.jpg" alt="Henning Thies" class="author-photo">
       <div class="author-info">
         <h4>Henning Thies</h4>
         <p>15+ years building production Rails applications. Now using AI to deliver in weeks what used to take months.</p>

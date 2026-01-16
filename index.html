@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI on Rails — Ship Production Software in Weeks | Ruby on Rails Development</title>
-  <meta name="description" content="AI-powered Ruby on Rails development with 15+ years of production experience. Ship in weeks what others build in months.">
+  <title>AI on Rails — You Don't Need a Big Team | AI-Powered Rails Development</title>
+  <meta name="description" content="Good software doesn't need 10 developers anymore. AI changed the rules. Senior expertise, AI-amplified. Production-ready in weeks.">
 
   <!-- Canonical URL -->
   <link rel="canonical" href="https://ai-on-rails.com/">
@@ -15,8 +15,8 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="AI on Rails — Ship in Weeks, Not Months">
-  <meta property="og:description" content="AI-powered Ruby on Rails development with 15+ years of production experience.">
+  <meta property="og:title" content="AI on Rails — You Don't Need a Big Team">
+  <meta property="og:description" content="Good software doesn't need 10 developers anymore. AI changed the rules. Senior expertise, AI-amplified.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://ai-on-rails.com/">
   <meta property="og:image" content="https://ai-on-rails.com/og-image.png">
@@ -25,8 +25,8 @@
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="AI on Rails — Ship in Weeks, Not Months">
-  <meta name="twitter:description" content="AI-powered Ruby on Rails development with 15+ years of production experience.">
+  <meta name="twitter:title" content="AI on Rails — You Don't Need a Big Team">
+  <meta name="twitter:description" content="Good software doesn't need 10 developers anymore. AI changed the rules. Senior expertise, AI-amplified.">
   <meta name="twitter:image" content="https://ai-on-rails.com/og-image.png">
 
   <!-- Analytics -->
@@ -582,9 +582,9 @@
 
     .meanings-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 2rem;
-      max-width: 1200px;
+      max-width: 1000px;
       margin: 0 auto;
     }
 
@@ -986,7 +986,7 @@
       max-width: 1200px;
       margin: 0 auto;
       display: grid;
-      grid-template-columns: 1fr 2fr;
+      grid-template-columns: 220px 1fr;
       gap: 4rem;
       align-items: start;
     }
@@ -996,9 +996,11 @@
     }
 
     .about-photo {
-      width: 100%;
-      aspect-ratio: 3/4;
-      border: 1px solid var(--color-border);
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      border: 6px solid var(--color-surface-elevated);
+      box-shadow: 0 0 0 1px var(--color-border), 0 20px 40px rgba(0,0,0,0.4);
       overflow: hidden;
     }
 
@@ -1006,16 +1008,18 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      object-position: center top;
+      filter: brightness(0.95);
     }
 
     .about-badge {
       position: absolute;
-      bottom: -20px;
-      right: -20px;
+      bottom: 0;
+      right: -10px;
       background: var(--color-ruby);
-      padding: 1rem 1.5rem;
+      padding: 0.75rem 1rem;
       font-family: var(--font-display);
-      font-size: 1.5rem;
+      font-size: 1.2rem;
       color: white;
       box-shadow: 0 10px 30px var(--color-ruby-glow);
     }
@@ -1174,7 +1178,7 @@
     @media (max-width: 1024px) {
       .meanings-grid {
         grid-template-columns: 1fr;
-        max-width: 500px;
+        max-width: 550px;
       }
 
       .process-grid {
@@ -1192,6 +1196,12 @@
       .case-study-content,
       .about-content {
         grid-template-columns: 1fr;
+      }
+
+      .about-photo {
+        width: 150px;
+        height: 150px;
+        margin: 0 auto;
       }
     }
 
@@ -1281,7 +1291,7 @@
       <span class="logo-ruby">AI</span> ON RAILS
     </a>
     <ul class="nav-links" id="nav-links">
-      <li><a href="#what">What I Do</a></li>
+      <li><a href="#what">Why</a></li>
       <li><a href="#process">Process</a></li>
       <li><a href="#work">Work</a></li>
       <li><a href="#about">About</a></li>
@@ -1300,13 +1310,12 @@
     <div class="hero-content">
       <div class="hero-badge">Now accepting projects for Q1 2026</div>
       <h1 class="hero-title">
-        <span class="line">THE ONE-PERSON</span>
-        <span class="line"><span class="highlight">FRAMEWORK<span class="speed-lines"><span class="speed-line"></span><span class="speed-line"></span><span class="speed-line"></span></span></span></span>
-        <span class="line">MEETS AI</span>
+        <span class="line">YOU DON'T NEED</span>
+        <span class="line"><span class="highlight">A BIG TEAM<span class="speed-lines"><span class="speed-line"></span><span class="speed-line"></span><span class="speed-line"></span></span></span></span>
       </h1>
       <p class="hero-subtitle">
-        Ship in weeks what others build in months. <strong>AI-powered Rails development</strong>
-        with the quality that comes from <strong>15+ years</strong> of production experience.
+        Good software doesn't need 10 developers anymore. AI changed the rules.
+        <strong>Senior expertise. AI-amplified.</strong> Production-ready in weeks.
       </p>
       <div class="hero-cta-group">
         <a href="#contact" class="btn-primary">
@@ -1341,24 +1350,29 @@
   <section class="what-section" id="what">
     <div class="section-header">
       <div class="section-number">// 01</div>
-      <h2 class="section-title">AI ON RAILS</h2>
-      <p class="section-desc">Three meanings. One mission: Ship your product faster without sacrificing quality.</p>
+      <h2 class="section-title">WHY IT WORKS</h2>
+      <p class="section-desc">One developer. AI-amplified. No overhead.</p>
     </div>
     <div class="meanings-grid">
       <div class="meaning-card">
-        <div class="meaning-icon">💎</div>
-        <h3 class="meaning-title">AI + RUBY ON RAILS</h3>
-        <p class="meaning-desc">The most productive web framework meets modern AI tools. Claude, Cursor, and battle-tested Rails patterns to generate production-grade code at unprecedented speed.</p>
+        <div class="meaning-icon">→</div>
+        <h3 class="meaning-title">NO TEAM OVERHEAD</h3>
+        <p class="meaning-desc">No project managers. No standup meetings. No coordination tax. One senior developer who does architecture, code, and deployment. Direct communication, fast decisions.</p>
       </div>
       <div class="meaning-card">
-        <div class="meaning-icon">🛡️</div>
-        <h3 class="meaning-title">AI ON GUARDRAILS</h3>
-        <p class="meaning-desc">AI writes 70–90% of boilerplate. A senior developer with 15 years experience reviews, architects, and ensures security. You get speed without the Frankenstein code.</p>
+        <div class="meaning-icon">→</div>
+        <h3 class="meaning-title">AI-AMPLIFIED, NOT AI-REPLACED</h3>
+        <p class="meaning-desc">AI writes 70–80% of boilerplate. Experience delivers architecture, security, and judgment. You get speed without Frankenstein code.</p>
       </div>
       <div class="meaning-card">
-        <div class="meaning-icon">🚄</div>
-        <h3 class="meaning-title">SPEED LIKE A TRAIN</h3>
-        <p class="meaning-desc">What takes traditional agencies 4–8 months, I deliver in 2–6 weeks. Your product launches while competitors are still in discovery phases.</p>
+        <div class="meaning-icon">→</div>
+        <h3 class="meaning-title">WEEKS, NOT MONTHS</h3>
+        <p class="meaning-desc">What traditional agencies build in 4–6 months ships in 2–6 weeks. Fixed scope, fixed price. No surprises.</p>
+      </div>
+      <div class="meaning-card">
+        <div class="meaning-icon">→</div>
+        <h3 class="meaning-title">THE ONE-PERSON FRAMEWORK</h3>
+        <p class="meaning-desc">Ruby on Rails was built for small teams. DHH calls it "The One-Person Framework" — a tech stack that lets one developer do what used to require entire teams. With AI, this sweet spot gets even stronger.</p>
       </div>
     </div>
   </section>
@@ -1451,7 +1465,7 @@
   <section class="about-section" id="about">
     <div class="about-content">
       <div class="about-image">
-        <div class="about-photo"><img src="henning-thies.jpeg" alt="Henning Thies"></div>
+        <div class="about-photo"><img src="henning-thies.jpg" alt="Henning Thies"></div>
         <div class="about-badge">15+ YEARS</div>
       </div>
       <div class="about-text">
@@ -1471,28 +1485,28 @@
         </p>
         <div class="credentials">
           <div class="credential">
-            <div class="credential-icon">💎</div>
+            <div class="credential-icon">→</div>
             <div class="credential-text">
               <strong>Ruby on Rails</strong>
               Expert since 2010
             </div>
           </div>
           <div class="credential">
-            <div class="credential-icon">👥</div>
+            <div class="credential-icon">→</div>
             <div class="credential-text">
               <strong>Team Leadership</strong>
               Led teams up to 10 devs
             </div>
           </div>
           <div class="credential">
-            <div class="credential-icon">🏢</div>
+            <div class="credential-icon">→</div>
             <div class="credential-text">
               <strong>Enterprise & Startup</strong>
               Both environments
             </div>
           </div>
           <div class="credential">
-            <div class="credential-icon">🇩🇪</div>
+            <div class="credential-icon">→</div>
             <div class="credential-text">
               <strong>Based in Germany</strong>
               EU timezone, GDPR compliant
@@ -1506,10 +1520,9 @@
   <!-- CTA Section -->
   <section class="cta-section" id="contact">
     <div class="cta-content">
-      <h2 class="cta-title">LET'S BUILD SOMETHING GREAT</h2>
+      <h2 class="cta-title">READY TO MOVE FAST?</h2>
       <p class="cta-desc">
-        Whether you're a startup founder with a vision or an enterprise team looking
-        to accelerate development — let's have a conversation about your project.
+        Skip the big team. One conversation to see if we're a fit.
       </p>
       <div class="cta-buttons">
         <a href="https://calendar.app.google/VdnLNLqjpSR4MS6G7" class="btn-primary" target="_blank" rel="noopener">
@@ -1530,7 +1543,7 @@
     <div class="footer-content">
       <div class="footer-logo"><span>AI</span> ON RAILS</div>
       <ul class="footer-links">
-        <li><a href="#what">What I Do</a></li>
+        <li><a href="#what">Why</a></li>
         <li><a href="#process">Process</a></li>
         <li><a href="#work">Work</a></li>
         <li><a href="#about">About</a></li>
@@ -1539,7 +1552,7 @@
         <li><a href="/impressum.html">Impressum</a></li>
         <li><a href="/datenschutz.html">Datenschutz</a></li>
       </ul>
-      <div class="footer-copy">© 2025 AI on Rails. Henning Thies.</div>
+      <div class="footer-copy">© 2026 AI on Rails. Henning Thies.</div>
     </div>
   </footer>
 
