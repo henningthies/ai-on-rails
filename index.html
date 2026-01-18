@@ -1174,6 +1174,16 @@
       color: var(--color-text-muted);
     }
 
+    .footer-copy a {
+      color: var(--color-text-muted);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-copy a:hover {
+      color: var(--color-ruby);
+    }
+
     /* Responsive */
     @media (max-width: 1024px) {
       .meanings-grid {
@@ -1295,7 +1305,6 @@
       <li><a href="#process">Process</a></li>
       <li><a href="#work">Work</a></li>
       <li><a href="#about">About</a></li>
-      <li><a href="/blog/">Blog</a></li>
     </ul>
     <a href="#contact" class="nav-cta">Let's Talk</a>
     <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu">
@@ -1547,12 +1556,11 @@
         <li><a href="#process">Process</a></li>
         <li><a href="#work">Work</a></li>
         <li><a href="#about">About</a></li>
-        <li><a href="/blog/">Blog</a></li>
         <li><a href="mailto:hello@ai-on-rails.com">Contact</a></li>
         <li><a href="/impressum.html">Impressum</a></li>
         <li><a href="/datenschutz.html">Datenschutz</a></li>
       </ul>
-      <div class="footer-copy">© 2026 AI on Rails. Henning Thies.</div>
+      <div class="footer-copy">© 2026 AI on Rails. Founded by <a href="https://henning-thies.de" target="_blank">Henning Thies</a>.</div>
     </div>
   </footer>
 
