@@ -9,11 +9,6 @@
   <!-- Canonical URL -->
   <link rel="canonical" href="https://ai-on-rails.com/">
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-
   <!-- Open Graph -->
   <meta property="og:title" content="AI on Rails — You Don't Need a Big Team">
   <meta property="og:description" content="AI-powered Rails development: MVP in weeks, growth retainer, and legacy Rails rescue. Ship fast, stay fast, get fast.">
@@ -22,6 +17,7 @@
   <meta property="og:image" content="https://ai-on-rails.com/og-image.png">
   <meta property="og:site_name" content="AI on Rails">
   <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="de_DE">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
@@ -219,6 +215,35 @@
       background: var(--color-accent);
       transform: translateY(-2px);
       box-shadow: 0 10px 30px var(--color-ruby-glow);
+    }
+
+    .lang-switch {
+      display: flex;
+      gap: 0.4rem;
+      align-items: center;
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+    }
+
+    .lang-switch a {
+      color: var(--color-text-muted);
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: color 0.3s ease;
+    }
+
+    .lang-switch a:hover {
+      color: var(--color-ruby);
+    }
+
+    .lang-switch [aria-current="page"] {
+      color: var(--color-text);
+    }
+
+    .lang-switch .lang-sep {
+      color: var(--color-border);
     }
 
     /* Mobile hamburger menu */
@@ -1592,6 +1617,11 @@
       <li><a href="#work">Work</a></li>
       <li><a href="#about">About</a></li>
     </ul>
+    <div class="lang-switch" aria-label="Language">
+      <a href="/" hreflang="en" aria-current="page">EN</a>
+      <span class="lang-sep" aria-hidden="true">/</span>
+      <a href="/de/" hreflang="de">DE</a>
+    </div>
     <a href="#contact" class="nav-cta">Let's Talk</a>
     <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu">
       <span></span>
