@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Software Factory — Miet eine Software-Factory | ai-on-rails</title>
+  <meta name="description" content="Miet eine AI Software-Factory. Senior-Engineering auf Subscription. Statt Hire, statt Agentur. PRs in dein Repo, ab nächster Woche.">
+
+  <link rel="canonical" href="https://ai-on-rails.com/factory">
+
+  <meta property="og:title" content="AI Software Factory — Miet eine Software-Factory">
+  <meta property="og:description" content="Senior-Engineering auf Subscription. Statt Hire, statt Agentur. AI baut, Senior reviewed, PRs in dein Repo.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ai-on-rails.com/factory">
+  <meta property="og:image" content="https://ai-on-rails.com/og-image.png">
+  <meta property="og:site_name" content="AI on Rails">
+  <meta property="og:locale" content="de_DE">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AI Software Factory — Miet eine Software-Factory">
+  <meta name="twitter:description" content="Senior-Engineering auf Subscription. Statt Hire, statt Agentur.">
+  <meta name="twitter:image" content="https://ai-on-rails.com/og-image.png">
+
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="5dde56bc-9822-4d4c-a606-0bd521350c76"></script>
+
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#FAFAF9">
+  <meta name="author" content="Henning Thies">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #FAFAF9;
+      --bg-card: #FFFFFF;
+      --bg-inverted: #0A0A0A;
+      --ink: #0A0A0A;
+      --ink-2: #404040;
+      --ink-muted: #71717A;
+      --line: #E7E5E4;
+      --accent: #EA580C;
+      --accent-light: #FB923C;
+      --accent-bg: #FFF7ED;
+      --font-body: 'Inter', -apple-system, "Segoe UI", system-ui, sans-serif;
+      --font-mono: 'JetBrains Mono', "SF Mono", Menlo, monospace;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body);
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.55;
+      font-size: 0.9375rem;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    a { color: inherit; }
+    img { max-width: 100%; display: block; }
+
+    /* ======= NAVIGATION ======= */
+    .nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(250, 250, 249, 0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav-inner {
+      max-width: 1100px; margin: 0 auto;
+      padding: 0.875rem 2rem;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .nav-logo {
+      font-weight: 700; font-size: 0.9375rem; letter-spacing: -0.01em;
+      text-decoration: none; color: var(--ink);
+      display: inline-flex; align-items: center; gap: 0.5rem;
+    }
+    .nav-logo .accent { color: var(--accent); }
+    .nav-logo .divider { color: var(--ink-muted); font-weight: 400; }
+    .nav-logo .product { font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.12em; color: var(--ink-muted); text-transform: uppercase; font-weight: 600; }
+    .nav-actions { display: flex; align-items: center; gap: 1.25rem; }
+    .nav-back {
+      font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.08em;
+      color: var(--ink-muted); text-decoration: none; text-transform: uppercase; font-weight: 600;
+      transition: color 0.15s;
+    }
+    .nav-back:hover { color: var(--ink); }
+    .btn-cta-nav {
+      font-family: var(--font-body); font-size: 0.875rem; font-weight: 600;
+      padding: 0.5rem 1rem; border-radius: 4px;
+      background: var(--accent); color: #fff; text-decoration: none;
+      transition: background 0.15s;
+    }
+    .btn-cta-nav:hover { background: #C2410C; }
+    @media (max-width: 640px) {
+      .nav-back { display: none; }
+      .nav-inner { padding: 0.75rem 1.25rem; }
+    }
+
+    /* ======= COMMON ======= */
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+    .container-narrow { max-width: 880px; margin: 0 auto; padding: 0 2rem; }
+    @media (max-width: 640px) {
+      .container, .container-narrow { padding: 0 1.25rem; }
+    }
+
+    .section { padding: 5rem 0; }
+    .section-alt { background: var(--bg-card); }
+    @media (max-width: 640px) { .section { padding: 3rem 0; } }
+
+    .section-num {
+      font-family: var(--font-mono); font-size: 0.6875rem; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 0.75rem;
+    }
+    .section-title {
+      font-size: 1.75rem; font-weight: 700; line-height: 1.15;
+      letter-spacing: -0.015em; margin-bottom: 0.75rem;
+    }
+    .section-desc {
+      color: var(--ink-2); font-size: 1.0625rem; max-width: 640px;
+    }
+
+    /* ======= HERO ======= */
+    .hero {
+      padding: 4.5rem 0 5rem;
+      border-bottom: 1px solid var(--line);
+    }
+    .hero-pre {
+      font-family: var(--font-mono); font-size: 0.6875rem; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--ink-muted); margin-bottom: 1.5rem;
+    }
+    .hero-pre .badge {
+      display: inline-block; padding: 0.25rem 0.625rem;
+      background: var(--accent); color: #fff;
+      border-radius: 3px; margin-right: 0.75rem;
+    }
+    .hero-title {
+      font-size: clamp(2.25rem, 5.5vw, 3.5rem);
+      font-weight: 800; line-height: 1.05; letter-spacing: -0.025em;
+      margin-bottom: 1.25rem;
+    }
+    .hero-title .accent { color: var(--accent); }
+    .hero-kicker {
+      font-size: 1.125rem; font-weight: 600; line-height: 1.4;
+      color: var(--ink); margin-bottom: 1rem;
+      max-width: 720px;
+    }
+    .hero-subtitle {
+      font-size: 1.0625rem; color: var(--ink-2); line-height: 1.55;
+      max-width: 680px; margin-bottom: 2.25rem;
+    }
+    .hero-subtitle strong { color: var(--ink); font-weight: 600; }
+
+    .cta-row { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+    .btn {
+      font-family: var(--font-body); font-size: 0.9375rem; font-weight: 600;
+      padding: 0.875rem 1.75rem; border-radius: 4px;
+      text-decoration: none; cursor: pointer;
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      transition: all 0.15s;
+      border: 1px solid transparent;
+    }
+    .btn-primary {
+      background: var(--accent); color: #fff;
+    }
+    .btn-primary:hover { background: #C2410C; }
+    .btn-secondary {
+      background: transparent; color: var(--ink);
+      border-color: var(--ink);
+    }
+    .btn-secondary:hover { background: var(--ink); color: #fff; }
+
+    /* ======= COMPARE / OLD VS NEW ======= */
+    .compare-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem;
+      margin-top: 2rem;
+    }
+    .compare-card {
+      padding: 1.75rem;
+      border-radius: 6px;
+    }
+    .compare-card.old {
+      background: var(--bg);
+      border: 1px solid var(--line);
+    }
+    .compare-card.new {
+      background: var(--bg-inverted);
+      color: #fff;
+    }
+    .compare-label {
+      font-family: var(--font-mono); font-size: 0.6875rem; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--ink-muted); margin-bottom: 1rem;
+    }
+    .compare-card.new .compare-label { color: var(--accent-light); }
+    .compare-list { list-style: none; }
+    .compare-list li {
+      font-size: 0.9375rem; line-height: 1.5; padding: 0.4rem 0;
+      padding-left: 1.5rem; position: relative;
+      color: var(--ink-2);
+    }
+    .compare-card.new .compare-list li { color: #E7E5E4; }
+    .compare-list.old li::before {
+      content: '✕'; position: absolute; left: 0;
+      color: var(--ink-muted); font-weight: 700;
+    }
+    .compare-list.new li::before {
+      content: '→'; position: absolute; left: 0;
+      color: var(--accent); font-weight: 700;
+    }
+    @media (max-width: 720px) {
+      .compare-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ======= STEPS ======= */
+    .steps-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem;
+      margin-top: 2rem;
+    }
+    .step-card {
+      background: var(--bg-card);
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 1.75rem;
+    }
+    .step-num {
+      font-family: var(--font-mono); font-size: 0.6875rem; font-weight: 700;
+      letter-spacing: 0.14em; color: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+    .step-title {
+      font-size: 1.125rem; font-weight: 700; margin-bottom: 0.5rem;
+    }
+    .step-desc {
+      font-size: 0.9375rem; color: var(--ink-2); line-height: 1.55;
+    }
+    @media (max-width: 720px) {
+      .steps-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ======= MECHANIC EXPLAINER ======= */
+    .mechanic-block {
+      margin-top: 2rem;
+      padding: 1.75rem;
+      background: var(--bg-card);
+      border: 1px solid var(--line);
+      border-radius: 6px;
+    }
+    .mechanic-block p {
+      font-size: 1rem; line-height: 1.65; color: var(--ink-2);
+      margin-bottom: 0.75rem;
+    }
+    .mechanic-block p:last-child { margin-bottom: 0; }
+    .mechanic-block strong { color: var(--ink); font-weight: 600; }
+
+    /* ======= PRICING (the conversion hero) ======= */
+    .pricing-section { padding-bottom: 6rem; }
+    .pricing-card {
+      max-width: 880px; margin: 2rem auto 0;
+      background: linear-gradient(135deg, var(--accent-bg) 0%, var(--bg-card) 60%);
+      border: 2px solid var(--accent);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .pricing-badge {
+      background: var(--accent); color: #fff;
+      padding: 0.6rem 1.5rem;
+      font-family: var(--font-mono); font-size: 0.6875rem; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .pricing-badge .badge-meta { font-weight: 500; opacity: 0.85; }
+    .pricing-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+    }
+    .price-block {
+      padding: 2rem 1.75rem;
+    }
+    .price-block:first-child {
+      border-right: 1px solid var(--line);
+    }
+    .price-label {
+      font-family: var(--font-mono); font-size: 0.6875rem; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--ink-muted); margin-bottom: 0.5rem;
+    }
+    .price-current {
+      font-size: 2.5rem; font-weight: 800; line-height: 1;
+      color: var(--ink);
+    }
+    .price-current small {
+      font-size: 0.8125rem; font-weight: 500;
+      color: var(--ink-muted); margin-left: 0.25rem;
+    }
+    .price-standard {
+      font-family: var(--font-mono); font-size: 0.75rem;
+      color: var(--ink-muted); margin-top: 0.4rem;
+    }
+    .price-standard s { opacity: 0.7; }
+    .price-desc {
+      font-size: 0.9375rem; color: var(--ink-2);
+      margin-top: 0.65rem; line-height: 1.5;
+    }
+
+    .includes-block {
+      padding: 1.5rem 1.75rem;
+      border-top: 1px solid var(--line);
+    }
+    .includes-title {
+      font-family: var(--font-mono); font-size: 0.6875rem; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 0.875rem;
+    }
+    .includes-list {
+      list-style: none; display: grid;
+      grid-template-columns: 1fr 1fr; gap: 0.4rem 1.5rem;
+    }
+    .includes-list li {
+      font-size: 0.9375rem; color: var(--ink);
+      padding-left: 1.25rem; position: relative;
+    }
+    .includes-list li::before {
+      content: '→'; position: absolute; left: 0;
+      color: var(--accent); font-weight: 700;
+    }
+
+    .upsell-line {
+      padding: 1rem 1.75rem;
+      background: rgba(0,0,0,0.02);
+      border-top: 1px solid var(--line);
+      font-size: 0.875rem; color: var(--ink-2);
+    }
+    .upsell-line strong { color: var(--ink); font-weight: 600; }
+
+    .deadline-line {
+      padding: 0.875rem 1.75rem;
+      font-family: var(--font-mono); font-size: 0.8125rem; font-weight: 600;
+      letter-spacing: 0.05em; color: var(--accent);
+      background: var(--accent-bg);
+      border-top: 1px solid var(--line);
+    }
+
+    .pricing-cta {
+      padding: 1.5rem 1.75rem;
+      background: var(--bg);
+      border-top: 1px solid var(--line);
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 1rem;
+    }
+    .pricing-cta-text { font-family: var(--font-mono); font-size: 0.8125rem; color: var(--ink-2); }
+    .pricing-cta-text strong { color: var(--ink); }
+
+    @media (max-width: 720px) {
+      .pricing-grid { grid-template-columns: 1fr; }
+      .price-block:first-child { border-right: none; border-bottom: 1px solid var(--line); }
+      .includes-list { grid-template-columns: 1fr; }
+      .pricing-cta { flex-direction: column; align-items: stretch; }
+      .pricing-cta .btn-primary { justify-content: center; }
+    }
+
+    /* ======= FAQ ======= */
+    .faq-list { max-width: 720px; margin: 2rem auto 0; }
+    .faq-item {
+      border-bottom: 1px solid var(--line);
+    }
+    .faq-item:first-child { border-top: 1px solid var(--line); }
+    .faq-summary {
+      padding: 1.25rem 0; cursor: pointer;
+      font-size: 1rem; font-weight: 600; color: var(--ink);
+      list-style: none;
+      display: flex; justify-content: space-between; align-items: center;
+      transition: color 0.15s;
+    }
+    .faq-summary::-webkit-details-marker { display: none; }
+    .faq-summary::after {
+      content: '+'; color: var(--accent); font-size: 1.25rem; font-weight: 400;
+      line-height: 1; transition: transform 0.2s;
+    }
+    .faq-item[open] .faq-summary::after { transform: rotate(45deg); }
+    .faq-summary:hover { color: var(--accent); }
+    .faq-answer {
+      padding: 0 0 1.25rem;
+      color: var(--ink-2); font-size: 0.9375rem; line-height: 1.65;
+      max-width: 620px;
+    }
+    .faq-answer strong { color: var(--ink); font-weight: 600; }
+
+    /* ======= ABOUT (compact) ======= */
+    .about-row {
+      display: grid; grid-template-columns: 96px 1fr; gap: 1.5rem;
+      align-items: center;
+      max-width: 720px; margin: 2rem auto 0;
+      padding: 1.75rem;
+      background: var(--bg-card);
+      border: 1px solid var(--line);
+      border-radius: 6px;
+    }
+    .about-photo {
+      width: 96px; height: 96px; border-radius: 50%;
+      background: var(--bg) url('/henning-thies.webp') center/cover;
+      border: 1px solid var(--line);
+    }
+    .about-name { font-size: 1.0625rem; font-weight: 700; margin-bottom: 0.2rem; }
+    .about-role {
+      font-family: var(--font-mono); font-size: 0.75rem;
+      color: var(--ink-muted); letter-spacing: 0.05em;
+      margin-bottom: 0.65rem;
+    }
+    .about-text { font-size: 0.9375rem; color: var(--ink-2); line-height: 1.55; }
+    .about-text a {
+      color: var(--accent); text-decoration: none;
+      border-bottom: 1px solid var(--accent);
+    }
+    .about-text a:hover { color: #C2410C; border-color: #C2410C; }
+    @media (max-width: 540px) {
+      .about-row { grid-template-columns: 1fr; text-align: center; }
+      .about-photo { margin: 0 auto; }
+    }
+
+    /* ======= FINAL CTA ======= */
+    .final-cta {
+      padding: 5rem 0 6rem;
+      text-align: center;
+      border-top: 1px solid var(--line);
+    }
+    .final-cta-title {
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      font-weight: 800; line-height: 1.1; letter-spacing: -0.02em;
+      margin-bottom: 0.75rem; max-width: 640px; margin-left: auto; margin-right: auto;
+    }
+    .final-cta-title .accent { color: var(--accent); }
+    .final-cta-desc {
+      font-size: 1.0625rem; color: var(--ink-2);
+      max-width: 540px; margin: 0 auto 2rem; line-height: 1.55;
+    }
+    .final-cta-row { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; }
+    .final-cta-meta {
+      margin-top: 1.5rem;
+      font-family: var(--font-mono); font-size: 0.75rem;
+      color: var(--ink-muted); letter-spacing: 0.05em;
+    }
+    .final-cta-meta strong { color: var(--accent); }
+
+    /* ======= FOOTER ======= */
+    .footer {
+      padding: 1.75rem 0;
+      background: var(--bg-card);
+      border-top: 1px solid var(--line);
+    }
+    .footer-inner {
+      max-width: 1100px; margin: 0 auto;
+      padding: 0 2rem;
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 1rem;
+      font-family: var(--font-mono); font-size: 0.75rem;
+      color: var(--ink-muted); letter-spacing: 0.05em;
+    }
+    .footer-logo { font-family: var(--font-body); font-size: 0.875rem; font-weight: 700; color: var(--ink); letter-spacing: -0.01em; }
+    .footer-logo .accent { color: var(--accent); }
+    .footer-links { display: flex; gap: 1.5rem; flex-wrap: wrap; list-style: none; }
+    .footer-links a { color: var(--ink-muted); text-decoration: none; transition: color 0.15s; }
+    .footer-links a:hover { color: var(--ink); }
+    .footer-copy a { color: var(--accent); text-decoration: none; }
+  </style>
+</head>
+<body>
+
+  <!-- ============ NAVIGATION ============ -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        AI<span class="accent">·</span>ON<span class="accent">·</span>RAILS
+        <span class="divider">/</span>
+        <span class="product">FACTORY</span>
+      </a>
+      <div class="nav-actions">
+        <a href="/" class="nav-back">← Hauptseite</a>
+        <a href="#contact" class="btn-cta-nav">Slot anfragen</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============ HERO ============ -->
+  <header class="hero">
+    <div class="container-narrow">
+      <div class="hero-pre">
+        <span class="badge">Beta Programm</span>
+        3 Slots · 2 noch frei · Start Juni 2026
+      </div>
+      <h1 class="hero-title">Miet eine <span class="accent">Software-Factory.</span></h1>
+      <p class="hero-kicker">Senior-Engineering auf Subscription. Statt Hire, statt Agentur.</p>
+      <p class="hero-subtitle">
+        Senior-Engineering-Capacity für deine Webanwendung – als <strong>Subscription, nicht als Hire</strong>. AI baut, Senior reviewed. Pull Requests in deinem Repo, ab nächster Woche.
+      </p>
+      <div class="cta-row">
+        <a href="#pricing" class="btn btn-primary">
+          Pricing &amp; Beta-Slot
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#contact" class="btn btn-secondary">20-min Validation Call</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ OLD VS NEW ============ -->
+  <section class="section">
+    <div class="container-narrow">
+      <div class="section-num">// 01</div>
+      <h2 class="section-title">Dev-Team aufbauen — oder mieten</h2>
+      <p class="section-desc">Du brauchst Software-Output. Drei Wege führen dahin – einer ist schnell, planbar und ohne Fixkosten.</p>
+
+      <div class="compare-grid">
+        <div class="compare-card old">
+          <div class="compare-label">Bisher</div>
+          <ul class="compare-list old">
+            <li>4-6 Monate Senior-Recruiting</li>
+            <li>Festanstellung mit allen Risiken</li>
+            <li>Agentur-Stundenzettel, Wochen-Zyklen</li>
+            <li>12-Monats-Verträge ohne Exit</li>
+            <li>Vibe-Code-Tools auf 70 % stuck</li>
+          </ul>
+        </div>
+        <div class="compare-card new">
+          <div class="compare-label">Mit Factory</div>
+          <ul class="compare-list new">
+            <li>Erste PRs in 7 Tagen</li>
+            <li>Festpreis pro Monat, kein Stundenzettel</li>
+            <li>Pause anytime, Cancel anytime</li>
+            <li>Production-Code, Senior-reviewed</li>
+            <li>Du behältst Code-Ownership</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ HOW IT WORKS ============ -->
+  <section class="section section-alt">
+    <div class="container-narrow">
+      <div class="section-num">// 02</div>
+      <h2 class="section-title">So läuft die Factory</h2>
+      <p class="section-desc">Drei Phasen. Klare Mechanik. Du briefst, wir liefern.</p>
+
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-num">01 — SETUP</div>
+          <div class="step-title">Wir lernen dein Repo</div>
+          <div class="step-desc">Codebase-Audit, Architektur-Map, Conventions. 2 Pilot-PRs in 7 Tagen.</div>
+        </div>
+        <div class="step-card">
+          <div class="step-num">02 — BRIEFING</div>
+          <div class="step-title">Du briefst Aufgaben</div>
+          <div class="step-desc">Per Issue oder Email. Brief beliebig viele – du musst nicht zählen.</div>
+        </div>
+        <div class="step-card">
+          <div class="step-num">03 — LIEFERUNG</div>
+          <div class="step-title">PRs in dein Repo</div>
+          <div class="step-desc">Eine Pipeline arbeitet fokussiert. Sobald eine Aufgabe fertig ist, rückt die nächste nach. ~5 PRs / Monat.</div>
+        </div>
+      </div>
+
+      <div class="mechanic-block">
+        <p><strong>Was zählt als Aufgabe?</strong> Alles, was als 1 Pull Request lieferbar ist – ein Feature ("User-Profile-Page"), ein Bugfix ("Login-Redirect kaputt"), ein Refactoring ("Auth-Module aufräumen"), eine Integration ("Stripe-Checkout").</p>
+        <p><strong>Wie viele kannst du briefen?</strong> Beliebig viele. Eine Pipeline arbeitet fokussiert an deiner nächsten Aufgabe – der Rest wartet in deiner Queue. So bekommst du planbar ~5 PRs pro Monat, jede Aufgabe braucht 3-7 Tage.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PRICING ============ -->
+  <section class="section pricing-section" id="pricing">
+    <div class="container-narrow">
+      <div class="section-num">// 03</div>
+      <h2 class="section-title">Pricing</h2>
+      <p class="section-desc">Eine Subscription. Reduzierter Preis für die ersten 3 Beta-Kunden – im Gegenzug für ehrliches Feedback und enge Zusammenarbeit.</p>
+
+      <div class="pricing-card">
+        <div class="pricing-badge">
+          <span>⚡ Beta Customer</span>
+          <span class="badge-meta">2 von 3 Slots noch frei</span>
+        </div>
+
+        <div class="pricing-grid">
+          <div class="price-block">
+            <div class="price-label">Phase A — Setup (einmalig)</div>
+            <div class="price-current">€2.900<small>flat</small></div>
+            <div class="price-standard">Standard ab Kunde 4: <s>€4.900</s></div>
+            <div class="price-desc">Codebase-Audit, Agent-Setup, 2 Pilot-PRs in 7 Tagen.</div>
+          </div>
+          <div class="price-block">
+            <div class="price-label">Phase B — Subscription (monatlich)</div>
+            <div class="price-current">€3.900<small>/Monat</small></div>
+            <div class="price-standard">Standard ab Kunde 4: <s>€5.900/Monat</s></div>
+            <div class="price-desc">Eine fokussierte Pipeline. ~5 PRs/Monat. Pause anytime.</div>
+          </div>
+        </div>
+
+        <div class="includes-block">
+          <div class="includes-title">In jeder Subscription enthalten</div>
+          <ul class="includes-list">
+            <li>Eine fokussierte Pipeline</li>
+            <li>Senior-Code-Review jeder PR</li>
+            <li>~5 PRs pro Monat</li>
+            <li>Aufwands-Schätzung vor jedem Start</li>
+            <li>Architecture-Review monatlich</li>
+            <li>Du behältst Code-Ownership</li>
+          </ul>
+        </div>
+
+        <div class="upsell-line">
+          <strong>Mehr Throughput?</strong> Zusätzliche Pipelines als Add-on verfügbar (auf Anfrage). Doppelte Pipeline = doppelter Output.
+        </div>
+
+        <div class="deadline-line">
+          ⚡ Beta-Pricing gilt für die ersten 3 Beta-Kunden — danach Standardpreis.
+        </div>
+
+        <div class="pricing-cta">
+          <div class="pricing-cta-text">
+            <strong>3 Beta-Slots</strong> · 2 noch frei
+          </div>
+          <a href="#contact" class="btn btn-primary">
+            Slot reservieren
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="section section-alt">
+    <div class="container-narrow">
+      <div class="section-num">// 04</div>
+      <h2 class="section-title">Häufige Fragen</h2>
+
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary class="faq-summary">Was zählt als „Aufgabe"?</summary>
+          <div class="faq-answer">
+            Alles, was als <strong>ein Pull Request</strong> sinnvoll lieferbar ist: ein Feature, ein Bugfix, ein Refactoring, eine Integration. Sehr große Aufgaben (>2 Wochen) werden in mehrere PRs gesplittet.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-summary">Wie viele Aufgaben kann ich beauftragen?</summary>
+          <div class="faq-answer">
+            <strong>Beliebig viele beim Briefen — kein Limit.</strong> Wir arbeiten an einer fokussiert. Wenn du heute 10 Aufgaben einreichst, ist eine sofort in Arbeit, 9 warten in deiner Queue. So bekommst du ~5 PRs/Monat. Quality-Focus statt Volume.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-summary">Was, wenn ich mehr Throughput brauche?</summary>
+          <div class="faq-answer">
+            Du kannst <strong>zusätzliche Pipelines als Add-on</strong> dazu buchen. Doppelte Pipeline = doppelter Output. Custom-Quote für deine Bedarfe – linearer, fairer Skalierungs-Pfad.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-summary">Welche Webanwendungen / Stacks werden unterstützt?</summary>
+          <div class="faq-answer">
+            <strong>Stack-agnostisch nach außen, intern Mainstream-Webframeworks bevorzugt:</strong> Rails, Next.js, Vue/Nuxt, Django, Laravel, Express/Node. Sehr exotische Stacks werden in der Setup-Phase geprüft – Custom-Quote oder ablehnen. Kein Mobile, kein Desktop, kein Embedded.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-summary">Wer reviewed den Code? Wirklich ein Senior?</summary>
+          <div class="faq-answer">
+            <strong>Ja, jeder PR wird vor Lieferung von Henning Thies persönlich reviewed</strong> (15+ Jahre Senior Dev, ehemaliger Tech-Lead in mehreren SaaS-Teams). AI macht den Heavy-Lift, der Senior macht Architecture-Judgment, Security-Check und Code-Quality-Gate.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-summary">Was passiert mit meinem Code – kein Vendor-Lock-In?</summary>
+          <div class="faq-answer">
+            <strong>Du behältst 100 % Code-Ownership.</strong> Die Lieferung ist ein PR direkt in dein Repo. Wir hosten nichts, wir besitzen nichts. Wenn du kündigst, hast du den ganzen Code – business as usual.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-summary">Wie sind die Pause/Cancel-Bedingungen?</summary>
+          <div class="faq-answer">
+            <strong>Pause anytime, Cancel anytime.</strong> Keine 12-Monats-Bindung. Niedrige Commitment-Hürde – wir wollen, dass du bleibst, weil wir liefern, nicht weil du musst.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-summary">Gibt es ein SLA / Lieferzeit-Garantie?</summary>
+          <div class="faq-answer">
+            <strong>Erste PRs in 7 Tagen nach Setup-Phase.</strong> Pro Aufgabe 3-7 Tage realistisch (abhängig von Komplexität). Du bekommst vor jeder Aufgabe eine Aufwands-Schätzung – wenn die nicht passt, splitten wir oder verschieben. Keine harten Vertrags-SLAs (das gehört in Enterprise-Custom-Verträge), aber transparente Kommunikation und realistic Estimates.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-summary">Welche AI-Modelle werden eingesetzt?</summary>
+          <div class="faq-answer">
+            Multi-Modell-Routing als Operations-Hebel: <strong>Claude (Opus + Sonnet) als Backbone</strong>, GPT-5/Codex als Alternative, Open-Source-Modelle für triviale Tasks. Wir wählen pro Aufgabe das passende Modell – du bekommst den finalen PR, ohne dich um Modell-Wahl kümmern zu müssen.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-summary">Was, wenn die Code-Qualität nicht passt?</summary>
+          <div class="faq-answer">
+            Jeder PR wird Senior-reviewed bevor er bei dir landet. Wenn du den PR ablehnst (mit Begründung), iterieren wir kostenfrei. <strong>Wir liefern Production-Code, kein Vibe-Code.</strong> Das ist die Mindest-Qualität, kein Premium-Add-on.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-summary">AVV / DPA / Datenschutz — wie wird das gehandhabt?</summary>
+          <div class="faq-answer">
+            <strong>Standard-AVV nach Art. 28 DSGVO ist verfügbar</strong> und Vertragsbestandteil bei Beta-Onboarding. Sub-Processor-Liste (eingesetzte Modell-Anbieter) wird im Setup transparent kommuniziert. Auf Wunsch: Open-Source-Modelle (self-hosted) statt US-Anbieter — gegen Aufpreis möglich.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-summary">Was passiert bei Krankheit oder Urlaub des Operators?</summary>
+          <div class="faq-answer">
+            <strong>Subscription wird automatisch pausiert</strong> bei Ausfall — du zahlst nur für tatsächlich gelieferte Wochen. Geplante Auszeiten werden 4 Wochen vorab kommuniziert. Bei längerem Ausfall: garantierte Repo-Zugangs-Beendigung und Subscription-Cancel ohne Lock-In.
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT (compact) ============ -->
+  <section class="section">
+    <div class="container-narrow">
+      <div class="section-num">// 05</div>
+      <h2 class="section-title">Der Operator</h2>
+
+      <div class="about-row">
+        <div class="about-photo"></div>
+        <div>
+          <div class="about-name">Henning Thies</div>
+          <div class="about-role">Senior Dev · 15+ Jahre · Hamburg</div>
+          <div class="about-text">
+            Senior-Entwickler mit 15+ Jahren Erfahrung im Aufbau von Web-Anwendungen. Ehemaliger Tech-Lead, jetzt Solo-Operator mit AI-leveraged Workflow.
+            Mehr: <a href="https://henning-thies.de" target="_blank" rel="noopener">henning-thies.de</a> · <a href="https://www.linkedin.com/in/henningthies/" target="_blank" rel="noopener">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FINAL CTA ============ -->
+  <section class="final-cta" id="contact">
+    <div class="container-narrow">
+      <h2 class="final-cta-title">Jetzt <span class="accent">Beta-Slot</span> reservieren</h2>
+      <p class="final-cta-desc">
+        3 Beta-Customer-Slots für die Pilot-Phase ab Juni 2026. 2 noch frei.
+        20-min Erstgespräch: Konzept verstehen, Fit klären, ggf. Beta-Slot nehmen.
+      </p>
+      <div class="final-cta-row">
+        <a href="https://calendar.app.google/VdnLNLqjpSR4MS6G7" class="btn btn-primary" target="_blank" rel="noopener">
+          20-min Call buchen
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="mailto:hello@ai-on-rails.com?subject=Factory%20Slot%20Anfrage" class="btn btn-secondary">hello@ai-on-rails.com</a>
+      </div>
+      <div class="final-cta-meta">
+        Beta-Pricing für die ersten <strong>3 Kunden</strong> — danach Standardpreis
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-logo">
+        AI<span class="accent">·</span>ON<span class="accent">·</span>RAILS / FACTORY
+      </div>
+      <ul class="footer-links">
+        <li><a href="/">Hauptseite</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#contact">Kontakt</a></li>
+        <li><a href="/impressum.html">Impressum</a></li>
+        <li><a href="/datenschutz.html">Datenschutz</a></li>
+      </ul>
+      <div class="footer-copy">© 2026 · <a href="https://henning-thies.de" target="_blank">Henning Thies</a></div>
+    </div>
+  </footer>
+
+</body>
+</html>
