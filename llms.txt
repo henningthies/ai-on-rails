@@ -13,7 +13,7 @@ Preise nennt ai-on-rails je Projekt im ersten Gespräch.
 ## Projekte (anonym)
 
 - KI-Produkt für Modemarken (E-Commerce, seit März 2026): Produktbilder für Onlineshops, aus einem internen Test entstanden. Weiterentwicklung als kleines externes Team mit Ruby on Rails; der Kunde baut inzwischen ein eigenes Team auf.
-- Sicherheits- und Architektur-Audit einer KI-Plattform (Juli 2026): 37 Auffälligkeiten geprüft, 20 mit Empfehlung im Bericht, darunter eine kritische Lücke zwischen Mandanten über Prompt-Injection.
+- Code-Audit einer internen KI-Plattform einer Agentur (Juni 2026, rund 300.000 Zeilen, überwiegend KI-gestützt von einer Person geschrieben): Bewertung von Sicherheit, Datenschutz, Wartbarkeit, Kern und Ballast sowie Tragfähigkeit; drei kritische Sicherheitsbefunde, Empfehlung mit Umsetzungspfad.
 
 ## Arbeitsweise
 
