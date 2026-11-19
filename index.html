@@ -1,2068 +1,224 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI on Rails — You Don't Need a Big Team | AI-Powered Rails Development</title>
-  <meta name="description" content="AI-powered Rails development: MVP in weeks, growth retainer, and legacy Rails rescue. Ship fast, stay fast, get fast. One senior developer, no team overhead.">
-
-  <!-- Canonical URL -->
+  <title>Ruby on Rails Agentur Hamburg | ai-on-rails</title>
+  <meta name="description" content="Wir bauen, modernisieren und entwickeln Rails-Anwendungen weiter. Ruby on Rails Agentur aus Hamburg mit KI-gestützter Entwicklung.">
   <link rel="canonical" href="https://ai-on-rails.com/">
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="AI on Rails — You Don't Need a Big Team">
-  <meta property="og:description" content="AI-powered Rails development: MVP in weeks, growth retainer, and legacy Rails rescue. Ship fast, stay fast, get fast.">
+  <meta property="og:title" content="Ruby on Rails Agentur Hamburg | ai-on-rails">
+  <meta property="og:description" content="Wir bauen, modernisieren und entwickeln Rails-Anwendungen weiter. Ruby on Rails Agentur aus Hamburg mit KI-gestützter Entwicklung.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://ai-on-rails.com/">
   <meta property="og:image" content="https://ai-on-rails.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta property="og:site_name" content="AI on Rails">
-  <meta property="og:locale" content="en_US">
-  <meta property="og:locale:alternate" content="de_DE">
-
-  <!-- Twitter Card -->
+  <meta property="og:locale" content="de_DE">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="AI on Rails — You Don't Need a Big Team">
-  <meta name="twitter:description" content="AI-powered Rails development: MVP in weeks, growth retainer, and legacy Rails rescue. Ship fast, stay fast, get fast.">
+  <meta name="twitter:title" content="Ruby on Rails Agentur Hamburg | ai-on-rails">
+  <meta name="twitter:description" content="Wir bauen, modernisieren und entwickeln Rails-Anwendungen weiter. Ruby on Rails Agentur aus Hamburg mit KI-gestützter Entwicklung.">
   <meta name="twitter:image" content="https://ai-on-rails.com/og-image.png">
 
-  <!-- Analytics -->
-  <script defer src="https://cloud.umami.is/script.js" data-website-id="5dde56bc-9822-4d4c-a606-0bd521350c76"></script>
-
-  <!-- Hreflang for international targeting -->
-  <link rel="alternate" hreflang="en" href="https://ai-on-rails.com/">
-  <link rel="alternate" hreflang="de" href="https://ai-on-rails.com/de/">
-  <link rel="alternate" hreflang="x-default" href="https://ai-on-rails.com/">
-
-  <!-- Additional SEO -->
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#1C1917">
   <meta name="author" content="Henning Thies">
   <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="5dde56bc-9822-4d4c-a606-0bd521350c76"></script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:wght@400;500;600&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:wght@400;500&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/site.css">
 
-  <style>
-    :root {
-      --color-bg: #1C1917;
-      --color-surface: #231F1C;
-      --color-surface-elevated: #2C2724;
-      --color-border: #3D3530;
-      --color-text: #FAF7F5;
-      --color-text-muted: #A8A29E;
-      --color-ruby: #D97706;
-      --color-ruby-glow: rgba(217, 119, 6, 0.25);
-      --color-accent: #F59E0B;
-      --color-gold: #FBBF24;
-      --color-chrome: #E7E5E4;
-      --font-display: 'Bebas Neue', sans-serif;
-      --font-mono: 'JetBrains Mono', monospace;
-      --font-body: 'Source Sans 3', sans-serif;
-    }
-
-    *, *::before, *::after {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    /* Skip link for accessibility */
-    .skip-link {
-      position: absolute;
-      top: -100%;
-      left: 50%;
-      transform: translateX(-50%);
-      background: var(--color-ruby);
-      color: white;
-      padding: 1rem 2rem;
-      font-family: var(--font-mono);
-      font-size: 0.9rem;
-      text-decoration: none;
-      z-index: 10000;
-      transition: top 0.3s ease;
-    }
-
-    .skip-link:focus {
-      top: 1rem;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: var(--font-body);
-      background: var(--color-bg);
-      color: var(--color-text);
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-
-    /* Noise texture overlay */
-    body::before {
-      content: '';
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-      opacity: 0.03;
-      pointer-events: none;
-      z-index: 9999;
-    }
-
-    /* Rail lines pattern */
-    .rail-lines {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: -1;
-      overflow: hidden;
-    }
-
-    .rail-line {
-      position: absolute;
-      width: 2px;
-      height: 200%;
-      background: linear-gradient(to bottom,
-        transparent 0%,
-        var(--color-border) 20%,
-        var(--color-border) 80%,
-        transparent 100%
-      );
-      opacity: 0.3;
-    }
-
-    .rail-line:nth-child(1) { left: 10%; transform: rotate(2deg); }
-    .rail-line:nth-child(2) { left: 30%; transform: rotate(-1deg); }
-    .rail-line:nth-child(3) { left: 70%; transform: rotate(1.5deg); }
-    .rail-line:nth-child(4) { left: 90%; transform: rotate(-2deg); }
-
-    /* Navigation */
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 1000;
-      padding: 1.5rem 3rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: linear-gradient(to bottom, var(--color-bg) 0%, transparent 100%);
-      backdrop-filter: blur(10px);
-    }
-
-    .logo {
-      font-family: var(--font-display);
-      font-size: 1.8rem;
-      letter-spacing: 0.05em;
-      color: var(--color-text);
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .logo-ruby {
-      color: var(--color-ruby);
-      text-shadow: 0 0 20px var(--color-ruby-glow);
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 2.5rem;
-      list-style: none;
-    }
-
-    .nav-links a {
-      font-family: var(--font-mono);
-      font-size: 0.85rem;
-      font-weight: 500;
-      color: var(--color-text-muted);
-      text-decoration: none;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      transition: color 0.3s ease;
-    }
-
-    .nav-links a:hover {
-      color: var(--color-ruby);
-    }
-
-    .nav-cta {
-      font-family: var(--font-mono);
-      font-size: 0.85rem;
-      font-weight: 600;
-      padding: 0.75rem 1.5rem;
-      background: var(--color-ruby);
-      color: white;
-      text-decoration: none;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      border: none;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      clip-path: polygon(0 0, 100% 0, 95% 100%, 5% 100%);
-    }
-
-    .nav-cta:hover {
-      background: var(--color-accent);
-      transform: translateY(-2px);
-      box-shadow: 0 10px 30px var(--color-ruby-glow);
-    }
-
-    .lang-switch {
-      display: flex;
-      gap: 0.4rem;
-      align-items: center;
-      font-family: var(--font-mono);
-      font-size: 0.85rem;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-    }
-
-    .lang-switch a {
-      color: var(--color-text-muted);
-      text-decoration: none;
-      text-transform: uppercase;
-      transition: color 0.3s ease;
-    }
-
-    .lang-switch a:hover {
-      color: var(--color-ruby);
-    }
-
-    .lang-switch [aria-current="page"] {
-      color: var(--color-text);
-    }
-
-    .lang-switch .lang-sep {
-      color: var(--color-border);
-    }
-
-    /* Mobile hamburger menu */
-    .nav-toggle {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 10px;
-    }
-
-    .nav-toggle span {
-      width: 24px;
-      height: 2px;
-      background: var(--color-text);
-      transition: all 0.3s ease;
-    }
-
-    .nav-toggle.active span:nth-child(1) {
-      transform: rotate(45deg) translate(5px, 5px);
-    }
-
-    .nav-toggle.active span:nth-child(2) {
-      opacity: 0;
-    }
-
-    .nav-toggle.active span:nth-child(3) {
-      transform: rotate(-45deg) translate(5px, -5px);
-    }
-
-    @media (max-width: 768px) {
-      .nav-toggle {
-        display: flex;
-      }
-
-      .nav-links {
-        position: fixed;
-        top: 70px;
-        left: 0;
-        right: 0;
-        background: var(--color-bg);
-        flex-direction: column;
-        padding: 2rem;
-        gap: 1.5rem;
-        border-bottom: 1px solid var(--color-border);
-        transform: translateY(-100%);
-        opacity: 0;
-        pointer-events: none;
-        transition: all 0.3s ease;
-      }
-
-      .nav-links.active {
-        display: flex;
-        transform: translateY(0);
-        opacity: 1;
-        pointer-events: auto;
-      }
-
-      .nav-cta {
-        display: none;
-      }
-    }
-
-    /* Hero Section */
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 8rem 3rem 4rem;
-      position: relative;
-    }
-
-    .hero-content {
-      max-width: 1400px;
-      margin: 0 auto;
-      width: 100%;
-    }
-
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.75rem;
-      font-family: var(--font-mono);
-      font-size: 0.8rem;
-      font-weight: 500;
-      color: var(--color-ruby);
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      margin-bottom: 2rem;
-      padding: 0.5rem 1rem;
-      background: rgba(217, 119, 6, 0.1);
-      border: 1px solid rgba(217, 119, 6, 0.3);
-      animation: fadeInUp 0.8s ease-out;
-    }
-
-    .hero-badge::before {
-      content: '';
-      width: 8px;
-      height: 8px;
-      background: var(--color-ruby);
-      border-radius: 50%;
-      animation: pulse 2s ease-in-out infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.5; transform: scale(1.2); }
-    }
-
-    .hero-title {
-      font-family: var(--font-display);
-      font-size: clamp(3rem, 9vw, 7rem);
-      line-height: 0.95;
-      letter-spacing: -0.01em;
-      margin-bottom: 2rem;
-      animation: fadeInUp 0.8s ease-out 0.1s both;
-    }
-
-    .hero-title .line {
-      display: block;
-      overflow: hidden;
-    }
-
-    .hero-title .highlight {
-      color: var(--color-ruby);
-      text-shadow: 0 0 60px var(--color-ruby-glow);
-      position: relative;
-    }
-
-    .hero-title .speed-lines {
-      position: absolute;
-      right: 100%;
-      top: 50%;
-      transform: translateY(-50%);
-      display: flex;
-      gap: 4px;
-      padding-right: 20px;
-    }
-
-    .hero-title .speed-line {
-      width: 40px;
-      height: 3px;
-      background: linear-gradient(to left, var(--color-ruby), transparent);
-      animation: speedLine 1.5s ease-out infinite;
-    }
-
-    .hero-title .speed-line:nth-child(2) {
-      width: 60px;
-      animation-delay: 0.2s;
-    }
-
-    .hero-title .speed-line:nth-child(3) {
-      width: 30px;
-      animation-delay: 0.4s;
-    }
-
-    @keyframes speedLine {
-      0% { opacity: 0; transform: translateX(20px); }
-      20% { opacity: 1; }
-      100% { opacity: 0; transform: translateX(-100px); }
-    }
-
-    .hero-subtitle {
-      font-family: var(--font-body);
-      font-size: clamp(1.2rem, 2.5vw, 1.6rem);
-      font-weight: 400;
-      color: var(--color-text-muted);
-      max-width: 700px;
-      margin-bottom: 3rem;
-      animation: fadeInUp 0.8s ease-out 0.2s both;
-    }
-
-    .hero-subtitle strong {
-      color: var(--color-text);
-      font-weight: 600;
-    }
-
-    .hero-cta-group {
-      display: flex;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-      animation: fadeInUp 0.8s ease-out 0.3s both;
-    }
-
-    .btn-primary {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.75rem;
-      font-family: var(--font-display);
-      font-size: 1.4rem;
-      letter-spacing: 0.05em;
-      padding: 1.25rem 2.5rem;
-      background: var(--color-ruby);
-      color: white;
-      text-decoration: none;
-      position: relative;
-      overflow: hidden;
-      transition: all 0.3s ease;
-      clip-path: polygon(0 0, 100% 0, 95% 100%, 5% 100%);
-    }
-
-    .btn-primary::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-      transition: left 0.5s ease;
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 20px 40px var(--color-ruby-glow);
-    }
-
-    .btn-primary:hover::before {
-      left: 100%;
-    }
-
-    .btn-secondary {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.75rem;
-      font-family: var(--font-mono);
-      font-size: 0.9rem;
-      font-weight: 500;
-      letter-spacing: 0.05em;
-      padding: 1.25rem 2rem;
-      background: transparent;
-      color: var(--color-text);
-      text-decoration: none;
-      border: 1px solid var(--color-border);
-      transition: all 0.3s ease;
-    }
-
-    .btn-secondary:hover {
-      border-color: var(--color-ruby);
-      color: var(--color-ruby);
-      background: rgba(217, 119, 6, 0.05);
-    }
-
-    .hero-stats {
-      display: flex;
-      gap: 4rem;
-      margin-top: 5rem;
-      padding-top: 3rem;
-      border-top: 1px solid var(--color-border);
-      animation: fadeInUp 0.8s ease-out 0.4s both;
-    }
-
-    .stat {
-      text-align: left;
-    }
-
-    .stat-value {
-      font-family: var(--font-display);
-      font-size: 3.5rem;
-      color: var(--color-text);
-      line-height: 1;
-    }
-
-    .stat-value span {
-      color: var(--color-ruby);
-    }
-
-    .stat-label {
-      font-family: var(--font-mono);
-      font-size: 0.75rem;
-      color: var(--color-text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      margin-top: 0.5rem;
-    }
-
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* Train animation in hero */
-    .train-track {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background: var(--color-border);
-      overflow: hidden;
-    }
-
-    .train-track::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -200px;
-      width: 200px;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, var(--color-ruby), transparent);
-      animation: trainMove 4s linear infinite;
-    }
-
-    @keyframes trainMove {
-      0% { left: -200px; }
-      100% { left: 100%; }
-    }
-
-    /* What I Build Section */
-    .what-section {
-      padding: 8rem 3rem;
-      background: var(--color-surface);
-      position: relative;
-    }
-
-    .what-section::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 1px;
-      height: 80px;
-      background: linear-gradient(to bottom, var(--color-ruby), transparent);
-    }
-
-    .section-header {
-      text-align: center;
-      max-width: 800px;
-      margin: 0 auto 5rem;
-    }
-
-    .section-number {
-      font-family: var(--font-mono);
-      font-size: 0.8rem;
-      color: var(--color-ruby);
-      letter-spacing: 0.2em;
-      margin-bottom: 1rem;
-    }
-
-    .section-title {
-      font-family: var(--font-display);
-      font-size: clamp(2.5rem, 6vw, 4rem);
-      letter-spacing: 0.02em;
-      margin-bottom: 1.5rem;
-    }
-
-    .section-desc {
-      font-size: 1.1rem;
-      color: var(--color-text-muted);
-    }
-
-    .meanings-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 2rem;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    .meaning-card {
-      padding: 2.5rem;
-      background: var(--color-surface-elevated);
-      border: 1px solid var(--color-border);
-      position: relative;
-      overflow: hidden;
-      transition: all 0.4s ease;
-    }
-
-    .meaning-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 3px;
-      background: var(--color-ruby);
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.4s ease;
-    }
-
-    .meaning-card:hover {
-      transform: translateY(-5px);
-      border-color: var(--color-ruby);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-    }
-
-    .meaning-card:hover::before {
-      transform: scaleX(1);
-    }
-
-    .meaning-icon {
-      width: 60px;
-      height: 60px;
-      margin-bottom: 1.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2rem;
-      background: rgba(217, 119, 6, 0.1);
-      border: 1px solid rgba(217, 119, 6, 0.2);
-    }
-
-    .meaning-title {
-      font-family: var(--font-display);
-      font-size: 1.8rem;
-      letter-spacing: 0.02em;
-      margin-bottom: 1rem;
-    }
-
-    .meaning-desc {
-      font-size: 1rem;
-      color: var(--color-text-muted);
-      line-height: 1.7;
-    }
-
-    /* Services Section */
-    .services-section {
-      padding: 8rem 3rem;
-      position: relative;
-      background: var(--color-bg);
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
-      max-width: 1400px;
-      margin: 0 auto 4rem;
-    }
-
-    .service-card {
-      padding: 3rem 2.5rem;
-      background: var(--color-surface);
-      border: 1px solid var(--color-border);
-      position: relative;
-      transition: all 0.4s ease;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .service-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background: var(--color-border);
-      transition: background 0.4s ease;
-    }
-
-    .service-card:hover {
-      transform: translateY(-8px);
-      border-color: var(--color-ruby);
-      box-shadow: 0 30px 60px rgba(0,0,0,0.4);
-    }
-
-    .service-card:hover::before {
-      background: var(--color-ruby);
-    }
-
-    .service-card-featured {
-      background: var(--color-surface-elevated);
-      border: 2px solid var(--color-ruby);
-      transform: scale(1.02);
-    }
-
-    .service-card-featured::before {
-      background: var(--color-ruby);
-      height: 6px;
-    }
-
-    .service-card-featured:hover {
-      transform: scale(1.02) translateY(-8px);
-    }
-
-    .service-stage {
-      font-family: var(--font-mono);
-      font-size: 0.7rem;
-      color: var(--color-ruby);
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      margin-bottom: 1rem;
-    }
-
-    .service-title {
-      font-family: var(--font-display);
-      font-size: 2.2rem;
-      letter-spacing: 0.02em;
-      margin-bottom: 0.5rem;
-      line-height: 1.1;
-    }
-
-    .service-tagline {
-      font-family: var(--font-mono);
-      font-size: 0.9rem;
-      color: var(--color-text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      margin-bottom: 1.5rem;
-      padding-bottom: 1.5rem;
-      border-bottom: 1px solid var(--color-border);
-    }
-
-    .service-desc {
-      font-size: 1rem;
-      color: var(--color-text-muted);
-      line-height: 1.7;
-      margin-bottom: 2rem;
-      flex: 1;
-    }
-
-    .service-features {
-      list-style: none;
-      margin-bottom: 2rem;
-    }
-
-    .service-features li {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      padding: 0.5rem 0;
-      font-family: var(--font-mono);
-      font-size: 0.85rem;
-      color: var(--color-text-muted);
-    }
-
-    .service-features li::before {
-      content: '→';
-      color: var(--color-ruby);
-      font-weight: bold;
-    }
-
-    .service-cta {
-      font-family: var(--font-mono);
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: var(--color-ruby);
-      text-decoration: none;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      transition: all 0.3s ease;
-      display: inline-block;
-    }
-
-    .service-cta:hover {
-      color: var(--color-accent);
-      transform: translateX(5px);
-    }
-
-    .services-journey {
-      max-width: 1400px;
-      margin: 0 auto;
-      text-align: center;
-      position: relative;
-      padding-top: 3rem;
-    }
-
-    .journey-line {
-      position: absolute;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 60%;
-      height: 1px;
-      background: linear-gradient(90deg,
-        transparent 0%,
-        var(--color-ruby) 20%,
-        var(--color-ruby) 80%,
-        transparent 100%
-      );
-    }
-
-    .journey-line::before {
-      content: '→';
-      position: absolute;
-      right: -15px;
-      top: 50%;
-      transform: translateY(-50%);
-      color: var(--color-ruby);
-      font-size: 1.2rem;
-    }
-
-    .journey-text {
-      font-family: var(--font-mono);
-      font-size: 0.85rem;
-      color: var(--color-text-muted);
-      font-style: italic;
-      margin-top: 1.5rem;
-    }
-
-    /* How It Works Section */
-    .process-section {
-      padding: 8rem 3rem;
-      position: relative;
-    }
-
-    .process-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 0;
-      max-width: 1400px;
-      margin: 0 auto;
-    }
-
-    .process-step {
-      padding: 3rem 2rem;
-      border-right: 1px solid var(--color-border);
-      position: relative;
-    }
-
-    .process-step:last-child {
-      border-right: none;
-    }
-
-    .process-step::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--color-border), transparent);
-    }
-
-    .step-number {
-      font-family: var(--font-display);
-      font-size: 4rem;
-      color: var(--color-surface-elevated);
-      -webkit-text-stroke: 1px var(--color-border);
-      line-height: 1;
-      margin-bottom: 1.5rem;
-      transition: all 0.3s ease;
-    }
-
-    .process-step:hover .step-number {
-      color: var(--color-ruby);
-      -webkit-text-stroke: 1px var(--color-ruby);
-    }
-
-    .step-title {
-      font-family: var(--font-mono);
-      font-size: 0.85rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      margin-bottom: 1rem;
-      color: var(--color-text);
-    }
-
-    .step-desc {
-      font-size: 0.95rem;
-      color: var(--color-text-muted);
-      line-height: 1.6;
-    }
-
-
-    /* Case Study Section */
-    .case-study-section {
-      padding: 8rem 3rem;
-      background: var(--color-surface);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .case-study-section::after {
-      content: 'CASE STUDY';
-      position: absolute;
-      top: 50%;
-      right: -5%;
-      transform: translateY(-50%) rotate(90deg);
-      font-family: var(--font-display);
-      font-size: 8rem;
-      color: var(--color-border);
-      opacity: 0.3;
-      white-space: nowrap;
-      pointer-events: none;
-    }
-
-    .case-study-content {
-      max-width: 1400px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: center;
-    }
-
-    .case-study-info {
-      position: relative;
-      z-index: 1;
-    }
-
-    .case-study-label {
-      font-family: var(--font-mono);
-      font-size: 0.8rem;
-      color: var(--color-ruby);
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      margin-bottom: 1rem;
-    }
-
-    .case-study-title {
-      font-family: var(--font-display);
-      font-size: clamp(2rem, 4vw, 3rem);
-      margin-bottom: 1.5rem;
-    }
-
-    .case-study-desc {
-      font-size: 1.1rem;
-      color: var(--color-text-muted);
-      margin-bottom: 2rem;
-      line-height: 1.7;
-    }
-
-    .case-study-features {
-      list-style: none;
-      margin-bottom: 2.5rem;
-    }
-
-    .case-study-features li {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      padding: 0.75rem 0;
-      border-bottom: 1px solid var(--color-border);
-      font-family: var(--font-mono);
-      font-size: 0.9rem;
-    }
-
-    .case-study-features li::before {
-      content: '→';
-      color: var(--color-ruby);
-    }
-
-    .case-study-meta {
-      display: flex;
-      gap: 3rem;
-    }
-
-    .meta-item {
-      text-align: left;
-    }
-
-    .meta-value {
-      font-family: var(--font-display);
-      font-size: 2rem;
-      color: var(--color-ruby);
-    }
-
-    .meta-label {
-      font-family: var(--font-mono);
-      font-size: 0.7rem;
-      color: var(--color-text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-    }
-
-    .case-study-visual {
-      position: relative;
-    }
-
-    .browser-window {
-      background: var(--color-surface-elevated);
-      border: 1px solid var(--color-border);
-      border-radius: 8px 8px 0 0;
-      overflow: hidden;
-      box-shadow: 0 30px 60px rgba(0,0,0,0.4);
-    }
-
-    .browser-bar {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      padding: 12px 16px;
-      background: var(--color-bg);
-      border-bottom: 1px solid var(--color-border);
-    }
-
-    .browser-dot {
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      background: var(--color-border);
-    }
-
-    .browser-dot:first-child { background: #ff5f57; }
-    .browser-dot:nth-child(2) { background: #ffbd2e; }
-    .browser-dot:nth-child(3) { background: #28c940; }
-
-    .browser-url {
-      flex: 1;
-      margin-left: 12px;
-      padding: 6px 12px;
-      background: var(--color-surface);
-      border-radius: 4px;
-      font-family: var(--font-mono);
-      font-size: 0.75rem;
-      color: var(--color-text-muted);
-    }
-
-    .browser-content {
-      background: linear-gradient(135deg, var(--color-surface) 0%, var(--color-bg) 100%);
-      display: flex;
-      flex-direction: column;
-    }
-
-    .mock-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 2rem;
-    }
-
-    .mock-logo {
-      font-family: var(--font-display);
-      font-size: 1.2rem;
-      color: var(--color-text);
-    }
-
-    .mock-nav {
-      display: flex;
-      gap: 1rem;
-    }
-
-    .mock-nav span {
-      width: 60px;
-      height: 8px;
-      background: var(--color-border);
-      border-radius: 4px;
-    }
-
-    .mock-dashboard {
-      flex: 1;
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      gap: 1rem;
-    }
-
-    .mock-sidebar {
-      background: var(--color-surface-elevated);
-      border-radius: 8px;
-      padding: 1rem;
-    }
-
-    .mock-menu-item {
-      height: 24px;
-      background: var(--color-border);
-      border-radius: 4px;
-      margin-bottom: 8px;
-      opacity: 0.5;
-    }
-
-    .mock-menu-item.active {
-      background: var(--color-ruby);
-      opacity: 1;
-    }
-
-    .mock-main {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    .mock-cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 0.75rem;
-    }
-
-    .mock-card {
-      background: var(--color-surface-elevated);
-      border-radius: 8px;
-      padding: 1rem;
-      height: 60px;
-    }
-
-    .mock-card-value {
-      font-family: var(--font-display);
-      font-size: 1.4rem;
-      color: var(--color-text);
-    }
-
-    .mock-card-label {
-      font-size: 0.6rem;
-      color: var(--color-text-muted);
-      text-transform: uppercase;
-    }
-
-    .mock-chart {
-      flex: 1;
-      background: var(--color-surface-elevated);
-      border-radius: 8px;
-      padding: 1rem;
-      display: flex;
-      align-items: flex-end;
-      gap: 8px;
-    }
-
-    .mock-bar {
-      flex: 1;
-      background: var(--color-ruby);
-      border-radius: 4px 4px 0 0;
-      opacity: 0.7;
-    }
-
-    .mock-bar:nth-child(1) { height: 40%; }
-    .mock-bar:nth-child(2) { height: 65%; }
-    .mock-bar:nth-child(3) { height: 45%; }
-    .mock-bar:nth-child(4) { height: 80%; }
-    .mock-bar:nth-child(5) { height: 55%; }
-    .mock-bar:nth-child(6) { height: 90%; }
-    .mock-bar:nth-child(7) { height: 70%; }
-
-    /* About Section */
-    .about-section {
-      padding: 8rem 3rem;
-      background: var(--color-surface);
-    }
-
-    .about-content {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 220px 1fr;
-      gap: 4rem;
-      align-items: start;
-    }
-
-    .about-image {
-      position: relative;
-    }
-
-    .about-photo {
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
-      border: 6px solid var(--color-surface-elevated);
-      box-shadow: 0 0 0 1px var(--color-border), 0 20px 40px rgba(0,0,0,0.4);
-      overflow: hidden;
-    }
-
-    .about-photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center top;
-      filter: brightness(0.95);
-    }
-
-    .about-badge {
-      position: absolute;
-      bottom: 0;
-      right: -10px;
-      background: var(--color-ruby);
-      padding: 0.75rem 1rem;
-      font-family: var(--font-display);
-      font-size: 1.2rem;
-      color: white;
-      box-shadow: 0 10px 30px var(--color-ruby-glow);
-    }
-
-    .about-text h2 {
-      font-family: var(--font-display);
-      font-size: clamp(2rem, 4vw, 3rem);
-      margin-bottom: 1.5rem;
-    }
-
-    .about-text p {
-      font-size: 1.1rem;
-      color: var(--color-text-muted);
-      margin-bottom: 1.5rem;
-      line-height: 1.8;
-    }
-
-    .about-text p strong {
-      color: var(--color-text);
-    }
-
-    .credentials {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.5rem;
-      margin-top: 2.5rem;
-      padding-top: 2.5rem;
-      border-top: 1px solid var(--color-border);
-    }
-
-    .credential {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    .credential-icon {
-      width: 48px;
-      height: 48px;
-      background: rgba(217, 119, 6, 0.1);
-      border: 1px solid rgba(217, 119, 6, 0.2);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.2rem;
-    }
-
-    .credential-text {
-      font-family: var(--font-mono);
-      font-size: 0.85rem;
-      color: var(--color-text-muted);
-    }
-
-    .credential-text strong {
-      display: block;
-      color: var(--color-text);
-      font-size: 1rem;
-    }
-
-    /* CTA Section */
-    .cta-section {
-      padding: 8rem 3rem;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .cta-section::before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(circle, var(--color-ruby-glow) 0%, transparent 70%);
-      opacity: 0.3;
-      pointer-events: none;
-    }
-
-    .cta-content {
-      position: relative;
-      z-index: 1;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .cta-title {
-      font-family: var(--font-display);
-      font-size: clamp(3rem, 8vw, 5rem);
-      margin-bottom: 1.5rem;
-    }
-
-    .cta-desc {
-      font-size: 1.2rem;
-      color: var(--color-text-muted);
-      margin-bottom: 3rem;
-    }
-
-    .cta-buttons {
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-    }
-
-    /* Footer */
-    footer {
-      padding: 4rem 3rem;
-      border-top: 1px solid var(--color-border);
-    }
-
-    .footer-content {
-      max-width: 1400px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .footer-logo {
-      font-family: var(--font-display);
-      font-size: 1.5rem;
-      color: var(--color-text);
-    }
-
-    .footer-logo span {
-      color: var(--color-ruby);
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 2rem;
-      list-style: none;
-    }
-
-    .footer-links a {
-      font-family: var(--font-mono);
-      font-size: 0.8rem;
-      color: var(--color-text-muted);
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-
-    .footer-links a:hover {
-      color: var(--color-ruby);
-    }
-
-    .footer-copy {
-      font-family: var(--font-mono);
-      font-size: 0.75rem;
-      color: var(--color-text-muted);
-    }
-
-    .footer-copy a {
-      color: var(--color-text-muted);
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-
-    .footer-copy a:hover {
-      color: var(--color-ruby);
-    }
-
-    /* Responsive */
-    @media (max-width: 1024px) {
-      .meanings-grid {
-        grid-template-columns: 1fr;
-        max-width: 550px;
-      }
-
-      .services-grid {
-        grid-template-columns: 1fr;
-        max-width: 600px;
-        margin: 0 auto 3rem;
-      }
-
-      .service-card-featured {
-        transform: scale(1);
-      }
-
-      .service-card-featured:hover {
-        transform: translateY(-8px);
-      }
-
-      .process-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .process-step {
-        border-bottom: 1px solid var(--color-border);
-      }
-
-      .process-step:nth-child(2) {
-        border-right: none;
-      }
-
-      .case-study-content,
-      .about-content {
-        grid-template-columns: 1fr;
-      }
-
-      .about-photo {
-        width: 150px;
-        height: 150px;
-        margin: 0 auto;
-      }
-    }
-
-    @media (max-width: 768px) {
-      nav {
-        padding: 1rem 1.5rem;
-      }
-
-      .hero {
-        padding: 6rem 1.5rem 3rem;
-      }
-
-      .hero-stats {
-        flex-direction: column;
-        gap: 2rem;
-      }
-
-      .process-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .process-step {
-        border-right: none;
-      }
-
-      section {
-        padding: 4rem 1.5rem;
-      }
-
-      .footer-content {
-        flex-direction: column;
-        gap: 2rem;
-        text-align: center;
-      }
-
-      .credentials {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
-
-  <!-- Structured Data -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "AI on Rails",
-    "description": "AI-powered Ruby on Rails development. Ship production software in weeks, not months.",
-    "url": "https://ai-on-rails.com",
-    "logo": "https://ai-on-rails.com/logo.png",
-    "founder": {
-      "@type": "Person",
-      "name": "Henning Thies",
-      "jobTitle": "Founder & Developer",
-      "knowsAbout": ["Ruby on Rails", "Web Development", "AI-Assisted Development", "Legacy Rails Modernization", "Rails Maintenance"]
-    },
-    "areaServed": ["Germany", "Europe", "Worldwide"],
-    "serviceType": ["Web Development", "MVP Development", "SaaS Development", "Ruby on Rails Development", "Rails Maintenance", "Legacy Rails Modernization"],
-    "knowsAbout": ["Ruby on Rails", "Hotwire", "PostgreSQL", "AI Development Tools", "Rails Upgrades", "Technical Debt Reduction"],
-    "priceRange": "$$$$",
-    "address": {
-      "@type": "PostalAddress",
-      "addressCountry": "DE"
-    },
-    "sameAs": [
-      "https://mvp-development.de",
-      "https://www.linkedin.com/company/ai-on-rails"
-    ],
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Rails Development Services",
-      "itemListElement": [
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "MVP Development",
-            "description": "From idea to production in 2-6 weeks. Fixed scope, fixed price. Production-ready Rails app with authentication, database, deployment, and core features.",
-            "provider": {
-              "@type": "ProfessionalService",
-              "name": "AI on Rails"
-            },
-            "serviceType": "MVP Development",
-            "areaServed": ["Germany", "Europe", "Worldwide"]
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Growth & Iterate",
-            "description": "Monthly retainer for continuous momentum. New features, optimizations, and strategic improvements without hiring a full-time team.",
-            "provider": {
-              "@type": "ProfessionalService",
-              "name": "AI on Rails"
-            },
-            "serviceType": "Ongoing Development",
-            "areaServed": ["Germany", "Europe", "Worldwide"]
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Legacy Rails Rescue",
-            "description": "Modernize Rails apps and bring them back to speed. Rails & dependency upgrades, technical debt reduction, performance rescue, and ongoing maintenance.",
-            "provider": {
-              "@type": "ProfessionalService",
-              "name": "AI on Rails"
-            },
-            "serviceType": "Rails Maintenance",
-            "areaServed": ["Germany", "Europe", "Worldwide"]
-          }
-        }
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://ai-on-rails.com/#organization",
+      "name": "AI on Rails",
+      "url": "https://ai-on-rails.com/",
+      "logo": "https://ai-on-rails.com/og-image.png",
+      "email": "hello@ai-on-rails.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Hamburg",
+        "addressCountry": "DE"
+      },
+      "founder": {
+        "@id": "https://ai-on-rails.com/#henning"
+      },
+      "sameAs": [
+        "https://henning-thies.de",
+        "https://www.linkedin.com/in/henningthies/"
       ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://ai-on-rails.com/#webpage",
+      "url": "https://ai-on-rails.com/",
+      "name": "Ruby on Rails Agentur Hamburg | ai-on-rails",
+      "description": "Wir bauen, modernisieren und entwickeln Rails-Anwendungen weiter. Ruby on Rails Agentur aus Hamburg mit KI-gestützter Entwicklung.",
+      "inLanguage": "de-DE",
+      "isPartOf": {
+        "@id": "https://ai-on-rails.com/#website"
+      },
+      "about": {
+        "@id": "https://ai-on-rails.com/#organization"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://ai-on-rails.com/#henning",
+      "name": "Henning Thies",
+      "url": "https://henning-thies.de",
+      "jobTitle": "Gründer",
+      "worksFor": {
+        "@id": "https://ai-on-rails.com/#organization"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Hamburg",
+        "addressCountry": "DE"
+      },
+      "knowsAbout": [
+        "Ruby on Rails",
+        "Ruby",
+        "Softwarearchitektur",
+        "KI-gestützte Softwareentwicklung"
+      ],
+      "sameAs": [
+        "https://henning-thies.de",
+        "https://www.linkedin.com/in/henningthies/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://ai-on-rails.com/#website",
+      "url": "https://ai-on-rails.com/",
+      "name": "AI on Rails",
+      "inLanguage": "de-DE",
+      "publisher": {
+        "@id": "https://ai-on-rails.com/#organization"
+      }
     }
-  }
-  </script>
-
-  <!-- Case Study: Kunden-Cockpit -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "Kunden-Cockpit",
-    "applicationCategory": "BusinessApplication",
-    "description": "A lead management and project CRM built for agencies. AI-powered briefings, proposal generation, customer portal, and milestone tracking.",
-    "url": "https://kunden-cockpit.de",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "EUR"
-    },
-    "author": {
-      "@type": "Organization",
-      "name": "AI on Rails"
-    },
-    "featureList": [
-      "AI-powered project briefing with chat interface",
-      "Proposal generation with Claude AI assistance",
-      "Customer portal with magic link access",
-      "Milestone tracking & deliverables management",
-      "Multi-tenant workspaces for agency teams"
-    ]
-  }
-  </script>
-
-  <!-- Case Study: Vermio -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "Vermio",
-    "applicationCategory": "BusinessApplication",
-    "description": "Property management for private landlords with up to 10 units. Replace Excel chaos with automated utility billing, bank imports, and PDF statements.",
-    "url": "https://vermio.app",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "EUR"
-    },
-    "author": {
-      "@type": "Organization",
-      "name": "AI on Rails"
-    },
-    "featureList": [
-      "Properties, units, tenants & lease management",
-      "Automated utility cost distribution (Nebenkostenabrechnung)",
-      "Bank account import (CAMT format)",
-      "PDF billing statements for tenants",
-      "Multi-property dashboard with payment tracking"
-    ]
-  }
+  ]
+}
   </script>
 </head>
 <body>
-  <!-- Skip link for accessibility -->
-  <a href="#main" class="skip-link">Skip to main content</a>
-
-  <!-- Rail lines background -->
-  <div class="rail-lines">
-    <div class="rail-line"></div>
-    <div class="rail-line"></div>
-    <div class="rail-line"></div>
-    <div class="rail-line"></div>
-  </div>
-
-  <!-- Navigation -->
-  <nav aria-label="Main navigation">
-    <a href="/" class="logo" aria-label="AI on Rails - Home">
-      <span class="logo-ruby">AI</span> ON RAILS
-    </a>
-    <ul class="nav-links" id="nav-links">
-      <li><a href="#what">Why</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#work">Work</a></li>
-      <li><a href="#about">About</a></li>
-    </ul>
-    <div class="lang-switch" aria-label="Language">
-      <a href="/" hreflang="en" aria-current="page">EN</a>
-      <span class="lang-sep" aria-hidden="true">/</span>
-      <a href="/de/" hreflang="de">DE</a>
+  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+  <header class="site-nav">
+    <div class="in">
+      <a class="logo" href="/" aria-label="AI on Rails, Startseite"><span>AI</span> ON RAILS</a>
+      <nav aria-label="Hauptnavigation">
+        <a href="/product-bets">Product Bets</a>
+        <a href="/rails-modernisierung">Modernisierung</a>
+        <a href="/rails-weiterentwicklung">Weiterentwicklung</a>
+        <a class="btn sm" href="#kontakt">Gespräch vereinbaren</a>
+      </nav>
     </div>
-    <a href="#contact" class="nav-cta">Let's Talk</a>
-    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-  </nav>
+  </header>
 
-  <!-- Hero Section -->
-  <section class="hero" id="main">
-    <div class="hero-content">
-      <div class="hero-badge">Now booking for Summer 2026</div>
-      <h1 class="hero-title">
-        <span class="line">YOU DON'T NEED</span>
-        <span class="line"><span class="highlight">A BIG TEAM<span class="speed-lines"><span class="speed-line"></span><span class="speed-line"></span><span class="speed-line"></span></span></span></span>
-      </h1>
-      <p class="hero-subtitle">
-        Good software doesn't need 10 developers anymore. AI changed the rules.
-        <strong>Senior expertise. AI-amplified.</strong> Production-ready in weeks.
-      </p>
-      <div class="hero-cta-group">
-        <a href="#contact" class="btn-primary">
-          Start a Conversation
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M5 12h14M12 5l7 7-7 7"/>
-          </svg>
+  <main id="main">
+  <section class="hero">
+    <div class="in">
+      <span class="kick">Ruby on Rails · KI-gestützte Entwicklung · Hamburg</span>
+      <h1>Wir bauen, modernisieren und entwickeln Rails-Anwendungen weiter</h1>
+      <p class="lead">ai-on-rails ist eine Entwicklungsagentur aus Hamburg. Wir arbeiten mit Ruby on Rails und setzen KI in der Entwicklung ein. Jede Änderung prüft ein Mensch, bevor sie live geht.</p>
+      <div class="row"><a class="btn" href="#kontakt">Gespräch vereinbaren</a><a class="btn ghost" href="#leistungen">Leistungen ansehen</a></div>
+    </div>
+  </section>
+
+  <section class="band alt" id="leistungen" aria-labelledby="leistungen-h">
+    <div class="in">
+      <h2 id="leistungen-h">Leistungen</h2>
+      <div class="pillars">
+        <a class="pillar lead-pillar" href="/product-bets">
+          <span class="tag">Ship Fast</span>
+          <h3>Product Bets</h3>
+          <p>Eine Produktidee in 12 Wochen als lauffähige Software, mit Messung und Entscheidungsvorlage.</p>
+          <ul class="list"><li>12 Wochen zum Festpreis</li><li>Entscheidung in Woche 12: weiterbauen, umbauen oder stoppen</li></ul>
+          <span class="more">Product Bets →</span>
         </a>
-        <a href="#work" class="btn-secondary">
-          View Case Study
+        <a class="pillar" href="/rails-modernisierung">
+          <span class="tag">Get Fast</span>
+          <h3>Rails-Anwendungen modernisieren</h3>
+          <p>Bestandsaufnahme, Rails-Upgrade, Performance und Neubau in Etappen.</p>
+          <ul class="list"><li>Rails- und Ruby-Upgrades</li><li>Neubau bei laufendem Betrieb</li></ul>
+          <span class="more">Modernisierung →</span>
         </a>
-      </div>
-      <div class="hero-stats">
-        <div class="stat">
-          <div class="stat-value">15<span>+</span></div>
-          <div class="stat-label">Years Experience</div>
-        </div>
-        <div class="stat">
-          <div class="stat-value">3<span>–</span>5<span>×</span></div>
-          <div class="stat-label">Faster Than Traditional</div>
-        </div>
-        <div class="stat">
-          <div class="stat-value">10<span>+</span></div>
-          <div class="stat-label">Team Leadership</div>
-        </div>
-      </div>
-    </div>
-    <div class="train-track"></div>
-  </section>
-
-  <!-- What Section -->
-  <section class="what-section" id="what">
-    <div class="section-header">
-      <div class="section-number">// 01</div>
-      <h2 class="section-title">WHY IT WORKS</h2>
-      <p class="section-desc">One developer. AI-amplified. No overhead.</p>
-    </div>
-    <div class="meanings-grid">
-      <div class="meaning-card">
-        <div class="meaning-icon">→</div>
-        <h3 class="meaning-title">NO TEAM OVERHEAD</h3>
-        <p class="meaning-desc">No project managers. No standup meetings. No coordination tax. One senior developer who does architecture, code, and deployment. Direct communication, fast decisions.</p>
-      </div>
-      <div class="meaning-card">
-        <div class="meaning-icon">→</div>
-        <h3 class="meaning-title">AI-AMPLIFIED, NOT AI-REPLACED</h3>
-        <p class="meaning-desc">AI writes 70–80% of boilerplate. Experience delivers architecture, security, and judgment. You get speed without Frankenstein code.</p>
-      </div>
-      <div class="meaning-card">
-        <div class="meaning-icon">→</div>
-        <h3 class="meaning-title">WEEKS, NOT MONTHS</h3>
-        <p class="meaning-desc">What traditional agencies build in 4–6 months ships in 2–6 weeks. Fixed scope, fixed price. No surprises.</p>
-      </div>
-      <div class="meaning-card">
-        <div class="meaning-icon">→</div>
-        <h3 class="meaning-title">THE ONE-PERSON FRAMEWORK</h3>
-        <p class="meaning-desc">Ruby on Rails was built for small teams. DHH calls it "The One-Person Framework" — a tech stack that lets one developer do what used to require entire teams. With AI, this sweet spot gets even stronger.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Services Section -->
-  <section class="services-section" id="services">
-    <div class="section-header">
-      <div class="section-number">// 02</div>
-      <h2 class="section-title">THE FULL LIFECYCLE</h2>
-      <p class="section-desc">From first line of code to long-term partnership</p>
-    </div>
-    <div class="services-grid">
-      <div class="service-card">
-        <div class="service-stage">STAGE 1</div>
-        <h3 class="service-title">SHIP FAST</h3>
-        <div class="service-tagline">MVP Development</div>
-        <p class="service-desc">
-          From idea to production in 2–6 weeks. Fixed scope, fixed price.
-          You get a production-ready Rails app with authentication, database,
-          deployment, and your core features. No fluff, no delays.
-        </p>
-        <ul class="service-features">
-          <li>Rails 8 + Hotwire + Kamal</li>
-          <li>Database design & architecture</li>
-          <li>Production deployment</li>
-          <li>Documentation & handoff</li>
-        </ul>
-        <a href="#contact" class="service-cta">Start a New Project →</a>
-      </div>
-
-      <div class="service-card service-card-featured">
-        <div class="service-stage">STAGE 2</div>
-        <h3 class="service-title">STAY FAST</h3>
-        <div class="service-tagline">Growth & Iterate</div>
-        <p class="service-desc">
-          Your app is running. Now you need continuous momentum — new features,
-          optimizations, and strategic improvements. Monthly retainer keeps your
-          velocity high without hiring a full-time team.
-        </p>
-        <ul class="service-features">
-          <li>New features & enhancements</li>
-          <li>Performance optimization</li>
-          <li>Bug fixes & monitoring</li>
-          <li>Strategic tech guidance</li>
-        </ul>
-        <a href="#contact" class="service-cta">Ongoing Development →</a>
-      </div>
-
-      <div class="service-card">
-        <div class="service-stage">STAGE 3</div>
-        <h3 class="service-title">GET FAST</h3>
-        <div class="service-tagline">Legacy Rescue</div>
-        <p class="service-desc">
-          Your Rails app is slowing you down. Stuck on Rails 5 or 6? Old gems, technical debt,
-          or no one left who understands the code? I modernize legacy Rails applications
-          and bring them back to speed — or keep them running reliably with ongoing maintenance.
-        </p>
-        <ul class="service-features">
-          <li>Rails upgrades (Rails 5/6 → Rails 8)</li>
-          <li>Ruby version upgrades & gem updates</li>
-          <li>Technical debt reduction & refactoring</li>
-          <li>Performance optimization & rescue</li>
-        </ul>
-        <a href="#contact" class="service-cta">Rails Maintenance →</a>
-      </div>
-    </div>
-    <div class="services-journey">
-      <div class="journey-line"></div>
-      <div class="journey-text">The ideal partnership starts at Ship Fast and stays through all stages</div>
-    </div>
-  </section>
-
-  <!-- Process Section -->
-  <section class="process-section" id="process">
-    <div class="section-header">
-      <div class="section-number">// 03</div>
-      <h2 class="section-title">HOW WE WORK TOGETHER</h2>
-      <p class="section-desc">Simple, transparent process for any stage</p>
-    </div>
-    <div class="process-grid">
-      <div class="process-step">
-        <div class="step-number">01</div>
-        <h3 class="step-title">Discovery Call</h3>
-        <p class="step-desc">45-minute video call to understand where you are and what you need. MVP, growth features, or legacy rescue — we define the scope together.</p>
-      </div>
-      <div class="process-step">
-        <div class="step-number">02</div>
-        <h3 class="step-title">Proposal & Timeline</h3>
-        <p class="step-desc">Fixed-price proposal for projects, or monthly retainer structure. Clear deliverables, realistic timeline, no surprises.</p>
-      </div>
-      <div class="process-step">
-        <div class="step-number">03</div>
-        <h3 class="step-title">Execution</h3>
-        <p class="step-desc">AI-accelerated development with senior oversight. Regular updates via your preferred channel. Code reviews, testing, and documentation included.</p>
-      </div>
-      <div class="process-step">
-        <div class="step-number">04</div>
-        <h3 class="step-title">Delivery & Beyond</h3>
-        <p class="step-desc">Production deployment, handoff documentation, and optional ongoing support. The end of one stage can be the start of the next.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Case Study Section -->
-  <section class="case-study-section" id="work">
-    <div class="case-study-content">
-      <div class="case-study-info">
-        <div class="case-study-label">Featured Project</div>
-        <h2 class="case-study-title">KUNDEN-COCKPIT</h2>
-        <p class="case-study-desc">
-          A lead management and project CRM built for agencies.
-          AI-powered briefings, proposal generation, customer portal,
-          and milestone tracking — from first contact to project launch.
-        </p>
-        <ul class="case-study-features">
-          <li>AI-powered project briefing with chat interface</li>
-          <li>Proposal generation with Claude AI assistance</li>
-          <li>Customer portal with magic link access</li>
-          <li>Milestone tracking & deliverables management</li>
-          <li>Multi-tenant workspaces for agency teams</li>
-        </ul>
-        <div class="case-study-meta">
-          <div class="meta-item">
-            <div class="meta-value">2</div>
-            <div class="meta-label">Weeks to Build</div>
-          </div>
-          <div class="meta-item">
-            <div class="meta-value">1</div>
-            <div class="meta-label">Developer</div>
-          </div>
-          <div class="meta-item">
-            <div class="meta-value">12</div>
-            <div class="meta-label">Core Modules</div>
-          </div>
-        </div>
-      </div>
-      <div class="case-study-visual">
-        <div class="browser-window">
-          <div class="browser-bar">
-            <div class="browser-dot"></div>
-            <div class="browser-dot"></div>
-            <div class="browser-dot"></div>
-            <div class="browser-url">kunden-cockpit.de</div>
-          </div>
-          <div class="browser-content">
-            <picture>
-              <source srcset="kunden-cockpit.webp" type="image/webp">
-              <img src="kunden-cockpit.png" alt="Kunden-Cockpit Dashboard" loading="lazy" style="width: 100%; height: 100%;">
-            </picture>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Case Study 2: Vermio -->
-  <section class="case-study-section" style="background: var(--color-bg);">
-    <div class="case-study-content">
-      <div class="case-study-visual" style="order: -1;">
-        <div class="browser-window">
-          <div class="browser-bar">
-            <div class="browser-dot"></div>
-            <div class="browser-dot"></div>
-            <div class="browser-dot"></div>
-            <div class="browser-url">vermio.app</div>
-          </div>
-          <div class="browser-content">
-            <picture>
-              <source srcset="vermio.webp" type="image/webp">
-              <img src="vermio.png" alt="Vermio Property Management Dashboard" loading="lazy" style="width: 100%; height: 100%;">
-            </picture>
-          </div>
-        </div>
-      </div>
-      <div class="case-study-info">
-        <div class="case-study-label">Featured Project</div>
-        <h2 class="case-study-title">VERMIO</h2>
-        <p class="case-study-desc">
-          Property management for private landlords with up to 10 units.
-          Replace Excel chaos with automated utility billing, bank imports,
-          and PDF statements — built for German rental law compliance.
-        </p>
-        <ul class="case-study-features">
-          <li>Properties, units, tenants & lease management</li>
-          <li>Automated utility cost distribution (Nebenkostenabrechnung)</li>
-          <li>Bank account import (CAMT format)</li>
-          <li>PDF billing statements for tenants</li>
-          <li>Multi-property dashboard with payment tracking</li>
-        </ul>
-        <div class="case-study-meta">
-          <div class="meta-item">
-            <div class="meta-value">3</div>
-            <div class="meta-label">Days to Build</div>
-          </div>
-          <div class="meta-item">
-            <div class="meta-value">1</div>
-            <div class="meta-label">Developer</div>
-          </div>
-          <div class="meta-item">
-            <div class="meta-value">14</div>
-            <div class="meta-label">Core Models</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- About Section -->
-  <section class="about-section" id="about">
-    <div class="about-content">
-      <div class="about-image">
-        <div class="about-photo">
-          <picture>
-            <source srcset="henning-thies.webp" type="image/webp">
-            <img src="henning-thies.jpg" alt="Henning Thies">
-          </picture>
-        </div>
-        <div class="about-badge">15+ YEARS</div>
-      </div>
-      <div class="about-text">
-        <h2>HENNING THIES</h2>
-        <p>
-          I've spent <strong>over 15 years</strong> building production software — from startups to enterprise,
-          from solo projects to leading teams of 10+ developers. I've seen what works and what doesn't.
-        </p>
-        <p>
-          In 2025, AI changed everything. Suddenly, the tedious parts of development — boilerplate,
-          CRUD operations, basic integrations — could be generated in minutes instead of hours.
-          But AI alone produces Frankenstein code. <strong>You need experience to make it production-ready.</strong>
-        </p>
-        <p>
-          That's what AI on Rails offers: the speed of AI-accelerated development with the quality
-          that only comes from years of shipping real software to real users.
-        </p>
-        <div class="credentials">
-          <div class="credential">
-            <div class="credential-icon">→</div>
-            <div class="credential-text">
-              <strong>Ruby on Rails</strong>
-              Expert since 2010
-            </div>
-          </div>
-          <div class="credential">
-            <div class="credential-icon">→</div>
-            <div class="credential-text">
-              <strong>Team Leadership</strong>
-              Led teams up to 10 devs
-            </div>
-          </div>
-          <div class="credential">
-            <div class="credential-icon">→</div>
-            <div class="credential-text">
-              <strong>Enterprise & Startup</strong>
-              Both environments
-            </div>
-          </div>
-          <div class="credential">
-            <div class="credential-icon">→</div>
-            <div class="credential-text">
-              <strong>Based in Germany</strong>
-              EU timezone, GDPR compliant
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA Section -->
-  <section class="cta-section" id="contact">
-    <div class="cta-content">
-      <h2 class="cta-title">READY TO MOVE FAST?</h2>
-      <p class="cta-desc">
-        Skip the big team. One conversation to see if we're a fit.
-      </p>
-      <div class="cta-buttons">
-        <a href="https://calendar.app.google/VdnLNLqjpSR4MS6G7" class="btn-primary" target="_blank" rel="noopener">
-          Schedule a Call
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M5 12h14M12 5l7 7-7 7"/>
-          </svg>
-        </a>
-        <a href="mailto:hello@ai-on-rails.com" class="btn-secondary">
-          hello@ai-on-rails.com
+        <a class="pillar" href="/rails-weiterentwicklung">
+          <span class="tag">Stay Fast</span>
+          <h3>Weiterentwickeln und betreuen</h3>
+          <p>Laufende Weiterentwicklung zum Monatspreis: Updates, Fehlerbehebung und neue Funktionen.</p>
+          <ul class="list"><li>Sicherheits- und Versionsupdates</li><li>Feste monatliche Kapazität</li></ul>
+          <span class="more">Weiterentwicklung →</span>
         </a>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
+  <section class="band" aria-labelledby="arbeit-h">
+    <div class="in">
+      <h2 id="arbeit-h">So arbeiten wir</h2>
+      <div class="two">
+        <div><h3>Mit euren Daten und Systemen</h3><ul class="list"><li>Wir entwickeln auf euren Daten, nicht auf Testdaten.</li><li>Ihr seht jede Woche den aktuellen Stand.</li><li>Quellcode und Zugänge gehören euch.</li></ul></div>
+        <div><h3>In eurem Repository</h3><ul class="list"><li>Jede Änderung kommt als Pull Request in euer Repository.</li><li>Eure Review-Regeln und eure Definition of Done gelten.</li><li>Ein Mensch prüft jede Änderung vor dem Deployment.</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band alt" aria-labelledby="projekte-h">
+    <div class="in">
+      <h2 id="projekte-h">Projekte</h2>
+      <div class="cases">
+        <div class="case"><span class="meta">Ship Fast · E-Commerce · seit 2026</span><h3>KI-Produkt für Modemarken</h3><p>Produktentwicklung für ein KI-Produkt, das aus einem internen Test entstanden ist und heute von <span class="ph">[Zahl, Freigabe]</span> Marken genutzt wird.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" aria-labelledby="person-h">
+    <div class="in">
+      <h2 id="person-h">Ansprechpartner</h2>
+      <div class="person">
+        <img src="/henning-thies.webp" alt="Henning Thies" width="160" height="160" loading="lazy">
+        <div>
+          <h3>Henning Thies</h3>
+          <p class="role">Gründer</p>
+          <p>Seit über 15 Jahren Entwicklung mit Ruby on Rails. Im ersten Gespräch sprecht ihr direkt mit ihm.</p>
+          <p><a href="https://henning-thies.de" target="_blank" rel="noopener">henning-thies.de</a> · <a href="https://www.linkedin.com/in/henningthies/" target="_blank" rel="noopener">LinkedIn</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta" id="kontakt" aria-labelledby="kontakt-h">
+    <div class="in">
+      <div><h2 id="kontakt-h">Gespräch vereinbaren</h2><p>30 Minuten, unverbindlich. Wir klären, welche Leistung passt und was der nächste Schritt wäre.</p></div>
+      <div class="row">
+        <a class="btn" href="https://calendar.app.google/VdnLNLqjpSR4MS6G7" target="_blank" rel="noopener">Termin wählen</a>
+        <a class="btn ghost" href="mailto:hello@ai-on-rails.com">hello@ai-on-rails.com</a>
+      </div>
+    </div>
+  </section>
+  </main>
+
   <footer>
-    <div class="footer-content">
-      <div class="footer-logo"><span>AI</span> ON RAILS</div>
-      <ul class="footer-links">
-        <li><a href="#what">Why</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#work">Work</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="/factory">Factory</a></li>
-        <li><a href="mailto:hello@ai-on-rails.com">Contact</a></li>
+    <div class="in">
+      <span>AI on Rails · Ruby on Rails Agentur · Hamburg</span>
+      <ul>
+        <li><a href="/product-bets">Product Bets</a></li>
+        <li><a href="/rails-modernisierung">Modernisierung</a></li>
+        <li><a href="/rails-weiterentwicklung">Weiterentwicklung</a></li>
         <li><a href="/impressum.html">Impressum</a></li>
         <li><a href="/datenschutz.html">Datenschutz</a></li>
       </ul>
-      <div class="footer-copy">© 2026 AI on Rails. Founded by <a href="https://henning-thies.de" target="_blank">Henning Thies</a>.</div>
     </div>
   </footer>
-
-  <script>
-    // Smooth reveal on scroll
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'translateY(0)';
-        }
-      });
-    }, observerOptions);
-
-    document.querySelectorAll('.meaning-card, .process-step').forEach(el => {
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(30px)';
-      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-      observer.observe(el);
-    });
-
-    // Stagger animation for grid items
-    document.querySelectorAll('.meanings-grid .meaning-card').forEach((card, i) => {
-      card.style.transitionDelay = `${i * 0.1}s`;
-    });
-
-    document.querySelectorAll('.process-grid .process-step').forEach((step, i) => {
-      step.style.transitionDelay = `${i * 0.1}s`;
-    });
-
-    // Navigation background on scroll
-    const nav = document.querySelector('nav');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 100) {
-        nav.style.background = 'rgba(28, 25, 23, 0.95)';
-      } else {
-        nav.style.background = 'linear-gradient(to bottom, var(--color-bg) 0%, transparent 100%)';
-      }
-    });
-
-    // Mobile menu toggle
-    const navToggle = document.getElementById('nav-toggle');
-    const navLinks = document.getElementById('nav-links');
-
-    navToggle.addEventListener('click', () => {
-      navToggle.classList.toggle('active');
-      navLinks.classList.toggle('active');
-    });
-
-    // Close mobile menu when clicking a link
-    navLinks.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        navToggle.classList.remove('active');
-        navLinks.classList.remove('active');
-      });
-    });
-  </script>
 </body>
 </html>
