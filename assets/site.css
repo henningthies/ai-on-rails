@@ -180,7 +180,6 @@ footer a:hover { text-decoration: underline; }
    In jeder Spalte dieselbe Reihenfolge: H3, Meta-Zeile, Text. */
 .blk + .blk { margin-top: 88px; }
 .blk > h2 { font-size: clamp(1.3rem, 2vw, 1.5rem); margin-bottom: 18px; }
-.blk > .intro { color: var(--ink-2); margin: -8px 0 18px; max-width: 64ch; }
 .cols3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px 32px; list-style: none; padding: 0; margin: 0; }
 .cols3 > * { border-top: 1.5px solid var(--ink); padding-top: 16px; min-width: 0; }
 .cols3 h3 { font-size: 1.2rem; line-height: 1.25; }
