@@ -269,15 +269,16 @@ def leaf(inner):
 # ---------------------------------------------------------------- Startseite
 start = dict(path="/", file="index.html",
              title="Produktentwicklung und Ruby on Rails Agentur Hamburg | ai-on-rails",
-             desc="Produktideen in 12 Wochen mit euren Nutzern testen und weiterentwickeln: Anforderungen, UX/UI-Design, Ruby on Rails. Agentur aus der Region Hamburg.")
+             desc="In 12 Wochen wissen, ob eine Produktidee trägt: laufende Anwendung auf euren Daten, Test mit euren Nutzern, Entscheidungsvorlage. Agentur, Region Hamburg.")
 
 start_body = f"""
 <section class="start" id="start" aria-labelledby="start-h">
   <div class="in startgrid">
     <div>
-      <h1 id="start-h">Wir testen Produktideen in 12 Wochen mit euren Nutzern. Was sich bewährt, entwickeln wir weiter.</h1>
-      <p class="lead">ai-on-rails ist eine Agentur für Produktentwicklung aus der Region Hamburg. Wir klären Anforderungen, entwerfen UX und UI und entwickeln mit Ruby on Rails, auf euren Daten. Bestehende Webanwendungen modernisieren wir und entwickeln sie weiter.</p>
-      <div class="row"><a class="btn" href="#kontakt">Gespräch vereinbaren</a><a class="btn ghost" href="#ship">Leistungen ansehen</a></div>
+      <h1 id="start-h">In 12 Wochen wisst ihr, ob eure Produktidee trägt.</h1>
+      <p class="lead">Wir bauen sie als laufende Anwendung auf euren Daten. Ab Woche 4 testen eure Nutzer, in Woche 12 liegt die Entscheidungsvorlage: weiterbauen, umbauen oder stoppen. Zum Festpreis, bevor ihr ein Team einstellt.</p>
+      <div class="row"><a class="btn" href="#kontakt">Idee in 30 Minuten prüfen lassen</a><a class="btn ghost" href="/product-bets#ablauf">Ablauf ansehen</a></div>
+      <p class="proof">Der Workshop-Tag zum Einstieg wird bei Beauftragung angerechnet.<br>Aktuell: <a href="#projekte">KI-Produkt für Modemarken, SaaS-Plattform für Versicherer</a></p>
     </div>
     <ol class="index" aria-label="Leistungen">
       <li><a href="#ship"><i style="background:var(--ship)"></i>Product Bets</a><span>12 Wochen</span></li>
@@ -292,7 +293,7 @@ start_body = f"""
     <div class="margin"><span class="name">Ship Fast</span><span class="sub">12 Wochen · Festpreis</span></div>
     <div class="leaf">
       <h2 id="ship-h">Product Bets: eine Produktidee in 12 Wochen testen</h2>
-      <p class="lead">Von den Anforderungen über UX-Konzept und Design bis zur laufenden Anwendung auf euren Daten, in 12 Wochen. In Woche 12 liegt eine Entscheidungsvorlage: weiterbauen, umbauen oder stoppen.</p>
+      <p class="lead">Anforderungen mit eurem Fachbereich, UX-Konzept, Design und Entwicklung in einem Team. Ihr stellt die Idee, den Zugang zu euren Daten und die Testnutzer.</p>
       {BRIEF_SHIP}
       <div class="row"><a class="btn" href="/product-bets">Product Bets im Detail</a></div>
     </div>
@@ -344,7 +345,7 @@ start_body = f"""
     </div>
 
     <div class="blk">
-      <h2>Projekte</h2>
+      <h2 id="projekte">Projekte</h2>
       <div class="cols3">
         <article><h3>KI-Produkt für Modemarken</h3><span class="m">Stay Fast · E-Commerce · seit März 2026</span>
           <dl class="facts">
@@ -395,7 +396,7 @@ start_body = f"""
     </div>
   </div>
 </section>
-""" + contact("Gespräch vereinbaren", "30 Minuten, unverbindlich. Wir klären, welche Leistung passt und was der nächste Schritt wäre.")
+""" + contact("Idee prüfen lassen", "30 Minuten, unverbindlich. Ihr beschreibt eure Idee oder eure Anwendung, wir sagen, ob sie in 12 Wochen testbar ist oder was der erste Schritt wäre.")
 
 # ---------------------------------------------------------------- Product Bets
 bets_faq = [
@@ -421,7 +422,7 @@ bets_body = f"""
         <div class="row"><a class="btn" href="#kontakt">Gespräch vereinbaren</a></div>
       </div>
       <div class="leaf">
-        <h2>Ablauf</h2>
+        <h2 id="ablauf">Ablauf</h2>
         <ol class="track w-bet">
           <li><span class="w">Woche 1–2</span><b>Anforderungen und Ziel</b><span class="t">Anforderungen mit eurem Fachbereich, Erfolgs&shy;kriterium, UX-Konzept mit Nutzer&shy;flüssen und Wireframes. Ihr gebt das Kriterium frei.</span></li>
           <li><span class="w">Woche 3–10</span><b>Gestalten und entwickeln</b><span class="t">Design und Entwicklung der Anwendung auf euren Daten. Jede Woche eine Demo, ab Woche 4 eine testbare Version für Testnutzer, die ihr stellt.</span></li>
