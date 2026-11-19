@@ -209,7 +209,9 @@ Gilt vor allen Angaben weiter unten zur Registerleiste, zur Rail Rule, zu `--rai
 
 - Die feste Registerleiste rechts (Desktop) bzw. oben (Telefon) ist entfernt, ebenso das Skript, das den aktiven Reiter setzte. Die Register sind nur noch die farbigen Bänder mit Registername in der Marginalie. Die Seite nutzt die volle Breite.
 - Der Abschnitt nach den Registern (Zusammenhang, Arbeitsweise, Projekte, Team) hat keine Marginalie mehr ("Für alle Register" ist gestrichen) und läuft über die ganze Containerbreite. "Wie wir arbeiten" ist dreispaltig (`.three`, mittlere Breiten zwei-, Telefon einspaltig).
-- Projekte zeigen Ausgangslage, Arbeit und Stand/Ergebnis als `dl.facts` (Label Grotesk 600 0.8rem Tinte, Text Tinte 2).
+- **Raster unterer Teil (`.blk` + `.cols3`):** Alle vier Blöcke (Zusammenhang, Arbeitsweise, Projekte, Team) folgen demselben Muster: H2 (1.3–1.5rem, 18px Abstand), optional ein Einleitungssatz in Tinte 2, dann drei gleich breite Spalten (Abstand 32px) mit 1.5px Tintenlinie oben und 16px Innenabstand. In jeder Spalte dieselbe Reihenfolge: H3 1.2rem, Meta-Zeile Grotesk 500 0.88rem Tinte 2, dann Text (Serif, Tinte 2) mit 12px Abstand. Blöcke 88px auseinander (Telefon 64px). Mittlere Breiten zwei Spalten, Telefon eine. Spaltentitel so kurz halten, dass sie einzeilig bleiben.
+- Projekte zeigen Ausgangslage, Rolle und Stand/Ergebnis als `dl.facts` (Label Grotesk 600 0.82rem Tinte, Text Tinte 2).
+- Team ist dreispaltig: zwei Personen (Foto 120×150, Name, Rolle, Aufgabenliste, Links) und "Netzwerk" als dritte Spalte, deren Titel auf Höhe der Namen steht.
 - Telefon: Die Kopfnavigation zeigt die drei Textlinks unter der Wortmarke; der kleine Button entfällt dort (Startblock und Kontakt tragen den Aufruf).
 - Inhaltsverzeichnis im Startblock: nur noch die drei Leistungen.
 
