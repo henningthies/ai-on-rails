@@ -12,9 +12,9 @@ Preise nennt ai-on-rails je Projekt im ersten Gespräch.
 
 ## Projekte (anonym)
 
-- KI-Produkt für Modemarken (E-Commerce, seit März 2026): Produktbilder für Onlineshops, aus einem internen Test entstanden. Weiterentwicklung als kleines externes Team mit Ruby on Rails; laut Kunde über 140.000 produzierte Outfits; der Kunde baut inzwischen ein eigenes Team auf.
+- KI-Produkt für Modemarken (E-Commerce, seit März 2026): Produktbilder für Onlineshops, aus einem internen Test entstanden. ai-on-rails unterstützt das Team des Kunden bei der Weiterentwicklung (Ruby on Rails); laut Kunde über 140.000 produzierte Outfits; der Kunde baut inzwischen ein eigenes Team auf.
 - Code-Audit einer internen KI-Plattform einer Agentur (Juni 2026, rund 300.000 Zeilen, überwiegend KI-gestützt von einer Person geschrieben): Bewertung von Sicherheit, Datenschutz, Wartbarkeit, Kern und Ballast sowie Tragfähigkeit; drei kritische Sicherheitsbefunde, Empfehlung mit Umsetzungspfad.
-- SaaS-Plattform für Versicherer (seit September 2023): Laufende Weiterentwicklung einer mandantenfähigen Rails-Plattform (GraphQL, Vue.js) im Team eines Softwarekonzerns; Produkt-Engine, Schadenmodul, Abrechnung.
+- SaaS-Plattform für Versicherer (seit September 2023): ai-on-rails unterstützt das Entwicklungsteam eines Softwarekonzerns bei der Weiterentwicklung einer mandantenfähigen Rails-Plattform (GraphQL, Vue.js); Produkt-Engine, Schadenmodul, Abrechnung.
 
 ## Arbeitsweise
 
