@@ -38,7 +38,8 @@ Statische HTML-Seiten auf GitHub Pages, kein Build-Schritt. Termine über einen 
 
 - Firmenstimme "wir". Keine erfundenen Teamgrößen, keine Personen außer Henning namentlich.
 - UX und UI-Design stehen als eigene Rolle im Team, ohne Namen (Entscheidung 19.11.2026). Nutzertests/QS werden nicht als eigene Leistung beworben.
-- Offen und als sichtbare Platzhalter markiert: alle Preise (Workshop-Tag, Bet, Bestandsaufnahme, Etappe; Stay Fast 4.900 € Setup / 5.900 € pro Monat vorläufig), Kündigungsfrist und Reaktionszeit bei Stay Fast.
+- Preise (netto, Stand 19.11.2026): Workshop-Tag 2.900 € (wird bei Beauftragung der Bet angerechnet); Product Bet ab 90.000 €, üblich 90.000–150.000 €, Festpreis nach Workshop-Tag; Bestandsaufnahme ab 9.800 €; Etappen Festpreis nach Bestandsaufnahme; Weiterentwicklung Einrichtung 2.900 € + ab 4.900 €/Monat, Mindestlaufzeit 3 Monate, danach monatlich kündbar. Keine Tagessätze, kein Aufwand in Tagen auf der Seite.
+- Reaktionszeit Stay Fast: bei Ausfall am selben Arbeitstag (Mo–Fr, 9–17 Uhr), keine 24/7-Bereitschaft.
 - `/factory` bleibt als separate, nicht verlinkte Seite bestehen.
 
 ## Brand Commitments
