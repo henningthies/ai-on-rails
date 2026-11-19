@@ -1,0 +1,538 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-19T08:16:17+00:00",
+  "title": "Design System: ai-on-rails",
+  "extensions": {
+    "colorMeta": {
+      "paper": {
+        "role": "neutral",
+        "displayName": "Papier",
+        "canonical": "oklch(95.2% 0.015 90)",
+        "tonalRamp": [
+          "oklch(15% 0.006 90)",
+          "oklch(26% 0.008 90)",
+          "oklch(38% 0.011 90)",
+          "oklch(49% 0.014 90)",
+          "oklch(61% 0.014 90)",
+          "oklch(72% 0.011 90)",
+          "oklch(84% 0.008 90)",
+          "oklch(95% 0.006 90)"
+        ]
+      },
+      "leaf": {
+        "role": "neutral",
+        "displayName": "Blatt",
+        "canonical": "oklch(99.9% 0.003 106)",
+        "tonalRamp": [
+          "oklch(15% 0.001 106)",
+          "oklch(26% 0.001 106)",
+          "oklch(38% 0.002 106)",
+          "oklch(49% 0.002 106)",
+          "oklch(61% 0.002 106)",
+          "oklch(72% 0.002 106)",
+          "oklch(84% 0.001 106)",
+          "oklch(95% 0.001 106)"
+        ],
+        "note": "Normativer Wert rgba(255, 255, 253, .95); canonical beschreibt die deckende Grundfarbe."
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Tinte",
+        "canonical": "oklch(22.3% 0.004 286)",
+        "tonalRamp": [
+          "oklch(15% 0.001 286)",
+          "oklch(26% 0.002 286)",
+          "oklch(38% 0.003 286)",
+          "oklch(49% 0.004 286)",
+          "oklch(61% 0.004 286)",
+          "oklch(72% 0.003 286)",
+          "oklch(84% 0.002 286)",
+          "oklch(95% 0.001 286)"
+        ]
+      },
+      "ink-2": {
+        "role": "neutral",
+        "displayName": "Tinte 2",
+        "canonical": "oklch(40.9% 0.005 92)",
+        "tonalRamp": [
+          "oklch(15% 0.002 92)",
+          "oklch(26% 0.003 92)",
+          "oklch(38% 0.004 92)",
+          "oklch(49% 0.005 92)",
+          "oklch(61% 0.005 92)",
+          "oklch(72% 0.004 92)",
+          "oklch(84% 0.003 92)",
+          "oklch(95% 0.002 92)"
+        ]
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "Linie",
+        "canonical": "oklch(86.4% 0.021 89)",
+        "tonalRamp": [
+          "oklch(15% 0.008 89)",
+          "oklch(26% 0.012 89)",
+          "oklch(38% 0.016 89)",
+          "oklch(49% 0.019 89)",
+          "oklch(61% 0.019 89)",
+          "oklch(72% 0.016 89)",
+          "oklch(84% 0.012 89)",
+          "oklch(95% 0.008 89)"
+        ]
+      },
+      "start": {
+        "role": "neutral",
+        "displayName": "Startgrau",
+        "canonical": "oklch(51.9% 0.020 85)",
+        "tonalRamp": [
+          "oklch(15% 0.007 85)",
+          "oklch(26% 0.011 85)",
+          "oklch(38% 0.015 85)",
+          "oklch(49% 0.018 85)",
+          "oklch(61% 0.018 85)",
+          "oklch(72% 0.015 85)",
+          "oklch(84% 0.011 85)",
+          "oklch(95% 0.007 85)"
+        ]
+      },
+      "ship": {
+        "role": "primary",
+        "displayName": "Ship Oxidorange",
+        "canonical": "oklch(56.5% 0.169 38)",
+        "tonalRamp": [
+          "oklch(15% 0.064 38)",
+          "oklch(26% 0.094 38)",
+          "oklch(38% 0.124 38)",
+          "oklch(49% 0.154 38)",
+          "oklch(61% 0.154 38)",
+          "oklch(72% 0.124 38)",
+          "oklch(84% 0.094 38)",
+          "oklch(95% 0.064 38)"
+        ]
+      },
+      "ship-ink": {
+        "role": "primary",
+        "displayName": "Ship-Tinte",
+        "canonical": "oklch(50.1% 0.153 38)",
+        "tonalRamp": [
+          "oklch(15% 0.058 38)",
+          "oklch(26% 0.085 38)",
+          "oklch(38% 0.112 38)",
+          "oklch(49% 0.139 38)",
+          "oklch(61% 0.139 38)",
+          "oklch(72% 0.112 38)",
+          "oklch(84% 0.085 38)",
+          "oklch(95% 0.058 38)"
+        ]
+      },
+      "get": {
+        "role": "secondary",
+        "displayName": "Register-Grün",
+        "canonical": "oklch(48.6% 0.088 167)",
+        "tonalRamp": [
+          "oklch(15% 0.033 167)",
+          "oklch(26% 0.049 167)",
+          "oklch(38% 0.065 167)",
+          "oklch(49% 0.080 167)",
+          "oklch(61% 0.080 167)",
+          "oklch(72% 0.065 167)",
+          "oklch(84% 0.049 167)",
+          "oklch(95% 0.033 167)"
+        ],
+        "note": "--get-ink hat denselben Wert."
+      },
+      "stay": {
+        "role": "tertiary",
+        "displayName": "Ultramarin",
+        "canonical": "oklch(40.5% 0.153 269)",
+        "tonalRamp": [
+          "oklch(15% 0.058 269)",
+          "oklch(26% 0.085 269)",
+          "oklch(38% 0.112 269)",
+          "oklch(49% 0.139 269)",
+          "oklch(61% 0.139 269)",
+          "oklch(72% 0.112 269)",
+          "oklch(84% 0.085 269)",
+          "oklch(95% 0.058 269)"
+        ],
+        "note": "--stay-ink hat denselben Wert."
+      },
+      "dark": {
+        "role": "neutral",
+        "displayName": "Kontakt-Tinte",
+        "canonical": "oklch(22.3% 0.004 286)",
+        "tonalRamp": [
+          "oklch(15% 0.001 286)",
+          "oklch(26% 0.002 286)",
+          "oklch(38% 0.003 286)",
+          "oklch(49% 0.004 286)",
+          "oklch(61% 0.004 286)",
+          "oklch(72% 0.003 286)",
+          "oklch(84% 0.002 286)",
+          "oklch(95% 0.001 286)"
+        ],
+        "note": "Gleicher Wert wie ink; eigenes Token für Kontakt-Register und -Reiter."
+      },
+      "errata": {
+        "role": "signal",
+        "displayName": "Errata-Rost",
+        "canonical": "oklch(47.0% 0.143 37)",
+        "tonalRamp": [
+          "oklch(15% 0.054 37)",
+          "oklch(26% 0.079 37)",
+          "oklch(38% 0.105 37)",
+          "oklch(49% 0.130 37)",
+          "oklch(61% 0.130 37)",
+          "oklch(72% 0.105 37)",
+          "oklch(84% 0.079 37)",
+          "oklch(95% 0.054 37)"
+        ]
+      },
+      "selection": {
+        "role": "neutral",
+        "displayName": "Markierung",
+        "canonical": "oklch(90.1% 0.042 51)",
+        "tonalRamp": [
+          "oklch(15% 0.016 51)",
+          "oklch(26% 0.023 51)",
+          "oklch(38% 0.031 51)",
+          "oklch(49% 0.038 51)",
+          "oklch(61% 0.038 51)",
+          "oklch(72% 0.031 51)",
+          "oklch(84% 0.023 51)",
+          "oklch(95% 0.016 51)"
+        ]
+      },
+      "dark-leaf": {
+        "role": "neutral",
+        "displayName": "Kontakt-Blatt",
+        "canonical": "oklch(27.0% 0.007 286)",
+        "tonalRamp": [
+          "oklch(15% 0.003 286)",
+          "oklch(26% 0.004 286)",
+          "oklch(38% 0.005 286)",
+          "oklch(49% 0.007 286)",
+          "oklch(61% 0.007 286)",
+          "oklch(72% 0.005 286)",
+          "oklch(84% 0.004 286)",
+          "oklch(95% 0.003 286)"
+        ]
+      },
+      "dark-line": {
+        "role": "neutral",
+        "displayName": "Kontakt-Linie",
+        "canonical": "oklch(35.1% 0.010 286)",
+        "tonalRamp": [
+          "oklch(15% 0.004 286)",
+          "oklch(26% 0.006 286)",
+          "oklch(38% 0.008 286)",
+          "oklch(49% 0.009 286)",
+          "oklch(61% 0.009 286)",
+          "oklch(72% 0.008 286)",
+          "oklch(84% 0.006 286)",
+          "oklch(95% 0.004 286)"
+        ]
+      },
+      "dark-text": {
+        "role": "neutral",
+        "displayName": "Kontakt-Text",
+        "canonical": "oklch(95.2% 0.008 91)",
+        "tonalRamp": [
+          "oklch(15% 0.003 91)",
+          "oklch(26% 0.005 91)",
+          "oklch(38% 0.006 91)",
+          "oklch(49% 0.008 91)",
+          "oklch(61% 0.008 91)",
+          "oklch(72% 0.006 91)",
+          "oklch(84% 0.005 91)",
+          "oklch(95% 0.003 91)"
+        ]
+      },
+      "dark-lead": {
+        "role": "neutral",
+        "displayName": "Kontakt-Lead",
+        "canonical": "oklch(82.6% 0.013 92)",
+        "tonalRamp": [
+          "oklch(15% 0.005 92)",
+          "oklch(26% 0.007 92)",
+          "oklch(38% 0.009 92)",
+          "oklch(49% 0.012 92)",
+          "oklch(61% 0.012 92)",
+          "oklch(72% 0.009 92)",
+          "oklch(84% 0.007 92)",
+          "oklch(95% 0.005 92)"
+        ]
+      },
+      "dark-ghost-line": {
+        "role": "neutral",
+        "displayName": "Ghost-Linie (Kontakt)"
+      },
+      "white": {
+        "role": "neutral",
+        "displayName": "Weiß"
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Nur H1 im Startblock der Startseite, max. 18ch."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "H1 auf dem ersten Blatt einer Leistungsseite, max. 22ch."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "H2 auf Blättern; auf Papier fest 1.6rem."
+      },
+      "register-name": {
+        "displayName": "Registername",
+        "purpose": "Name des Registers in der Marginalie, weiß auf Registerfarbe."
+      },
+      "subtitle": {
+        "displayName": "Subtitle",
+        "purpose": "H3 in Preisen, Projekten, Zweispaltern (1.08 bis 1.15rem)."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Aller Fließtext inkl. Steckbrief-Werte und Ablauf-Texte, max. 64ch."
+      },
+      "lead": {
+        "displayName": "Lead",
+        "purpose": "Einleitungsabsatz auf Blättern, Tinte 2."
+      },
+      "lead-start": {
+        "displayName": "Lead Start",
+        "purpose": "Einleitungsabsatz im Startblock, max. 56ch."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Feldnamen im Steckbrief; Reiter mit +0.06em, vertikal."
+      },
+      "ui": {
+        "displayName": "UI",
+        "purpose": "Buttons; Kopfnavigation 500/0.95rem."
+      },
+      "wordmark": {
+        "displayName": "Wortmarke",
+        "purpose": "AI ON RAILS, 'AI' in Ship-Tinte."
+      },
+      "measure": {
+        "displayName": "Measure",
+        "purpose": "Dauern, Wochen, Marginalien-Unterzeile, Errata-Zettel (0.8em)."
+      },
+      "measure-amount": {
+        "displayName": "Measure Betrag",
+        "purpose": "Beträge im Preisblock."
+      }
+    },
+    "shadows": [
+      {
+        "name": "leaf",
+        "value": "0 1px 1px rgba(0, 0, 0, .08), 0 10px 24px -12px rgba(0, 0, 0, .35)",
+        "purpose": "Jedes Blatt auf Register oder Papier."
+      },
+      {
+        "name": "tab-active",
+        "value": "-6px 0 12px -6px rgba(0, 0, 0, .4)",
+        "purpose": "Nur der aktive, ausgezogene Reiter."
+      },
+      {
+        "name": "leaf-dark",
+        "value": "none; border: 1px solid #3a3a40",
+        "purpose": "Blätter im Kontakt-Register: Kante statt Schatten."
+      }
+    ],
+    "motion": [
+      {
+        "name": "step",
+        "value": "90ms steps(2)",
+        "purpose": "Einzige Transition: Reiter (transform), Buttons (background-color, color), FAQ-Plus (background-size). Kein Easing."
+      },
+      {
+        "name": "tab-offset",
+        "value": "translateX(12px) -> translateX(0)",
+        "purpose": "Reiter in Ruhe eingeschoben, aktiv/Hover ausgezogen. Mobil translateY(-4px) -> none."
+      },
+      {
+        "name": "scroll",
+        "value": "scroll-behavior: smooth",
+        "purpose": "Ankersprünge zu Registern; bei reduced motion auto."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "transition: none !important",
+        "purpose": "prefers-reduced-motion: reduce schaltet alle Transitions ab."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "compact",
+        "value": "860px",
+        "purpose": "max-width: Registerleiste wird horizontal sticky oben (40px), Raster einspaltig, Steckbrief 2x2, Kopf-Textlinks aus."
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Button Tinte",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Standard-Button; Hover kippt in zwei Stufen zur Kontur.",
+      "html": "<a class=\"ds-btn\" href=\"#\">Modernisierung im Detail</a>",
+      "css": ":host{--paper:#f3efe4;--leaf:rgba(255,255,253,.95);--ink:#1b1b1d;--ink-2:#4b4a47;--rule:#d8d2c3;--start:#6e685c;--ship:#c4471a;--ship-ink:#a83a12;--get:#1d6f55;--stay:#2a3d9a;--dark:#1b1b1d;--errata:#9a3412;--serif:\"Source Serif 4\",Georgia,serif;--sans:\"Hanken Grotesk\",system-ui,sans-serif;--mono:\"JetBrains Mono\",ui-monospace,monospace;--step:90ms steps(2);} .ds-btn{display:inline-block;font:600 1rem var(--sans);background:var(--ink);color:#fff;padding:12px 20px;text-decoration:none;border:1.5px solid var(--ink);border-radius:0;transition:background-color var(--step),color var(--step);}.ds-btn:hover{background:transparent;color:var(--ink);}.ds-btn:focus-visible{outline:2px solid var(--ink);outline-offset:3px;}"
+    },
+    {
+      "name": "Button Ship",
+      "kind": "button",
+      "refersTo": "button-ship",
+      "description": "Einziger farbiger Button; Haupt-Aufruf, weil die Product Bet führt.",
+      "html": "<a class=\"ds-btn-ship\" href=\"#\">Gespräch vereinbaren</a>",
+      "css": ":host{--paper:#f3efe4;--leaf:rgba(255,255,253,.95);--ink:#1b1b1d;--ink-2:#4b4a47;--rule:#d8d2c3;--start:#6e685c;--ship:#c4471a;--ship-ink:#a83a12;--get:#1d6f55;--stay:#2a3d9a;--dark:#1b1b1d;--errata:#9a3412;--serif:\"Source Serif 4\",Georgia,serif;--sans:\"Hanken Grotesk\",system-ui,sans-serif;--mono:\"JetBrains Mono\",ui-monospace,monospace;--step:90ms steps(2);} .ds-btn-ship{display:inline-block;font:600 1rem var(--sans);background:var(--ship);color:#fff;padding:12px 20px;text-decoration:none;border:1.5px solid var(--ship);border-radius:0;transition:background-color var(--step),color var(--step);}.ds-btn-ship:hover{background:transparent;color:var(--ship-ink);}.ds-btn-ship:focus-visible{outline:2px solid var(--ink);outline-offset:3px;}"
+    },
+    {
+      "name": "Button Ghost",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Zweite Aktion neben dem Haupt-Button.",
+      "html": "<a class=\"ds-btn-ghost\" href=\"#\">Leistungen ansehen</a>",
+      "css": ":host{--paper:#f3efe4;--leaf:rgba(255,255,253,.95);--ink:#1b1b1d;--ink-2:#4b4a47;--rule:#d8d2c3;--start:#6e685c;--ship:#c4471a;--ship-ink:#a83a12;--get:#1d6f55;--stay:#2a3d9a;--dark:#1b1b1d;--errata:#9a3412;--serif:\"Source Serif 4\",Georgia,serif;--sans:\"Hanken Grotesk\",system-ui,sans-serif;--mono:\"JetBrains Mono\",ui-monospace,monospace;--step:90ms steps(2);} .ds-btn-ghost{display:inline-block;font:600 1rem var(--sans);background:transparent;color:var(--ink);padding:12px 20px;text-decoration:none;border:1.5px solid var(--ink);border-radius:0;transition:background-color var(--step),color var(--step);}.ds-btn-ghost:hover{background:var(--ink);color:#fff;}.ds-btn-ghost:focus-visible{outline:2px solid var(--ink);outline-offset:3px;}"
+    },
+    {
+      "name": "Registerleiste",
+      "kind": "nav",
+      "refersTo": "tab-ship",
+      "description": "Feste Reiterleiste; aktiver Reiter in zwei Stufen ausgezogen.",
+      "html": "<nav class=\"ds-tabs\" aria-label=\"Register\"><a class=\"ds-t\" style=\"background:var(--start);--ext:1.1\" href=\"#\">Start</a><a class=\"ds-t\" style=\"background:var(--ship);--ext:1.6\" href=\"#\" aria-current=\"page\">Ship Fast</a><a class=\"ds-t\" style=\"background:var(--get);--ext:1.15\" href=\"#\">Get Fast</a><a class=\"ds-t\" style=\"background:var(--stay);--ext:1.15\" href=\"#\">Stay Fast</a><a class=\"ds-t\" style=\"background:var(--dark);--ext:.8\" href=\"#\">Kontakt</a></nav>",
+      "css": ":host{--paper:#f3efe4;--leaf:rgba(255,255,253,.95);--ink:#1b1b1d;--ink-2:#4b4a47;--rule:#d8d2c3;--start:#6e685c;--ship:#c4471a;--ship-ink:#a83a12;--get:#1d6f55;--stay:#2a3d9a;--dark:#1b1b1d;--errata:#9a3412;--serif:\"Source Serif 4\",Georgia,serif;--sans:\"Hanken Grotesk\",system-ui,sans-serif;--mono:\"JetBrains Mono\",ui-monospace,monospace;--step:90ms steps(2);} .ds-tabs{width:64px;height:420px;display:flex;flex-direction:column;margin-left:auto;}.ds-t{flex:var(--ext,1);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font:600 .8rem var(--sans);letter-spacing:.06em;writing-mode:vertical-rl;transform:translateX(12px);transition:transform var(--step);}.ds-t:hover,.ds-t[aria-current]{transform:translateX(0);}.ds-t[aria-current]{box-shadow:-6px 0 12px -6px rgba(0,0,0,.4);}.ds-t:focus-visible{outline:2px solid #fff;outline-offset:-4px;}"
+    },
+    {
+      "name": "Register mit Blatt und Steckbrief",
+      "kind": "card",
+      "refersTo": "register-ship",
+      "description": "Registerband mit Marginalie und Blatt; Steckbrief mit den vier festen Feldern.",
+      "html": "<section class=\"ds-reg\"><div class=\"ds-margin\"><span class=\"ds-name\">Ship Fast</span><span class=\"ds-sub\">12 Wochen · Festpreis</span></div><div class=\"ds-leaf\"><h2>Product Bets: eine Produktidee in 12 Wochen testen</h2><p class=\"ds-lead\">Lauffähige Software auf euren Daten, in Woche 12 eine Entscheidungsvorlage.</p><dl class=\"ds-brief\"><div><dt>Laufzeit</dt><dd>12 Wochen</dd></div><div><dt>Einstieg</dt><dd>Workshop-Tag</dd></div><div><dt>Kosten</dt><dd>Festpreis <span class=\"ds-open\">offen</span></dd></div><div><dt>Ergebnis</dt><dd>Software, Messergebnis, Entscheidungsvorlage</dd></div></dl></div></section>",
+      "css": ":host{--paper:#f3efe4;--leaf:rgba(255,255,253,.95);--ink:#1b1b1d;--ink-2:#4b4a47;--rule:#d8d2c3;--start:#6e685c;--ship:#c4471a;--ship-ink:#a83a12;--get:#1d6f55;--stay:#2a3d9a;--dark:#1b1b1d;--errata:#9a3412;--serif:\"Source Serif 4\",Georgia,serif;--sans:\"Hanken Grotesk\",system-ui,sans-serif;--mono:\"JetBrains Mono\",ui-monospace,monospace;--step:90ms steps(2);} .ds-reg{background:var(--ship);padding:56px 28px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,3fr);gap:28px;}.ds-margin{color:#fff;padding-top:22px;}.ds-name{font:700 1.6rem/1.1 var(--sans);letter-spacing:-.015em;display:block;}.ds-sub{font:500 .82rem var(--mono);display:block;margin-top:8px;}.ds-leaf{background:var(--leaf);color:var(--ink);padding:clamp(22px,3.5vw,40px);box-shadow:0 1px 1px rgba(0,0,0,.08),0 10px 24px -12px rgba(0,0,0,.35);font:400 1.0625rem/1.62 var(--serif);min-width:0;}.ds-leaf h2{font:700 clamp(1.4rem,2.6vw,1.9rem)/1.15 var(--sans);letter-spacing:-.015em;margin:0 0 12px;}.ds-lead{color:var(--ink-2);font-size:1.08rem;margin:0;max-width:64ch;}.ds-brief{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1fr) minmax(0,1fr) minmax(0,1.5fr);margin:24px 0 0;border-top:1.5px solid var(--ink);}.ds-brief div{padding:12px 14px 0 0;min-width:0;}.ds-brief div+div{padding-left:14px;border-left:1px solid var(--rule);}.ds-brief dt{font:600 .8rem var(--sans);letter-spacing:.04em;color:var(--ink-2);}.ds-brief dd{margin:3px 0 0;hyphens:auto;overflow-wrap:break-word;}.ds-open{font:500 .8em var(--mono);color:var(--errata);border:1px dashed currentColor;padding:0 5px;white-space:nowrap;}"
+    },
+    {
+      "name": "Errata-Zettel",
+      "kind": "chip",
+      "refersTo": "errata-open",
+      "description": "Sichtbar offene Angabe an der Stelle, wo sie fehlt.",
+      "html": "<p class=\"ds-p\">Kosten: <span class=\"ds-open\">5.900 €/Monat?</span></p>",
+      "css": ":host{--paper:#f3efe4;--leaf:rgba(255,255,253,.95);--ink:#1b1b1d;--ink-2:#4b4a47;--rule:#d8d2c3;--start:#6e685c;--ship:#c4471a;--ship-ink:#a83a12;--get:#1d6f55;--stay:#2a3d9a;--dark:#1b1b1d;--errata:#9a3412;--serif:\"Source Serif 4\",Georgia,serif;--sans:\"Hanken Grotesk\",system-ui,sans-serif;--mono:\"JetBrains Mono\",ui-monospace,monospace;--step:90ms steps(2);} .ds-p{font:400 1.0625rem/1.62 var(--serif);color:var(--ink);}.ds-open{font:500 .8em var(--mono);color:var(--errata);border:1px dashed currentColor;padding:0 5px;white-space:nowrap;}"
+    },
+    {
+      "name": "Ablauf",
+      "kind": "custom",
+      "refersTo": "leaf",
+      "description": "Schritte als Spaltenreihe mit Mono-Zeitraum in Registerfarbe.",
+      "html": "<ol class=\"ds-track\"><li><span class=\"ds-w\">Woche 1–2</span><b>Ziel festlegen</b><span class=\"ds-t\">Hypothese und messbares Erfolgskriterium.</span></li><li><span class=\"ds-w\">Woche 3–10</span><b>Entwickeln</b><span class=\"ds-t\">Lauffähige Software, jede Woche eine Demo.</span></li><li><span class=\"ds-w\">Woche 11–12</span><b>Auswerten</b><span class=\"ds-t\">Messung und Entscheidungsvorlage.</span></li></ol>",
+      "css": ":host{--paper:#f3efe4;--leaf:rgba(255,255,253,.95);--ink:#1b1b1d;--ink-2:#4b4a47;--rule:#d8d2c3;--start:#6e685c;--ship:#c4471a;--ship-ink:#a83a12;--get:#1d6f55;--stay:#2a3d9a;--dark:#1b1b1d;--errata:#9a3412;--serif:\"Source Serif 4\",Georgia,serif;--sans:\"Hanken Grotesk\",system-ui,sans-serif;--mono:\"JetBrains Mono\",ui-monospace,monospace;--step:90ms steps(2);} .ds-track{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:minmax(150px,2fr) 5fr minmax(170px,2fr);border-top:1.5px solid var(--ink);font:400 1.0625rem/1.62 var(--serif);}.ds-track li{padding:14px 16px 0 0;min-width:0;}.ds-track li+li{padding-left:16px;border-left:1px solid var(--rule);}.ds-w{font:500 .8rem var(--mono);color:var(--ship-ink);}.ds-track b{display:block;font-family:var(--sans);margin:2px 0 4px;}.ds-t{color:var(--ink-2);display:block;}"
+    },
+    {
+      "name": "Häufige Fragen",
+      "kind": "custom",
+      "refersTo": "leaf",
+      "description": "details/summary mit gezeichnetem Plus, klappt in zwei Stufen.",
+      "html": "<div class=\"ds-faq\"><details open><summary>Wem gehört der Code?</summary><p>Euch, ab dem ersten Commit.</p></details><details><summary>Was passiert nach Woche 12?</summary><p>Ihr entscheidet: weiterbauen, umbauen oder stoppen.</p></details></div>",
+      "css": ":host{--paper:#f3efe4;--leaf:rgba(255,255,253,.95);--ink:#1b1b1d;--ink-2:#4b4a47;--rule:#d8d2c3;--start:#6e685c;--ship:#c4471a;--ship-ink:#a83a12;--get:#1d6f55;--stay:#2a3d9a;--dark:#1b1b1d;--errata:#9a3412;--serif:\"Source Serif 4\",Georgia,serif;--sans:\"Hanken Grotesk\",system-ui,sans-serif;--mono:\"JetBrains Mono\",ui-monospace,monospace;--step:90ms steps(2);} .ds-faq{--hue-ink:var(--ship-ink);font:400 1.0625rem/1.62 var(--serif);}.ds-faq details{border-top:1px solid var(--rule);padding-block:14px;}.ds-faq details:last-child{border-bottom:1px solid var(--rule);}.ds-faq summary{font:600 1.02rem var(--sans);cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px;}.ds-faq summary::-webkit-details-marker{display:none;}.ds-faq summary::after{content:\"\";flex:none;width:14px;height:14px;margin-top:5px;color:var(--hue-ink);background:linear-gradient(currentColor,currentColor) center/14px 1.5px no-repeat,linear-gradient(currentColor,currentColor) center/1.5px 14px no-repeat;transition:background-size var(--step);}.ds-faq details[open] summary::after{background-size:14px 1.5px,1.5px 0;}.ds-faq summary:focus-visible{outline:2px solid var(--ink);outline-offset:3px;}.ds-faq p{margin:8px 0 0;color:var(--ink-2);}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Das Handbuch mit Registern",
+    "overview": "Die Website ist ein gebundenes Handbuch. Jede Leistung ist ein Register aus Karton in voller Farbe (Ship Fast Oxidorange, Get Fast Grün, Stay Fast Ultramarin, Kontakt Tinte), und der Inhalt liegt auf fast weißen Blättern, die auf diesem Karton aufliegen. Rechts sitzt über die volle Höhe eine feste Registerleiste; der Reiter des Registers, das gerade im Blick ist, ist ausgezogen. Die Welt stammt aus dem Katalog-Challenger rw-manual-acetate-tab-board und wurde vom Nutzer auf Platz 1 gesetzt.\n\nDie Haltung ist die eines technischen Handbuchs, nicht einer Agenturseite: dieselben Felder in jedem Register, Maße und Dauern in Monospace, Linien wie in einer Tabelle, offene Angaben als sichtbarer Errata-Zettel statt als geglätteter Platzhalter. Dichte ist mittel: lesbare Blätter mit begrenzter Zeilenlänge, aber keine Luftflächen ohne Inhalt. Die Seite verweigert die Agentur-Vorlage aus Hero-Bild, drei gleichen Karten und Logoleiste.\n\nBewegung hat genau eine Grammatik: zwei harte Stufen in 90 ms (`steps(2)`), ohne Easing. Der Reiter springt heraus, der Button kippt um, das Plus der FAQ klappt. Nichts gleitet, nichts federt.",
+    "keyCharacteristics": [
+      "Papiergrund, Register in voller Farbe, Inhalt immer auf einem hellen Blatt",
+      "Feste Registerleiste rechts (64px), Reiterhöhe nach Umfang der Leistung",
+      "Drei Schriftstimmen: Serif zum Lesen, Grotesk zum Navigieren, Mono zum Messen",
+      "Steckbrief mit denselben vier Feldern in jedem Register",
+      "Offene Angaben als gestrichelter Errata-Zettel in Rostrot",
+      "Rechte Winkel überall, Schatten nur unter Blättern",
+      "Bewegung in zwei Stufen, 90 ms, kein Easing"
+    ],
+    "rules": [
+      {
+        "name": "The One Register, One Color Rule",
+        "body": "Jede Leistung besitzt genau eine Farbe, und diese Farbe erscheint nur als ihr Registerband, ihr Reiter, ihre Farbmarke im Inhaltsverzeichnis und als Akzent auf ihren Blättern (Wochenangaben, Listenmarker, FAQ-Plus über `--hue-ink`). Eine Registerfarbe taucht nie in einem fremden Register auf.",
+        "section": "colors"
+      },
+      {
+        "name": "The Leaf Carries Content Rule",
+        "body": "Auf Registerfarbe stehen nur Registername und Unterzeile in der linken Marginalie (weiß). Überschriften, Fließtext, Steckbrief und Buttons liegen immer auf einem Blatt.",
+        "section": "colors"
+      },
+      {
+        "name": "The Errata Rule",
+        "body": "Rostrot ist für offene Angaben reserviert. Eine fehlende Zahl wird als Errata-Zettel gezeigt, nie weggelassen, nie durch eine erfundene ersetzt und nie unauffällig gestaltet.",
+        "section": "colors"
+      },
+      {
+        "name": "The Three Voices Rule",
+        "body": "Serif ist, was man liest. Grotesk ist, was man navigiert und überfliegt (Überschriften, Labels, Buttons, Reiter, Meta-Zeilen). Mono ist, was man misst (Dauer, Woche, Betrag, offene Angabe). Ein Wert, der eine Dauer oder ein Betrag ist, steht in Mono.",
+        "section": "typography"
+      },
+      {
+        "name": "The One Body Size Rule",
+        "body": "Fließtext hat eine Größe (1.0625rem), auch in Steckbrief-Werten und Ablauf-Texten. Größer werden nur Leads und Überschriften.",
+        "section": "typography"
+      },
+      {
+        "name": "The Margin Rule",
+        "body": "Der Name eines Registers steht in der linken Marginalie, nicht als Zeile über der Überschrift. Was ein Abschnitt ist, sagt der Rand; was er enthält, sagt die Überschrift.",
+        "section": "layout"
+      },
+      {
+        "name": "The Rail Rule",
+        "body": "Die Registerleiste ist immer da, rechts auf dem Desktop, oben auf dem Telefon. Die Reiterhöhe folgt dem Umfang der Leistung (`--ext`: Start 1.1, Ship 1.6, Get 1.15, Stay 1.15, Kontakt 0.8); Ship ist der größte Reiter, weil die Product Bet führt.",
+        "section": "layout"
+      },
+      {
+        "name": "The Leaf On Board Rule",
+        "body": "Nur Blätter und der aktive Reiter haben Schatten. Buttons, Tabellen, Bilder und Register bleiben flach; ein Schatten heißt immer \"das liegt obenauf\".",
+        "section": "elevation"
+      },
+      {
+        "name": "The Square Cut Rule",
+        "body": "Kein Radius. Ecken sind geschnitten wie Papier und Karton.",
+        "section": "shapes"
+      },
+      {
+        "name": "The Ledger Rule",
+        "body": "Eine Liste mit Struktur öffnet mit 1.5px Tinte und teilt innen mit 1px `rule`. Keine Karten-Rahmen, keine Hintergrund-Kacheln für Zellen.",
+        "section": "shapes"
+      },
+      {
+        "name": "The Two Step Rule",
+        "body": "Jede Transition läuft über `--step` (`90ms steps(2)`): Reiter, Buttons, FAQ-Plus. Kein Easing, keine andere Dauer, kein Gleiten. Bei `prefers-reduced-motion` entfallen alle Transitions und das weiche Scrollen.",
+        "section": "components"
+      },
+      {
+        "name": "The Same Four Fields Rule",
+        "body": "Jedes Register und jede Leistungsseite führt den Steckbrief mit denselben vier Feldern in derselben Reihenfolge. Fehlt ein Wert, steht dort ein Errata-Zettel, das Feld bleibt.",
+        "section": "components"
+      }
+    ],
+    "dos": [
+      "**Do** lege jeden Inhalt eines Registers auf ein Blatt (`leaf`) und lass nur Registername und Mono-Unterzeile direkt auf der Registerfarbe stehen.",
+      "**Do** führe in jedem Register den Steckbrief mit Laufzeit, Einstieg, Kosten, Ergebnis in dieser Reihenfolge.",
+      "**Do** setze jede Dauer, Woche und jeden Betrag in JetBrains Mono 500.",
+      "**Do** markiere jede fehlende Angabe mit dem Errata-Zettel in Rostrot (gestrichelt, Mono) an der Stelle, wo sie fehlt.",
+      "**Do** nutze für jede Transition `--step` (90ms steps(2)) und schalte sie bei `prefers-reduced-motion` ab.",
+      "**Do** öffne strukturierte Listen mit einer 1.5px-Tintenlinie und teile innen mit 1px `rule`.",
+      "**Do** färbe Text in Registerfarbe auf hellem Grund mit der `-ink`-Stufe (Ship-Tinte statt Ship-Orange).",
+      "**Do** gib eine neue Leistungsseite ihr eigenes Register: Seite öffnet im Band ihrer Farbe, H1 auf dem ersten Blatt, Steckbrief, Button, Reiter mit `aria-current=\"page\"`."
+    ],
+    "donts": [
+      "**Don't** setze Überschriften, Fließtext, Steckbrief oder Buttons direkt auf ein Registerband.",
+      "**Don't** runde Ecken; der Radius ist 0px.",
+      "**Don't** verwende Easing-Kurven, weiche Übergänge oder andere Dauern als 90ms steps(2).",
+      "**Don't** gib Elementen außer Blättern und dem aktiven Reiter einen Schatten.",
+      "**Don't** nutze Rostrot für etwas anderes als offene Angaben, und verstecke offene Angaben nicht.",
+      "**Don't** trage eine Registerfarbe in ein fremdes Register oder führe eine vierte Akzentfarbe ein.",
+      "**Don't** baue Hero-Bild, drei gleiche Karten oder eine Logoleiste; Leistungen sind Register, keine Kacheln.",
+      "**Don't** setze Labels oder Kicker über Überschriften; der Abschnittsname gehört in die Marginalie.",
+      "**Don't** verwende Icon-Sets oder Glyph-Icons; Marken sind Farbquadrate, Linien und gezeichnete Balken."
+    ]
+  }
+}
