@@ -12,16 +12,9 @@ Preise nennt ai-on-rails je Projekt im ersten Gespräch.
 
 ## Projekte (anonym)
 
-- KI-Produkt für Modemarken (E-Commerce, seit März 2026): Produktbilder für Onlineshops, aus einem internen Test entstanden. Weiterentwicklung als kleines externes Team mit Ruby on Rails; der Kunde baut inzwischen ein eigenes Team auf.
+- KI-Produkt für Modemarken (E-Commerce, seit März 2026): Produktbilder für Onlineshops, aus einem internen Test entstanden. Weiterentwicklung als kleines externes Team mit Ruby on Rails; laut Kunde über 140.000 produzierte Outfits; der Kunde baut inzwischen ein eigenes Team auf.
 - Code-Audit einer internen KI-Plattform einer Agentur (Juni 2026, rund 300.000 Zeilen, überwiegend KI-gestützt von einer Person geschrieben): Bewertung von Sicherheit, Datenschutz, Wartbarkeit, Kern und Ballast sowie Tragfähigkeit; drei kritische Sicherheitsbefunde, Empfehlung mit Umsetzungspfad.
 - SaaS-Plattform für Versicherer (seit September 2023): Laufende Weiterentwicklung einer mandantenfähigen Rails-Plattform (GraphQL, Vue.js) im Team eines Softwarekonzerns; Produkt-Engine, Schadenmodul, Abrechnung.
-
-## Davor: Rails-Projekte von Henning Thies (2011–2023, ohne KI)
-
-- XING (New Work), 2015–2022: zuletzt Teamlead für zwölf Entwickler in zwei Teams, Publishing für 16 Millionen Nutzer.
-- Plattform für Kapitalvermittlung, 2022: Beratungsmodul in sechs Monaten vom Konzept bis zum Livebetrieb.
-- Plattform für Paket-Abholstellen, 2022–2023: über 2.500 Abholstellen in UK, Deutschland und USA, Anbindung von UPS.
-- 2011–2015: Rails-Entwicklung für Startups und kleine Unternehmen.
 
 ## Arbeitsweise
 
@@ -31,7 +24,7 @@ Preise nennt ai-on-rails je Projekt im ersten Gespräch.
 
 ## Team
 
-- Henning Thies: Gründer, Product Engineering, Dipl.-Ing., Ruby on Rails seit 2011, davon sieben Jahre bei XING (zuletzt Teamlead für zwölf Entwickler). https://henning-thies.de · https://www.linkedin.com/in/henningthies/
+- Henning Thies: Gründer, Product Engineering, Dipl.-Ing., Ruby on Rails seit 2011. https://henning-thies.de · https://www.linkedin.com/in/henningthies/
 - Karin Krech: UX, Produkt und Management. https://www.linkedin.com/in/karin-krech-63ab86291/
 - Netzwerk: normkit.digital (https://normkit.digital), Studio für Produktentwicklung und UX/UI-Design, für größere Design-Vorhaben.
 
