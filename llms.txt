@@ -33,4 +33,4 @@ Preise nennt ai-on-rails je Projekt im ersten Gespräch.
 
 - E-Mail: hello@ai-on-rails.com
 - Termin: https://calendar.app.google/VdnLNLqjpSR4MS6G7
-- Impressum: https://ai-on-rails.com/impressum.html
+- Impressum: https://ai-on-rails.com/impressum

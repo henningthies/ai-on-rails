@@ -194,7 +194,7 @@ def head(page):
 
 
 FOOT = """</main>
-<footer><div class="in"><span>AI on Rails · Ruby on Rails Agentur · Region Hamburg</span><ul><li><a href="/product-bets">Product Bets</a></li><li><a href="/rails-modernisierung">Modernisierung</a></li><li><a href="/rails-weiterentwicklung">Weiterentwicklung</a></li><li><a href="/impressum.html">Impressum</a></li><li><a href="/datenschutz.html">Datenschutz</a></li></ul></div></footer>
+<footer><div class="in"><span>AI on Rails · Ruby on Rails Agentur · Region Hamburg</span><ul><li><a href="/product-bets">Product Bets</a></li><li><a href="/rails-modernisierung">Modernisierung</a></li><li><a href="/rails-weiterentwicklung">Weiterentwicklung</a></li><li><a href="/impressum">Impressum</a></li><li><a href="/datenschutz">Datenschutz</a></li></ul></div></footer>
 </div>
 """
 
@@ -801,8 +801,9 @@ DATENSCHUTZ = r"""<p class="update-date">Stand: November 2026</p>
  </p>
  <p>
  <strong>Zuständige Aufsichtsbehörde:</strong><br>
- <!-- TODO: Add your state's data protection authority -->
- [Landesdatenschutzbeauftragter Ihres Bundeslandes]
+ Unabhängiges Landeszentrum für Datenschutz Schleswig-Holstein (ULD)<br>
+ Holstenstraße 98, 24103 Kiel<br>
+ <a href="https://www.datenschutzzentrum.de" target="_blank" rel="noopener">www.datenschutzzentrum.de</a>
  </p>
  </section>
  <section>
@@ -827,8 +828,8 @@ def legal_body(title, content):
 """
 
 
-imp_page = dict(path="/impressum.html", file="impressum.html", legal=True, robots="noindex, follow", title="Impressum | ai-on-rails", desc="Impressum von ai-on-rails, Henning Thies, Negernbötel.")
-ds_page = dict(path="/datenschutz.html", file="datenschutz.html", legal=True, robots="noindex, follow", title="Datenschutzerklärung | ai-on-rails", desc="Datenschutzerklärung von ai-on-rails.")
+imp_page = dict(path="/impressum", file="impressum.html", legal=True, robots="noindex, follow", title="Impressum | ai-on-rails", desc="Impressum von ai-on-rails, Henning Thies, Negernbötel.")
+ds_page = dict(path="/datenschutz", file="datenschutz.html", legal=True, robots="noindex, follow", title="Datenschutzerklärung | ai-on-rails", desc="Datenschutzerklärung von ai-on-rails.")
 
 for page, body in [(start, start_body), (bets, bets_body), (mod, mod_body), (stay, stay_body), (imp_page, legal_body("Impressum", IMPRESSUM)), (ds_page, legal_body("Datenschutzerklärung", DATENSCHUTZ))]:
     html = head(page) + body + FOOT + "" + "</body>\n</html>\n"
