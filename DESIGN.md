@@ -283,7 +283,7 @@ Alle Überschriften: Grotesk 700, Zeilenhöhe 1.15, −0.015em, `text-wrap: bala
 
 **Startblock.** Auf Papier, 48px oben / 64px unten, Zweispalter 2fr : 1fr, 40px Abstand, unten bündig: links H1, Lead, Button-Reihe; rechts das Inhaltsverzeichnis. Unter dem Startblock beginnt sofort das orange Ship-Register.
 
-**Tabellen-Raster.** Steckbrief (0.8fr / 1fr / 1fr / 1.5fr), Ablauf (Bet: `minmax(150px, 2fr) 5fr minmax(170px, 2fr)`, sonst drei gleiche Spalten), Preise (zwei Spalten) und Zweispalter (1fr 1fr, 28px) teilen ihre Zellen mit senkrechten 1px-Linien statt mit Abständen allein.
+**Tabellen-Raster.** Steckbrief (0.8fr / 1fr / 1fr / 1.5fr), Ablauf (Bet: `minmax(200px, 2fr) minmax(0, 4fr) minmax(190px, 2fr)`, sonst drei gleiche Spalten), Preise (zwei Spalten) und Zweispalter (1fr 1fr, 28px) teilen ihre Zellen mit senkrechten 1px-Linien statt mit Abständen allein.
 
 **Button-Reihe.** 10px Abstand, 26px über der Reihe, umbrechend.
 

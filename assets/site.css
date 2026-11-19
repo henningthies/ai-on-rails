@@ -124,7 +124,7 @@ h1, h2, h3 { font-family: var(--sans); font-weight: 700; line-height: 1.15; lett
 
 /* Ablauf */
 .track { list-style: none; padding: 0; margin-top: 8px; display: grid; border-top: 1.5px solid var(--ink); }
-.track.w-bet { grid-template-columns: minmax(150px, 2fr) 5fr minmax(170px, 2fr); }
+.track.w-bet { grid-template-columns: minmax(200px, 2fr) minmax(0, 4fr) minmax(190px, 2fr); }
 .track.w-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .track li { padding: 14px 16px 0 0; min-width: 0; }
 .track li + li { padding-left: 16px; border-left: 1px solid var(--rule); }

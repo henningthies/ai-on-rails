@@ -16,7 +16,7 @@ web
 
 ai-on-rails ist eine Ruby-on-Rails-Agentur aus Hamburg mit drei Leistungen:
 
-- **Ship Fast / Product Bets:** eine Produktidee in 12 Wochen als lauffähige Software auf den Daten des Kunden, mit vorab freigegebenem Erfolgskriterium und Entscheidungsvorlage (weiterbauen, umbauen, stoppen). Festpreis nach einem Workshop-Tag.
+- **Ship Fast / Product Bets:** das volle Produktpaket. Anforderungen mit dem Fachbereich (Discovery), UX-Konzept und klickbarer Prototyp, UI-Design und Entwicklung: eine Produktidee in 12 Wochen als lauffähige Software auf den Daten des Kunden, mit vorab freigegebenem Erfolgskriterium und Entscheidungsvorlage (weiterbauen, umbauen, stoppen). Festpreis nach einem Workshop-Tag. Modernisierung und Weiterentwicklung bleiben technische Leistungen.
 - **Get Fast / Modernisierung:** Bestandsaufnahme (2 Wochen, Festpreis), Empfehlung, Umsetzung in Etappen, die einzeln live gehen.
 - **Stay Fast / Weiterentwicklung:** laufende Weiterentwicklung zum Monatspreis. Das wiederkehrende Geschäft, in das Bets und Modernisierung idealerweise übergehen.
 
@@ -37,6 +37,7 @@ Statische HTML-Seiten auf GitHub Pages, kein Build-Schritt. Termine über einen 
 ## Capabilities and Constraints
 
 - Firmenstimme "wir". Keine erfundenen Teamgrößen, keine Personen außer Henning namentlich.
+- UX und UI-Design stehen als eigene Rolle im Team, ohne Namen (Entscheidung 19.11.2026). Nutzertests/QS werden nicht als eigene Leistung beworben.
 - Offen und als sichtbare Platzhalter markiert: alle Preise (Workshop-Tag, Bet, Bestandsaufnahme, Etappe; Stay Fast 4.900 € Setup / 5.900 € pro Monat vorläufig), Kündigungsfrist und Reaktionszeit bei Stay Fast.
 - `/factory` bleibt als separate, nicht verlinkte Seite bestehen.
 
