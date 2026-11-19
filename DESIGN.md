@@ -288,7 +288,7 @@ Alle Überschriften: Grotesk 700, Zeilenhöhe 1.15, −0.015em, `text-wrap: bala
 **Button-Reihe.** 10px Abstand, 26px über der Reihe, umbrechend.
 
 **Responsive (≤ 860px).**
-- Die Registerleiste wird zu einer horizontalen Leiste, sticky oben, 40px hoch; Reiter waagrecht, 0.72rem; Reiter liegen bündig an der Unterkante der Leiste (zur Seite hin); inaktive Reiter sind 34px hoch, der aktive füllt die 40px und ragt nach oben heraus. `--rail` wird 0.
+- Die Registerleiste wird zu einer horizontalen Leiste, sticky oben, 40px hoch; Reiter waagrecht, 0.72rem, füllen die Leiste lückenlos. Inaktive Reiter tragen einen Innenschatten an der Unterkante, der aktive nicht.
 - Alle Zweispalter (Start, Register, Zweispalter, Preise) werden einspaltig; die Marginalie verliert ihren Versatz, auf Papier-Abschnitten wird sie ausgeblendet.
 - Steckbrief wird 2×2, die zweite Zeile mit 1px-Linie oben und ohne linke Linie in der ersten Spalte.
 - Ablauf wird einspaltig, Schritte durch 1px-Linie oben getrennt.
@@ -336,7 +336,7 @@ Klar und satt; beim Hover kippt der Button in zwei Stufen in seine Kontur.
 
 ### Registerleiste (Signatur)
 - Feste Spalte rechts, 64px, volle Höhe; fünf Reiter Start / Ship Fast / Get Fast / Stay Fast / Kontakt in ihren Farben, Text weiß, vertikal (`writing-mode: vertical-rl`), 0.8rem/600/+0.06em.
-- Alle Reiter liegen bündig an der linken Kante der Leiste, also direkt an der Seite; es gibt nie eine Papierfuge zwischen Inhalt und Reiter. In Ruhe sind Reiter 52px breit (64px − 12px); aktiver Reiter (`aria-current`) und Hover ziehen nach außen auf die volle Breite aus, in zwei Stufen (`width`, `steps(2)`). Auf Unterseiten geht der aktive Reiter damit nahtlos in das Registerband gleicher Farbe über.
+- Alle Reiter füllen die Leiste lückenlos über die volle Breite; es gibt weder zur Seite noch zum Bildschirmrand eine Papierfuge. Inaktive Reiter liegen "hinter" der Seite: Innenschatten an der Kante zur Seite (`inset 8px 0 10px -8px rgba(0,0,0,.45)`) und Text in 82 % Weiß. Aktiver Reiter (`aria-current`) und Hover: kein Schatten, Text voll weiß, in zwei Stufen. Auf Unterseiten geht der aktive Reiter dadurch nahtlos in das Registerband gleicher Farbe über.
 - Startseite: der Reiter folgt per IntersectionObserver dem Register in der Bildschirmmitte. Unterseiten: `aria-current="page"` am eigenen Reiter.
 - Focus: weißer Ring, 4px nach innen versetzt.
 - Mobil: siehe Layout.
@@ -405,7 +405,7 @@ Klar und satt; beim Hover kippt der Button in zwei Stufen in seine Kontur.
 - **Don't** runde Ecken; der Radius ist 0px.
 - **Don't** verwende Easing-Kurven, weiche Übergänge oder andere Dauern als 90ms steps(2).
 - **Don't** gib Elementen außer Blättern einen Schatten.
-- **Don't** verschiebe Reiter zur Seite hin (z.B. per `translateX`); zwischen Inhalt und Leiste darf keine Fuge entstehen.
+- **Don't** verschiebe oder verkürze Reiter (z.B. per `translateX` oder schmalerer Breite); weder zwischen Inhalt und Leiste noch am Bildschirmrand darf eine Fuge entstehen. Aktiv/inaktiv unterscheidet nur der Innenschatten.
 - **Don't** nutze Rostrot für etwas anderes als offene Angaben, und verstecke offene Angaben nicht.
 - **Don't** trage eine Registerfarbe in ein fremdes Register oder führe eine vierte Akzentfarbe ein.
 - **Don't** baue Hero-Bild, drei gleiche Karten oder eine Logoleiste; Leistungen sind Register, keine Kacheln.
