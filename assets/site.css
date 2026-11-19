@@ -201,12 +201,13 @@ footer a:hover { text-decoration: underline; }
 .facts dd { margin: 2px 0 0; }
 .team img, .team .photo-open { width: 120px; height: 150px; object-fit: cover; display: block; margin-bottom: 16px; }
 .team .photo-open { display: flex; align-items: center; justify-content: center; border: 1px dashed var(--errata); }
-.team .net { padding-top: calc(16px + 150px + 16px); }
+/* Netzwerk: Bildfeld wie bei den Personen, gezeichnetes Plus statt Foto */
+.team .net-tile { width: 120px; height: 150px; margin-bottom: 16px; color: var(--ink-2);
+  background: linear-gradient(currentColor, currentColor) center / 36px 2px no-repeat, linear-gradient(currentColor, currentColor) center / 2px 36px no-repeat, var(--rule); }
 .team .links { margin-top: 12px; }
 @media (max-width: 1100px) and (min-width: 861px) { .cols3 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 860px) {
   .cols3 { grid-template-columns: 1fr; gap: 32px; }
-  .team .net { padding-top: 16px; }
   .blk + .blk { margin-top: 64px; }
 }
 
