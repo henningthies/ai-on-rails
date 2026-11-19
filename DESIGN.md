@@ -24,7 +24,7 @@ colors:
 typography:
   display:
     fontFamily: "Hanken Grotesk, system-ui, sans-serif"
-    fontSize: "clamp(2.1rem, 4.6vw, 3.5rem)"
+    fontSize: "clamp(2rem, 4vw, 3rem)"
     fontWeight: 700
     lineHeight: 1.15
     letterSpacing: "-0.015em"
@@ -256,7 +256,7 @@ Warmer Papiergrund und Tinte als Basis, drei kräftige, gedeckte Registerfarben 
 **Character:** Eine ruhige Buchserif trägt den Text, eine sachliche Grotesk beschriftet und gliedert wie in einem Handbuch, Mono misst. Die Kombination liest sich wie technische Dokumentation mit Satzspiegel, nicht wie Werbung.
 
 ### Hierarchy
-- **Display** (700, `clamp(2.1rem, 4.6vw, 3.5rem)`, 1.15, max. 18ch): nur die H1 im Startblock der Startseite.
+- **Display** (700, `clamp(2rem, 4vw, 3rem)`, 1.15, max. 24ch): nur die H1 im Startblock der Startseite.
 - **Headline** (700, `clamp(1.9rem, 3.8vw, 2.8rem)`, 1.15, max. 22ch): H1 auf dem ersten Blatt einer Leistungsseite.
 - **Title** (700, `clamp(1.4rem, 2.6vw, 1.9rem)`, 1.15): H2 auf Blättern. Auf Papier ohne Blatt feste 1.6rem.
 - **Register-Name** (700, 1.6rem, 1.1): Name des Registers in der Marginalie.
