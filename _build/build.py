@@ -17,7 +17,7 @@ ORG = {
     "@id": f"{BASE}/#organization",
     "name": "AI on Rails",
     "url": f"{BASE}/",
-    "logo": OG,
+    "logo": f"{BASE}/logo-512.png",
     "email": MAIL,
     "address": {"@type": "PostalAddress", "streetAddress": "Lehmberg 7", "postalCode": "23795", "addressLocality": "Negernbötel", "addressRegion": "Schleswig-Holstein", "addressCountry": "DE"},
     "areaServed": [{"@type": "City", "name": "Hamburg"}, {"@type": "Country", "name": "Deutschland"}],
@@ -169,6 +169,9 @@ def head(page):
   <meta name="theme-color" content="#eff4f6">
   <meta name="author" content="Henning Thies">
   <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
   <script defer src="https://cloud.umami.is/script.js" data-website-id="5dde56bc-9822-4d4c-a606-0bd521350c76"></script>
 
@@ -524,7 +527,7 @@ stay_faq = [
     ("Betreut ihr auch Anwendungen, die nicht in Rails gebaut sind?", "Ja. Mit KI-gestützter Entwicklung hängt weniger an der einzelnen Technologie als früher. Ob wir eure Anwendung übernehmen, klären wir vorab anhand von Code, Tests und Deployment. Neue Anwendungen bauen wir mit Ruby on Rails."),
 ]
 stay = dict(path="/rails-weiterentwicklung", file="rails-weiterentwicklung.html", crumb="Weiterentwicklung",
-            title="Wartung und Weiterentwicklung von Rails- und Webanwendungen | ai-on-rails",
+            title="Rails-Wartung und Weiterentwicklung | ai-on-rails",
             desc="Laufende Weiterentwicklung eurer Webanwendung zu einem festen Monatsbetrag: Updates, Fehlerbehebung, neue Funktionen. Rails und andere Technologien.",
             service={"name": "Wartung und Weiterentwicklung", "type": "Wartung, Support und Weiterentwicklung von Ruby-on-Rails- und Webanwendungen"}, faq=stay_faq)
 stay_body = f"""
