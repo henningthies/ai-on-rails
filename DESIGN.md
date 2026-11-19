@@ -9,7 +9,7 @@ colors:
   rule: "#cfd4db"
   start: "#555d6b"
   ship: "#f0bf1a"
-  ship-ink: "#7a5b00"
+  ship-ink: "#15181e"
   get: "#1d6f55"
   stay: "#2a3d9a"
   dark: "#15181e"
@@ -219,7 +219,7 @@ Kühler grauer Grund und Tinte als Basis, drei kräftige Registerfarben (Chromge
 
 ### Primary
 - **Ship Chromgelb** (`ship`): Register Ship Fast / Product Bets, ihr Reiter, ihre Farbmarke im Inhaltsverzeichnis und der einzige farbige Button (`button-ship`). Weil die Product Bet führt, ist Orange auch die Farbe des Haupt-Aufrufs "Gespräch vereinbaren" im Startblock und auf der Bet-Seite.
-- **Ship-Tinte** (`ship-ink`): dunkle Ocker-Stufe für gelben Akzenttext auf hellem Grund (Gelb selbst ist als Text nicht lesbar) (Wochenangaben im Ablauf, Listenmarker, Hover-Text des Ship-Buttons, "AI" in der Wortmarke). Text in Registerfarbe auf Papier oder Blatt nimmt immer die `-ink`-Stufe.
+- **Ship-Tinte** (`ship-ink`): Akzenttext im Ship-Register ist Tinte, nicht Ocker (Ocker wirkte auf Weiß orange; Gelb selbst ist als Text nicht lesbar) (Wochenangaben im Ablauf, Listenmarker, Hover-Text des Ship-Buttons, "AI" in der Wortmarke). Text in Registerfarbe auf Papier oder Blatt nimmt immer die `-ink`-Stufe.
 
 ### Secondary
 - **Register-Grün** (`get`): Register Get Fast / Modernisierung. Im CSS existiert `--get-ink` mit identischem Wert; Grün ist dunkel genug, um als Text auf dem Blatt zu stehen.
@@ -414,6 +414,6 @@ Klar und satt; beim Hover kippt der Button in zwei Stufen in seine Kontur.
 
 ## Nachtrag 19.11.: Palette ohne Beige/Orange
 - Grund `#eceef1`, Blatt reines Weiß, Tinte `#15181e`, Linie `#cfd4db`, Start-Reiter `#555d6b`.
-- Ship Chromgelb `#f0bf1a` trägt **dunkle** Schrift (Marginalie, Reiter, Button), nie weiße. Akzenttext Ocker `#7a5b00`.
+- Ship Chromgelb `#f0bf1a` trägt **dunkle** Schrift (Marginalie, Reiter, Button), nie weiße. Akzenttext in Tinte (`#15181e`), kein Ocker.
 - Logo: "AI" auf gelbem Feld wie ein Registerreiter, Text in Tinte.
 - Errata Signalrot `#b4232f`.
