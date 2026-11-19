@@ -1,0 +1,28 @@
+# ai-on-rails
+
+> Agentur für Produktentwicklung aus der Region Hamburg (Negernbötel, Schleswig-Holstein). Wir testen Produktideen in 12 Wochen auf echten Daten und entwickeln weiter, was sich bewährt: Anforderungen, UX- und UI-Design und Entwicklung mit Ruby on Rails. Dazu Modernisierung und Weiterentwicklung bestehender Rails-Anwendungen. Projekte zum Festpreis, Weiterentwicklung zum Monatspreis. Sprache der Website: Deutsch.
+
+## Leistungen
+
+- [Product Bets](https://ai-on-rails.com/product-bets): Eine Produktidee in 12 Wochen als lauffähige Software auf den Daten des Kunden, mit vorab freigegebenem Erfolgskriterium und Entscheidungsvorlage in Woche 12 (weiterbauen, umbauen, stoppen). Enthält Anforderungen, UX-Konzept, UI-Design und Entwicklung. Workshop-Tag 2.900 € (wird angerechnet), Festpreis ab 90.000 €, üblich 90.000 bis 150.000 €.
+- [Rails-Modernisierung](https://ai-on-rails.com/rails-modernisierung): Bestandsaufnahme (2 Wochen, ab 9.800 €), danach Rails- und Ruby-Upgrades, Performance und Neubau in Etappen, die einzeln live gehen. Festpreis je Etappe.
+- [Rails-Weiterentwicklung](https://ai-on-rails.com/rails-weiterentwicklung): Laufende Weiterentwicklung und Wartung von Rails-Anwendungen. Einrichtung 2.900 €, ab 4.900 € pro Monat, Mindestlaufzeit 3 Monate, danach monatlich kündbar. Reaktion bei Ausfall am selben Arbeitstag (Mo–Fr, 9–17 Uhr), keine 24/7-Bereitschaft.
+
+Alle Preise netto zzgl. USt.
+
+## Arbeitsweise
+
+- Entwicklung mit KI; Werkzeuge und Abläufe wählt ai-on-rails selbst. Ein Mensch prüft jede Änderung, bevor sie live geht.
+- Quellcode, Designs und Zugänge gehören dem Kunden. Übergabe an ein eigenes Team des Kunden ist möglich, inklusive Unterstützung bei der Auswahl von Entwicklern.
+
+## Team
+
+- Henning Thies: Gründer, Product Engineering, Dipl.-Ing., über 15 Jahre Ruby on Rails. https://henning-thies.de · https://www.linkedin.com/in/henningthies/
+- Karin Krech: UX, Produkt und Management.
+- Netzwerk: Simon Reif und Normkit (https://normkit.digital) für UX/UI-Design.
+
+## Kontakt
+
+- E-Mail: hello@ai-on-rails.com
+- Termin: https://calendar.app.google/VdnLNLqjpSR4MS6G7
+- Impressum: https://ai-on-rails.com/impressum.html

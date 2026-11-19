@@ -38,7 +38,10 @@
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "Organization",
+      "@type": [
+        "Organization",
+        "ProfessionalService"
+      ],
       "@id": "https://ai-on-rails.com/#organization",
       "name": "AI on Rails",
       "url": "https://ai-on-rails.com/",
@@ -46,9 +49,32 @@
       "email": "hello@ai-on-rails.com",
       "address": {
         "@type": "PostalAddress",
-        "addressLocality": "Hamburg",
+        "streetAddress": "Lehmberg 7",
+        "postalCode": "23795",
+        "addressLocality": "Negernbötel",
+        "addressRegion": "Schleswig-Holstein",
         "addressCountry": "DE"
       },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Hamburg"
+        },
+        {
+          "@type": "Country",
+          "name": "Deutschland"
+        }
+      ],
+      "priceRange": "2.900 € bis 150.000 €",
+      "knowsAbout": [
+        "Ruby on Rails",
+        "Produktentwicklung",
+        "UX-Design",
+        "UI-Design",
+        "Rails-Upgrade",
+        "Softwaremodernisierung",
+        "KI-gestützte Softwareentwicklung"
+      ],
       "founder": {
         "@id": "https://ai-on-rails.com/#henning"
       },
@@ -244,7 +270,7 @@
   </div>
 </section>
 </main>
-<footer><div class="in"><span>AI on Rails · Ruby on Rails Agentur · Hamburg</span><ul><li><a href="/product-bets">Product Bets</a></li><li><a href="/rails-modernisierung">Modernisierung</a></li><li><a href="/rails-weiterentwicklung">Weiterentwicklung</a></li><li><a href="/impressum.html">Impressum</a></li><li><a href="/datenschutz.html">Datenschutz</a></li></ul></div></footer>
+<footer><div class="in"><span>AI on Rails · Ruby on Rails Agentur · Region Hamburg</span><ul><li><a href="/product-bets">Product Bets</a></li><li><a href="/rails-modernisierung">Modernisierung</a></li><li><a href="/rails-weiterentwicklung">Weiterentwicklung</a></li><li><a href="/impressum.html">Impressum</a></li><li><a href="/datenschutz.html">Datenschutz</a></li></ul></div></footer>
 </div>
 </body>
 </html>

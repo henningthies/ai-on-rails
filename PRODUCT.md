@@ -32,7 +32,7 @@ Wie die Arbeit intern entsteht (Agenten, Workflows), steht nicht auf der Seite. 
 
 ## Operating Context
 
-Statische HTML-Seiten auf GitHub Pages, kein Build-Schritt. Termine über einen Google-Calendar-Buchungslink, Mail an hello@ai-on-rails.com. Sprache Deutsch, englische Fassung später.
+Statische HTML-Seiten auf GitHub Pages, kein Build-Schritt. Termine über einen Google-Calendar-Buchungslink, Mail einheitlich hello@ai-on-rails.com (auch Impressum). Ort: im Text "Region Hamburg", rechtlich und in den strukturierten Daten Lehmberg 7, 23795 Negernbötel. Sprache Deutsch; englische Fassung erst nach Validierung des Angebots (Henning, 19.11.).
 
 ## Capabilities and Constraints
 
