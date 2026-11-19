@@ -10,7 +10,7 @@ REPO = Path(sys.argv[1])
 BASE = "https://ai-on-rails.com"
 CAL = "https://calendar.app.google/VdnLNLqjpSR4MS6G7"
 MAIL = "hello@ai-on-rails.com"
-OG = f"{BASE}/og-image.png"
+OG = f"{BASE}/og-image.png?v=2026-11-19b"
 
 ORG = {
     "@type": ["Organization", "ProfessionalService"],
