@@ -1,25 +1,25 @@
 ---
 name: ai-on-rails
-description: Handbuch mit Registern. Kühler grauer Grund, ein Register pro Leistung in voller Farbe, Inhalt auf hellen Blättern.
+description: Handbuch mit Registern. Kühler grauer Grund, Register in Graustufen von hell nach dunkel, Inhalt auf hellen Blättern. Einzige Farbe ist das Gelb im Logo.
 colors:
   paper: "#eceef1"
   leaf: "#ffffff"
   ink: "#15181e"
   ink-2: "#474d57"
   rule: "#cfd4db"
-  start: "#555d6b"
-  ship: "#f0bf1a"
-  ship-ink: "#15181e"
-  get: "#1d6f55"
-  stay: "#2a3d9a"
+  start: "#d4d7dc"
+  ship: "#b4b9c0"
+  get: "#868c95"
+  stay: "#4a5059"
+  brand: "#f0bf1a"
   dark: "#15181e"
   errata: "#b4232f"
   selection: "#ffe27a"
-  dark-leaf: "#26262a"
-  dark-line: "#3a3a40"
-  dark-text: "#f1efe9"
-  dark-lead: "#c9c6bd"
-  dark-ghost-line: "#6b6b72"
+  dark-leaf: "#22262d"
+  dark-line: "#383d46"
+  dark-text: "#eef0f3"
+  dark-lead: "#c3c8cf"
+  dark-ghost-line: "#6b717b"
   white: "#ffffff"
 typography:
   display:
@@ -193,6 +193,15 @@ components:
 ---
 
 # Design System: ai-on-rails
+
+## Nachtrag 19.11.2026: Graustufen, Typo-Skala, Buttons (Feedback Karin)
+
+Dieser Nachtrag geht allen Farb-, Typo- und Button-Angaben weiter unten vor. Wo unten noch Chromgelb, Grün oder Ultramarin als Registerfarbe steht, gilt das nicht mehr.
+
+- **Palette:** Die Register unterscheiden sich nur in der Helligkeit, von hell nach dunkel in der Reihenfolge der Leiste: Start `#d4d7dc`, Ship `#b4b9c0`, Get `#868c95`, Stay `#4a5059`, Kontakt `#15181e`. Auf Start, Ship und Get stehen Marginalie und Reitertext in Tinte, auf Stay und Kontakt in Weiß. Akzente in Blättern (Wochenangaben, Listenmarker, FAQ-Plus) sind Tinte bzw. Tinte 2. Die einzige Farbe ist das Chromgelb (`brand`) im "AI" der Wortmarke; dazu Signalrot nur für offene Angaben. Der dunkle Kontaktblock ist neutral grau, nicht warm.
+- **Typo-Skala:** Der Registername in der Marginalie ist die Abschnittsüberschrift und deshalb größer als alles im Blatt außer der Seiten-H1: H1 bis 3rem (Blatt-H1 bis 2.8rem), Registername 800 clamp(1.75rem, 2.8vw, 2.25rem), H2 im Blatt und `h2-plain` clamp(1.3rem, 2vw, 1.5rem), H3 einheitlich 1.2rem, FAQ-Frage 1.0625rem/600, Fließtext Serif 1.0625rem.
+- **Buttons:** Grotesk 800, 0.88rem, Versalien, +0.07em Laufweite, 14px 22px. Primär Tinte gefüllt, Sekundär Tinte-Kontur. Kein gelber Button mehr (`button-ship` entfällt).
+- **Reiter:** Text Grotesk 700 0.78rem, Versalien, +0.08em; auf dem Telefon 0.64rem/+0.03em, damit alle fünf Reiter in 390px passen.
 
 ## Overview
 
