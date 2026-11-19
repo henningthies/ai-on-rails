@@ -278,7 +278,7 @@ start_body = f"""
       <h1 id="start-h">In 12 Wochen wisst ihr, ob eure Produktidee trägt.</h1>
       <p class="lead">Wir bauen sie als laufende Anwendung auf euren Daten. Ab Woche 4 testen eure Nutzer, in Woche 12 liegt die Entscheidungsvorlage: weiterbauen, umbauen oder stoppen. Zum Festpreis, bevor ihr ein Team einstellt.</p>
       <div class="row"><a class="btn" href="#kontakt">Idee in 30 Minuten prüfen lassen</a><a class="btn ghost" href="/product-bets#ablauf">Ablauf ansehen</a></div>
-      <p class="proof">Der Workshop-Tag zum Einstieg wird bei Beauftragung angerechnet.<br>Aktuell: <a href="#projekte">KI-Produkt für Modemarken, SaaS-Plattform für Versicherer</a></p>
+      <p class="proof">Der Workshop-Tag zum Einstieg wird bei Beauftragung angerechnet.</p>
     </div>
     <ol class="index" aria-label="Leistungen">
       <li><a href="#ship"><i style="background:var(--ship)"></i>Product Bets</a><span>12 Wochen</span></li>
