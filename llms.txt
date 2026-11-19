@@ -19,7 +19,7 @@ Alle Preise netto zzgl. USt.
 
 - Henning Thies: Gründer, Product Engineering, Dipl.-Ing., über 15 Jahre Ruby on Rails. https://henning-thies.de · https://www.linkedin.com/in/henningthies/
 - Karin Krech: UX, Produkt und Management.
-- Netzwerk: Simon Reif und Normkit (https://normkit.digital) für UX/UI-Design.
+- Netzwerk: normkit.digital (https://normkit.digital), Studio für Produktentwicklung und UX/UI-Design, für größere Design-Vorhaben.
 
 ## Kontakt
 
