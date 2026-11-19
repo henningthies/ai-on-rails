@@ -154,6 +154,14 @@ ul.list li::marker { color: var(--hue-ink); }
 .facts div + div { margin-top: 12px; }
 .facts dt { font: 600 .8rem var(--sans); letter-spacing: .04em; color: var(--ink); }
 .facts dd { margin: 2px 0 0; color: var(--ink-2); max-width: 62ch; }
+.three.cases > .case + .case { margin-top: 0; }
+.h3-plain { font-size: 1.2rem; margin: 40px 0 10px; }
+.history { list-style: none; padding: 0; border-top: 1.5px solid var(--ink); }
+.history li { display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--rule); }
+.history .when { font: 500 .85rem/1.9 var(--mono); color: var(--ink-2); }
+.history b { font-family: var(--sans); display: block; }
+.history div span { color: var(--ink-2); display: block; max-width: 80ch; }
+@media (max-width: 860px) { .history li { grid-template-columns: 1fr; gap: 2px; } }
 .person { display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 22px; align-items: start; }
 .person img { width: 120px; height: 150px; object-fit: cover; display: block; }
 .person h3 { font-size: 1.2rem; }
