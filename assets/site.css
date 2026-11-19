@@ -1,20 +1,20 @@
 /* ai-on-rails: Handbuch mit Registern.
-   Ein Farbton in Abstufungen: alle Flächen sind Stufen desselben Blaus (OKLCH, Farbton 265), von hell (Start)
-   bis fast schwarz (Kontakt). Die Register unterscheiden sich in der Helligkeit. Gelb nur im Logo als Gegenfarbe. Bewusst kein Beige und kein Orange (Farbwelt typischer KI-Oberflächen).
+   Zwei Farben: helle Register in Gelb (Start blass, Ship Fast Chromgelb), dunkle Register in Petrol-Stufen
+   (OKLCH, Farbton 220; Get mittel, Stay dunkel, Kontakt fast schwarz). Papier, Linien und Tinte 2 leicht petrol. Bewusst kein Beige und kein Orange (Farbwelt typischer KI-Oberflächen).
    Bewegung nur in zwei Stufen (steps(2), 90 ms), kein Easing. */
 
 :root {
-  --paper: #edf0f6;
+  --paper: #eff4f6;
   --leaf: #ffffff;
   --ink: #15181e;
-  --ink-2: #4a5364;
-  --rule: #ced4e2;
-  --start: #d4def3;
-  --ship: #abbee5;
-  --get: #6885c3;
-  --stay: #2c488e;
+  --ink-2: #43565c;
+  --rule: #c8d7dc;
+  --start: #fbefc2;
+  --ship: #f0bf1a;
+  --get: #358da5;
+  --stay: #005165;
   --brand: #f0bf1a;
-  --dark: #0d1528;
+  --dark: #011a21;
   --errata: #b4232f;
   --serif: "Source Serif 4", Georgia, serif;
   --sans: "Hanken Grotesk", system-ui, sans-serif;
@@ -178,12 +178,12 @@ ul.list li::marker { color: var(--hue-ink); }
 .h2-plain { font-size: clamp(1.3rem, 2vw, 1.5rem); margin-bottom: 14px; }
 
 /* Kontakt-Register */
-.dark .margin { color: #ebeef5; }
-.dark .leaf { background: #1d263a; color: #ebeef5; box-shadow: none; border: 1px solid #333d52; }
-.dark .leaf .lead { color: #bcc4d5; }
+.dark .margin { color: #e9f0f2; }
+.dark .leaf { background: #102a32; color: #e9f0f2; box-shadow: none; border: 1px solid #27424a; }
+.dark .leaf .lead { color: #b7c7cd; }
 .dark .btn { background: #fff; color: var(--ink); border-color: #fff; }
 .dark .btn:hover { background: transparent; color: #fff; }
-.dark .btn.ghost { background: transparent; color: #fff; border-color: #66728a; }
+.dark .btn.ghost { background: transparent; color: #fff; border-color: #5b7780; }
 .dark .btn.ghost:hover { border-color: #fff; }
 
 footer .in { display: flex; justify-content: space-between; gap: 12px 24px; flex-wrap: wrap; padding-block: 22px; font: 500 .88rem var(--sans); color: var(--ink-2); }

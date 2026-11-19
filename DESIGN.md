@@ -1,25 +1,25 @@
 ---
 name: ai-on-rails
-description: Handbuch mit Registern. Kühler grauer Grund, Register als Abstufungen eines Blaus von hell nach dunkel, Inhalt auf hellen Blättern. Gelb nur im Logo.
+description: Handbuch mit Registern. Heller, leicht petrolfarbener Grund, helle Register in Gelb, dunkle Register in Petrol-Stufen, Inhalt auf hellen Blättern.
 colors:
-  paper: "#edf0f6"
+  paper: "#eff4f6"
   leaf: "#ffffff"
   ink: "#15181e"
-  ink-2: "#4a5364"
-  rule: "#ced4e2"
-  start: "#d4def3"
-  ship: "#abbee5"
-  get: "#6885c3"
-  stay: "#2c488e"
+  ink-2: "#43565c"
+  rule: "#c8d7dc"
+  start: "#fbefc2"
+  ship: "#f0bf1a"
+  get: "#358da5"
+  stay: "#005165"
   brand: "#f0bf1a"
-  dark: "#0d1528"
+  dark: "#011a21"
   errata: "#b4232f"
   selection: "#ffe27a"
-  dark-leaf: "#1d263a"
-  dark-line: "#333d52"
-  dark-text: "#ebeef5"
-  dark-lead: "#bcc4d5"
-  dark-ghost-line: "#66728a"
+  dark-leaf: "#102a32"
+  dark-line: "#27424a"
+  dark-text: "#e9f0f2"
+  dark-lead: "#b7c7cd"
+  dark-ghost-line: "#5b7780"
   white: "#ffffff"
 typography:
   display:
@@ -194,11 +194,11 @@ components:
 
 # Design System: ai-on-rails
 
-## Nachtrag 19.11.2026: Ein Farbton in Abstufungen, Typo-Skala, Buttons (Feedback Karin)
+## Nachtrag 19.11.2026: Gelb + Petrol, Typo-Skala, Buttons (Feedback Karin)
 
 Dieser Nachtrag geht allen Farb-, Typo- und Button-Angaben weiter unten vor. Wo unten noch Chromgelb, Grün oder Ultramarin als Registerfarbe steht, gilt das nicht mehr.
 
-- **Palette:** Alle Flächen sind Stufen eines einzigen Blaus (OKLCH, Farbton 265; Karin: "Abstufungen derselben Farbe", ausdrücklich nicht neutrales Grau). Die Register unterscheiden sich in der Helligkeit, von hell nach dunkel in der Reihenfolge der Leiste: Start `#d4def3`, Ship `#abbee5`, Get `#6885c3`, Stay `#2c488e`, Kontakt `#0d1528`. Papier `#edf0f6`, Linien `#ced4e2`, Tinte 2 `#4a5364` tragen denselben Farbton schwach. Ein anderer Farbton heißt: die Rampe mit gleicher Helligkeit (L 0.90/0.80/0.62/0.42/0.20) und neuem h neu berechnen. Auf Start, Ship und Get stehen Marginalie und Reitertext in Tinte, auf Stay und Kontakt in Weiß. Akzente in Blättern (Wochenangaben, Listenmarker, FAQ-Plus) sind Tinte bzw. Tinte 2. Die einzige Farbe ist das Chromgelb (`brand`) im "AI" der Wortmarke; dazu Signalrot nur für offene Angaben. Der dunkle Kontaktblock ist ein sehr dunkles Blau, nicht warm.
+- **Palette (entschieden 19.11., Variante "Gelb + Petrol" aus `_varianten/farbtoene.html`):** Die Register werden von hell nach dunkel in der Reihenfolge der Leiste. Die hellen sind Gelb: Start `#fbefc2` (blass), Ship Fast `#f0bf1a` (Chromgelb, die führende Leistung). Die dunklen sind Petrol-Stufen (OKLCH, Farbton 220): Get `#358da5`, Stay `#005165`, Kontakt `#011a21`. Papier `#eff4f6`, Linien `#c8d7dc` und Tinte 2 `#43565c` tragen Petrol schwach. Verworfen: neutrales Grau (Karin: "Abstufungen derselben Farbe", nicht grau), reines Blau (austauschbar, zu nah an henning-thies.de), Gelb in Stufen (dunkle Stufen kippen ins Oliv/Braun). Marginalie und Reitertext: Tinte auf Start, Ship und Get, Weiß auf Stay und Kontakt. Akzente in Blättern (Wochenangaben, Listenmarker, FAQ-Plus) sind Tinte bzw. Tinte 2. Chromgelb steht außerdem im "AI" der Wortmarke; Signalrot nur für offene Angaben. Der Kontaktblock ist fast schwarzes Petrol.
 - **Typo-Skala:** Der Registername in der Marginalie ist die Abschnittsüberschrift und deshalb größer als alles im Blatt außer der Seiten-H1: H1 bis 3rem (Blatt-H1 bis 2.8rem), Registername 800 clamp(1.75rem, 2.8vw, 2.25rem), H2 im Blatt und `h2-plain` clamp(1.3rem, 2vw, 1.5rem), H3 einheitlich 1.2rem, FAQ-Frage 1.0625rem/600, Fließtext Serif 1.0625rem.
 - **Buttons:** Grotesk 800, 0.88rem, Versalien, +0.07em Laufweite, 14px 22px. Primär Tinte gefüllt, Sekundär Tinte-Kontur. Kein gelber Button mehr (`button-ship` entfällt).
 - **Reiter:** Text Grotesk 700 0.78rem, Versalien, +0.08em; auf dem Telefon 0.64rem/+0.03em, damit alle fünf Reiter in 390px passen.
