@@ -162,6 +162,7 @@ ul.list li::marker { color: var(--hue-ink); }
 /* Projekte, Person */
 .case { border-top: 1.5px solid var(--ink); padding-top: 12px; }
 .case + .case { margin-top: 22px; }
+.two > .case + .case { margin-top: 0; }
 .case .m { font: 500 .88rem var(--sans); color: var(--ink-2); display: block; margin-bottom: 6px; }
 .case h3 { font-size: 1.15rem; margin: 0 0 2px; }
 .case p { color: var(--ink-2); }
@@ -210,3 +211,13 @@ footer a:hover { text-decoration: underline; }
   html { scroll-behavior: auto; }
   * { transition: none !important; }
 }
+
+/* Team: Rollen gleichrangig nebeneinander */
+.team { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; }
+.team article { border-top: 1.5px solid var(--ink); padding-top: 14px; min-width: 0; }
+.team img { float: right; width: 64px; height: 80px; object-fit: cover; margin: 2px 0 8px 14px; }
+.team h3 { font-size: 1.15rem; margin: 0 0 2px; }
+.team .m { font: 500 .88rem var(--sans); color: var(--ink-2); display: block; margin-bottom: 8px; }
+.team p { color: var(--ink-2); }
+.team p + p { margin-top: 8px; }
+@media (max-width: 860px) { .team { grid-template-columns: 1fr; } }
