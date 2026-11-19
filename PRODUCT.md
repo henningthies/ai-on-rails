@@ -16,7 +16,7 @@ web
 
 ai-on-rails ist eine Ruby-on-Rails-Agentur aus Hamburg mit drei Leistungen:
 
-- **Ship Fast / Product Bets:** das volle Produktpaket. Anforderungen mit dem Fachbereich (Discovery), UX-Konzept und klickbarer Prototyp, UI-Design und Entwicklung: eine Produktidee in 12 Wochen als lauffähige Software auf den Daten des Kunden, mit vorab freigegebenem Erfolgskriterium und Entscheidungsvorlage (weiterbauen, umbauen, stoppen). Festpreis nach einem Workshop-Tag. Modernisierung und Weiterentwicklung bleiben technische Leistungen.
+- **Ship Fast / Product Bets:** das volle Produktpaket. Anforderungen mit dem Fachbereich (Discovery), UX-Konzept (Nutzerflüsse, Wireframes), UI-Design und Entwicklung; erste testbare Version ab Woche 4, kein Klickdummy: eine Produktidee in 12 Wochen als lauffähige Software auf den Daten des Kunden, mit vorab freigegebenem Erfolgskriterium und Entscheidungsvorlage (weiterbauen, umbauen, stoppen). Festpreis nach einem Workshop-Tag. Modernisierung und Weiterentwicklung bleiben technische Leistungen.
 - **Get Fast / Modernisierung:** Bestandsaufnahme (2 Wochen, Festpreis), Empfehlung, Umsetzung in Etappen, die einzeln live gehen.
 - **Stay Fast / Weiterentwicklung:** laufende Weiterentwicklung zum Monatspreis. Das wiederkehrende Geschäft, in das Bets und Modernisierung idealerweise übergehen.
 
