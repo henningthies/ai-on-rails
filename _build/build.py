@@ -566,7 +566,8 @@ stay_body = f"""
 IMPRESSUM = r"""<section>
  <h2>Angaben gemäß § 5 DDG</h2>
  <p>
- <strong>Henning Thies</strong><br>
+ <strong>ai-on-rails</strong><br>
+ Inhaber: Henning Thies<br>
  Lehmberg 7<br>
  23795 Negernbötel<br>
  Deutschland
@@ -655,7 +656,8 @@ DATENSCHUTZ = r"""<p class="update-date">Stand: November 2026</p>
  <section>
  <h2>1. Verantwortlicher</h2>
  <p>
- <strong>Henning Thies</strong><br>
+ <strong>ai-on-rails</strong><br>
+ Inhaber: Henning Thies<br>
  Lehmberg 7<br>
  23795 Negernbötel<br>
  Deutschland<br>
