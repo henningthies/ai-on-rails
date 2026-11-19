@@ -24,8 +24,8 @@ Preise nennt ai-on-rails je Projekt im ersten Gespräch.
 
 ## Team
 
-- Henning Thies: Gründer, Product Engineering, Dipl.-Ing., Ruby on Rails seit 2011. https://henning-thies.de · https://www.linkedin.com/in/henningthies/
-- Karin Krech: UX, Produkt und Management. https://www.linkedin.com/in/karin-krech-63ab86291/
+- Henning Thies: Gründer; Anforderungen, Systemdesign und Architektur, Entwicklung. https://henning-thies.de · https://www.linkedin.com/in/henningthies/
+- Karin Krech: Nutzerflüsse und Wireframes, Gestaltung der Oberflächen, Produktmanagement, Projektorganisation. https://www.linkedin.com/in/karin-krech-63ab86291/
 - Netzwerk: normkit.digital (https://normkit.digital), Studio für Produktentwicklung und UX/UI-Design, für größere Design-Vorhaben.
 
 ## Kontakt
