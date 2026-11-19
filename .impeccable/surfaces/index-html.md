@@ -20,7 +20,7 @@ Ranking des Nutzers: C (Handbuch mit Registern), A (Entscheidungsvorlage), B (Br
 
 THESIS: Die Website ist ein gebundenes Handbuch mit einem Register pro Leistung. Ship Fast, Get Fast, Stay Fast sind Registerkarton in voller Farbe, der Inhalt liegt auf hellen Blättern darüber. Sie verweigert die Agentur-Vorlage aus Hero, drei gleichen Karten und Logoleiste.
 
-OWN-WORLD: Grund Papier #f3efe4. Register: Ship Oxidorange #c4471a, Get Grün #1d6f55, Stay Ultramarin #2a3d9a, Kontakt Tinte #1b1b1d. Blätter fast weiß (95 %), weicher kurzer Schatten. Fließtext Source Serif 4 in einer Größe, Köpfe Hanken Grotesk, Maße und Dauern in JetBrains Mono. Offene Angaben als gestrichelter Errata-Zettel in Rostrot.
+OWN-WORLD: Grund kühles Grau #eceef1 (kein Beige). Register: Ship Chromgelb #f0bf1a mit dunkler Schrift, Get Grün #1d6f55, Stay Ultramarin #2a3d9a, Kontakt Tinte #1b1b1d. Blätter reines Weiß, weicher kurzer Schatten. Fließtext Source Serif 4 in einer Größe, Köpfe Hanken Grotesk, Maße und Dauern in JetBrains Mono. Offene Angaben als gestrichelter Errata-Zettel in Signalrot. Kein Orange (Henning 19.11.: Beige + Orange wirkte wie Claude).
 
 STORY: Der Besucher sieht sofort, dass es drei Leistungen mit festem Ablauf gibt, dass die Product Bet vorne steht und was jede kostet, wie lange sie dauert und was am Ende vorliegt. Er glaubt das, weil jedes Register dieselben Felder führt (Raise aus A: Laufzeit, Einstieg, Kosten, Ergebnis) und Lücken sichtbar offen bleiben. Er bucht einen Termin.
 

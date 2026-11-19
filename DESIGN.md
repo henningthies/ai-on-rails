@@ -1,20 +1,20 @@
 ---
 name: ai-on-rails
-description: Handbuch mit Registern. Papiergrund, ein Register pro Leistung in voller Farbe, Inhalt auf hellen Blättern.
+description: Handbuch mit Registern. Kühler grauer Grund, ein Register pro Leistung in voller Farbe, Inhalt auf hellen Blättern.
 colors:
-  paper: "#f3efe4"
-  leaf: "rgba(255, 255, 253, .95)"
-  ink: "#1b1b1d"
-  ink-2: "#4b4a47"
-  rule: "#d8d2c3"
-  start: "#6e685c"
-  ship: "#c4471a"
-  ship-ink: "#a83a12"
+  paper: "#eceef1"
+  leaf: "#ffffff"
+  ink: "#15181e"
+  ink-2: "#474d57"
+  rule: "#cfd4db"
+  start: "#555d6b"
+  ship: "#f0bf1a"
+  ship-ink: "#7a5b00"
   get: "#1d6f55"
   stay: "#2a3d9a"
-  dark: "#1b1b1d"
-  errata: "#9a3412"
-  selection: "#f6d7c6"
+  dark: "#15181e"
+  errata: "#b4232f"
+  selection: "#ffe27a"
   dark-leaf: "#26262a"
   dark-line: "#3a3a40"
   dark-text: "#f1efe9"
@@ -198,14 +198,14 @@ components:
 
 **Creative North Star: "Das Handbuch mit Registern"**
 
-Die Website ist ein gebundenes Handbuch. Jede Leistung ist ein Register aus Karton in voller Farbe (Ship Fast Oxidorange, Get Fast Grün, Stay Fast Ultramarin, Kontakt Tinte), und der Inhalt liegt auf fast weißen Blättern, die auf diesem Karton aufliegen. Rechts sitzt über die volle Höhe eine feste Registerleiste; der Reiter des Registers, das gerade im Blick ist, ist ausgezogen. Die Welt stammt aus dem Katalog-Challenger rw-manual-acetate-tab-board und wurde vom Nutzer auf Platz 1 gesetzt.
+Die Website ist ein gebundenes Handbuch. Jede Leistung ist ein Register aus Karton in voller Farbe (Ship Fast Chromgelb, Get Fast Grün, Stay Fast Ultramarin, Kontakt Tinte), und der Inhalt liegt auf fast weißen Blättern, die auf diesem Karton aufliegen. Rechts sitzt über die volle Höhe eine feste Registerleiste; der Reiter des Registers, das gerade im Blick ist, ist ausgezogen. Die Welt stammt aus dem Katalog-Challenger rw-manual-acetate-tab-board und wurde vom Nutzer auf Platz 1 gesetzt.
 
 Die Haltung ist die eines technischen Handbuchs, nicht einer Agenturseite: dieselben Felder in jedem Register, Maße und Dauern in Monospace, Linien wie in einer Tabelle, offene Angaben als sichtbarer Errata-Zettel statt als geglätteter Platzhalter. Dichte ist mittel: lesbare Blätter mit begrenzter Zeilenlänge, aber keine Luftflächen ohne Inhalt. Die Seite verweigert die Agentur-Vorlage aus Hero-Bild, drei gleichen Karten und Logoleiste.
 
 Bewegung hat genau eine Grammatik: zwei harte Stufen in 90 ms (`steps(2)`), ohne Easing. Der Reiter springt heraus, der Button kippt um, das Plus der FAQ klappt. Nichts gleitet, nichts federt.
 
 **Key Characteristics:**
-- Papiergrund, Register in voller Farbe, Inhalt immer auf einem hellen Blatt
+- Kühler grauer Grund (Ordnerkarton), Register in voller Farbe, Inhalt immer auf einem hellen Blatt
 - Feste Registerleiste rechts (64px), Reiterhöhe nach Umfang der Leistung
 - Drei Schriftstimmen: Serif zum Lesen, Grotesk zum Navigieren, Mono zum Messen
 - Steckbrief mit denselben vier Feldern in jedem Register
@@ -215,11 +215,11 @@ Bewegung hat genau eine Grammatik: zwei harte Stufen in 90 ms (`steps(2)`), ohne
 
 ## Colors
 
-Warmer Papiergrund und Tinte als Basis, drei kräftige, gedeckte Registerfarben als Leistungs-Codes, ein Rostrot nur für offene Angaben.
+Kühler grauer Grund und Tinte als Basis, drei kräftige Registerfarben (Chromgelb, Grün, Ultramarin) als Leistungs-Codes, ein Signalrot nur für offene Angaben. **Bewusst kein Beige und kein Orange** (Henning, 19.11.: wirkte wie Claude bzw. typische KI-Oberfläche). Serif-Fließtext bleibt nur in Verbindung mit kühlem Grund vertretbar.
 
 ### Primary
-- **Ship Oxidorange** (`ship`): Register Ship Fast / Product Bets, ihr Reiter, ihre Farbmarke im Inhaltsverzeichnis und der einzige farbige Button (`button-ship`). Weil die Product Bet führt, ist Orange auch die Farbe des Haupt-Aufrufs "Gespräch vereinbaren" im Startblock und auf der Bet-Seite.
-- **Ship-Tinte** (`ship-ink`): dunklere Stufe für orangefarbenen Text auf hellem Grund (Wochenangaben im Ablauf, Listenmarker, Hover-Text des Ship-Buttons, "AI" in der Wortmarke). Text in Registerfarbe auf Papier oder Blatt nimmt immer die `-ink`-Stufe.
+- **Ship Chromgelb** (`ship`): Register Ship Fast / Product Bets, ihr Reiter, ihre Farbmarke im Inhaltsverzeichnis und der einzige farbige Button (`button-ship`). Weil die Product Bet führt, ist Orange auch die Farbe des Haupt-Aufrufs "Gespräch vereinbaren" im Startblock und auf der Bet-Seite.
+- **Ship-Tinte** (`ship-ink`): dunkle Ocker-Stufe für gelben Akzenttext auf hellem Grund (Gelb selbst ist als Text nicht lesbar) (Wochenangaben im Ablauf, Listenmarker, Hover-Text des Ship-Buttons, "AI" in der Wortmarke). Text in Registerfarbe auf Papier oder Blatt nimmt immer die `-ink`-Stufe.
 
 ### Secondary
 - **Register-Grün** (`get`): Register Get Fast / Modernisierung. Im CSS existiert `--get-ink` mit identischem Wert; Grün ist dunkel genug, um als Text auf dem Blatt zu stehen.
@@ -231,14 +231,14 @@ Warmer Papiergrund und Tinte als Basis, drei kräftige, gedeckte Registerfarben 
 - **Errata-Rost** (`errata`): ausschließlich für offene Angaben (`.open`): Preise, Fristen, Freigaben, die noch fehlen.
 
 ### Neutral
-- **Papier** (`paper`): Seitengrund, Startblock, Kopf, Fuß, Abschnitt "Für alle Register". Auch `theme-color`.
+- **Grund** (`paper`): Seitengrund, Startblock, Kopf, Fuß, Abschnitt "Für alle Register". Auch `theme-color`.
 - **Blatt** (`leaf`): fast weißes, leicht transparentes Blatt, auf dem jeder Inhalt eines Registers liegt.
 - **Tinte** (`ink`): Text, Primär-Button, 1.5px-Kopflinien von Tabellen, Fokusring. `dark` hat denselben Wert und färbt das Kontakt-Register und seinen Reiter.
 - **Tinte 2** (`ink-2`): Leads, Fließtext in Listen und Antworten, Labels, Meta-Zeilen, inaktive Kopfnavigation.
 - **Linie** (`rule`): 1px-Trennlinien innerhalb von Steckbrief, Ablauf, Preisen, Inhaltsverzeichnis und FAQ.
 - **Startgrau** (`start`): nur der Reiter "Start".
 - **Kontakt-Blatt / -Linie / -Text / -Lead / Ghost-Linie** (`dark-leaf`, `dark-line`, `dark-text`, `dark-lead`, `dark-ghost-line`): die invertierte Ausführung im Kontakt-Register.
-- **Markierung** (`selection`): Textauswahl, ein helles Orange.
+- **Markierung** (`selection`): Textauswahl, ein helles Gelb.
 
 ### Named Rules
 **The One Register, One Color Rule.** Jede Leistung besitzt genau eine Farbe, und diese Farbe erscheint nur als ihr Registerband, ihr Reiter, ihre Farbmarke im Inhaltsverzeichnis und als Akzent auf ihren Blättern (Wochenangaben, Listenmarker, FAQ-Plus über `--hue-ink`). Eine Registerfarbe taucht nie in einem fremden Register auf.
@@ -411,3 +411,9 @@ Klar und satt; beim Hover kippt der Button in zwei Stufen in seine Kontur.
 - **Don't** baue Hero-Bild, drei gleiche Karten oder eine Logoleiste; Leistungen sind Register, keine Kacheln.
 - **Don't** setze Labels oder Kicker über Überschriften; der Abschnittsname gehört in die Marginalie.
 - **Don't** verwende Icon-Sets oder Glyph-Icons; Marken sind Farbquadrate, Linien und gezeichnete Balken.
+
+## Nachtrag 19.11.: Palette ohne Beige/Orange
+- Grund `#eceef1`, Blatt reines Weiß, Tinte `#15181e`, Linie `#cfd4db`, Start-Reiter `#555d6b`.
+- Ship Chromgelb `#f0bf1a` trägt **dunkle** Schrift (Marginalie, Reiter, Button), nie weiße. Akzenttext Ocker `#7a5b00`.
+- Logo: "AI" auf gelbem Feld wie ein Registerreiter, Text in Tinte.
+- Errata Signalrot `#b4232f`.

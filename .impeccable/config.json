@@ -9,16 +9,6 @@
   "detector": {
     "ignoreRules": [],
     "ignoreFiles": [],
-    "ignoreValues": [
-      {
-        "rule": "cream-palette",
-        "value": "*",
-        "files": [
-          "*.html"
-        ],
-        "createdAt": "2026-11-19T08:07:08.735Z",
-        "reason": "Henning: chose variant C (Handbuch mit Registern) with paper ground #f3efe4 on 2026-11-19"
-      }
-    ]
+    "ignoreValues": []
   }
 }

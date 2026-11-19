@@ -1,22 +1,23 @@
 /* ai-on-rails: Handbuch mit Registern.
-   Papiergrund, ein Register pro Leistung in voller Farbe, Text auf hellen Blättern.
+   Kühler Grund (Ordnerkarton grau), ein Register pro Leistung in voller Farbe, Text auf hellen Blättern.
+   Bewusst kein Beige und kein Orange: das ist die Farbwelt typischer KI-Oberflächen.
    Bewegung nur in zwei Stufen (steps(2), 90 ms), kein Easing. */
 
 :root {
-  --paper: #f3efe4;
-  --leaf: rgba(255, 255, 253, .95);
-  --ink: #1b1b1d;
-  --ink-2: #4b4a47;
-  --rule: #d8d2c3;
-  --start: #6e685c;
-  --ship: #c4471a;
-  --ship-ink: #a83a12;
+  --paper: #eceef1;
+  --leaf: #ffffff;
+  --ink: #15181e;
+  --ink-2: #474d57;
+  --rule: #cfd4db;
+  --start: #555d6b;
+  --ship: #f0bf1a;
+  --ship-ink: #7a5b00;
   --get: #1d6f55;
   --get-ink: #1d6f55;
   --stay: #2a3d9a;
   --stay-ink: #2a3d9a;
-  --dark: #1b1b1d;
-  --errata: #9a3412;
+  --dark: #15181e;
+  --errata: #b4232f;
   --serif: "Source Serif 4", Georgia, serif;
   --sans: "Hanken Grotesk", system-ui, sans-serif;
   --mono: "JetBrains Mono", ui-monospace, monospace;
@@ -28,7 +29,7 @@
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; background: var(--paper); }
 body { margin: 0; background: var(--paper); color: var(--ink); font: 400 1.0625rem/1.62 var(--serif); }
-::selection { background: #f6d7c6; color: var(--ink); }
+::selection { background: #ffe27a; color: var(--ink); }
 a { color: inherit; text-underline-offset: 3px; text-decoration-thickness: 1px; }
 :focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
 h1, h2, h3, p, ul, ol, dl { margin: 0; }
@@ -53,7 +54,8 @@ h1, h2, h3 { font-family: var(--sans); font-weight: 700; line-height: 1.15; lett
 .tabs a:hover, .tabs a[aria-current="true"], .tabs a[aria-current="page"] { box-shadow: none; color: #fff; }
 .tabs a:focus-visible { outline-color: #fff; outline-offset: -4px; }
 .t-start { background: var(--start); }
-.t-ship { background: var(--ship); }
+.t-ship { background: var(--ship); color: rgba(21, 24, 30, .78) !important; }
+.t-ship:hover, .t-ship[aria-current="true"], .t-ship[aria-current="page"] { color: var(--ink) !important; }
 .t-get { background: var(--get); }
 .t-stay { background: var(--stay); }
 .t-kontakt { background: var(--dark); }
@@ -64,7 +66,7 @@ h1, h2, h3 { font-family: var(--sans); font-weight: 700; line-height: 1.15; lett
 /* Kopf */
 .top .in { display: flex; justify-content: space-between; align-items: center; gap: 12px 24px; flex-wrap: wrap; padding-block: 20px; }
 .brand { font: 700 1.05rem var(--sans); letter-spacing: .08em; text-decoration: none; }
-.brand span { color: var(--ship-ink); }
+.brand span { background: var(--ship); color: var(--ink); padding: 0 4px; margin-right: 1px; }
 .top nav { display: flex; gap: 6px 22px; align-items: center; flex-wrap: wrap; font: 500 .95rem var(--sans); }
 .top nav a:not(.btn) { text-decoration: none; color: var(--ink-2); }
 .top nav a:not(.btn):hover, .top nav a[aria-current="page"] { color: var(--ink); }
@@ -78,8 +80,8 @@ h1, h2, h3 { font-family: var(--sans); font-weight: 700; line-height: 1.15; lett
 }
 .btn:hover { background: transparent; color: var(--ink); }
 .btn.sm { padding: 7px 14px; font-size: .9rem; }
-.btn.ship { background: var(--ship); border-color: var(--ship); }
-.btn.ship:hover { background: transparent; color: var(--ship-ink); }
+.btn.ship { background: var(--ship); border-color: var(--ship); color: var(--ink); }
+.btn.ship:hover { background: transparent; color: var(--ink); border-color: var(--ink); }
 .btn.ghost { background: transparent; color: var(--ink); }
 .btn.ghost:hover { background: var(--ink); color: #fff; }
 .row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 26px; }
@@ -99,6 +101,7 @@ h1, h2, h3 { font-family: var(--sans); font-weight: 700; line-height: 1.15; lett
 /* Register */
 .reg { padding-block: 56px; --hue: var(--ink); --hue-ink: var(--ink); }
 .reg.ship { background: var(--ship); --hue: var(--ship); --hue-ink: var(--ship-ink); }
+.reg.ship .margin { color: var(--ink); }
 .reg.get { background: var(--get); --hue: var(--get); --hue-ink: var(--get-ink); }
 .reg.stay { background: var(--stay); --hue: var(--stay); --hue-ink: var(--stay-ink); }
 .reg.dark { background: var(--dark); }
