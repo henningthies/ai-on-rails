@@ -36,8 +36,8 @@ Statische HTML-Seiten auf GitHub Pages, kein Build-Schritt. Termine über einen 
 
 ## Capabilities and Constraints
 
-- Firmenstimme "wir". Keine erfundenen Teamgrößen, keine Personen außer Henning namentlich.
-- UX und UI-Design stehen als eigene Rolle im Team, ohne Namen (Entscheidung 19.11.2026). Nutzertests/QS werden nicht als eigene Leistung beworben.
+- Firmenstimme "wir". Keine erfundenen Teamgrößen, keine Personen außer Henning und Karin namentlich.
+- Team auf der Website (Entscheidung 19.11.2026, abends): Henning Thies (Gründer, Product Engineering) und **Karin namentlich** mit Rolle "UX, Produkt und Management"; Netzwerk für Entwicklung und Vertretung ohne Zahlen, Partner nur nach Zusage. Nutzertests/QS werden nicht als eigene Leistung beworben.
 - Preise (netto, Stand 19.11.2026): Workshop-Tag 2.900 € (wird bei Beauftragung der Bet angerechnet); Product Bet ab 90.000 €, üblich 90.000–150.000 €, Festpreis nach Workshop-Tag; Bestandsaufnahme ab 9.800 €; Etappen Festpreis nach Bestandsaufnahme; Weiterentwicklung Einrichtung 2.900 € + ab 4.900 €/Monat, Mindestlaufzeit 3 Monate, danach monatlich kündbar. Keine Tagessätze, kein Aufwand in Tagen auf der Seite.
 - Reaktionszeit Stay Fast: bei Ausfall am selben Arbeitstag (Mo–Fr, 9–17 Uhr), keine 24/7-Bereitschaft.
 - `/factory` bleibt als separate, nicht verlinkte Seite bestehen.

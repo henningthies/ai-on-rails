@@ -386,7 +386,7 @@ Klar und satt; beim Hover kippt der Button in zwei Stufen in seine Kontur.
 ### Projekt und Person
 - Projekt: 1.5px Tintenlinie oben, H3, Meta-Zeile in Grotesk 500 0.88rem Tinte 2 ("Ship Fast · E-Commerce · seit 2026"), Text in Tinte 2.
 - Person: Porträt 120 × 150px, rechteckig, `object-fit: cover`, daneben Name, Rolle (Grotesk 500 0.9rem Tinte 2), Text.
-- Team (`.team`): drei gleichrangige Rollen nebeneinander (mobil untereinander), je 1.5px-Kopflinie in Tinte, Rollenname als h3, Meta-Zeile (Grotesk 500 0.88rem) mit Person bzw. Herkunft, Text in Serif. Nur die Rolle mit benannter Person trägt ein Porträt, 64 × 80px rechts eingerückt, damit die Rollenüberschriften auf einer Linie bleiben. Keine Rolle wird durch ein großes Foto hervorgehoben.
+- Team (`.team`): Personen zweispaltig (mobil einspaltig), je 1.5px-Kopflinie in Tinte, Porträt 120 × 150px oben, Name als h3, Rolle als Meta-Zeile (Grotesk 500 0.9rem), 2–3 Sätze Bio in Serif, Links. Fehlt ein Foto, steht ein gestrichelter Rahmen gleicher Größe mit Errata-Zettel. Darunter das Netzwerk als ein Absatz ohne Zahlen (`.network`), Partner nur nach Zusage namentlich.
 
 ## Do's and Don'ts
 
