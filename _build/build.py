@@ -380,7 +380,7 @@ start_body = f"""
           <p class="links"><a href="https://henning-thies.de" target="_blank" rel="noopener">henning-thies.de</a> · <a href="https://www.linkedin.com/in/henningthies/" target="_blank" rel="noopener">LinkedIn</a></p>
         </article>
         <article>
-          <div class="photo-open" role="img" aria-label="Foto von Karin Krech folgt">{ph("Foto")}</div>
+          <img src="/karin-krech.webp" alt="Karin Krech" width="120" height="150" loading="lazy">
           <h3>Karin Krech</h3><span class="m">UX, Produkt und Management</span>
           {ul(["Nutzerflüsse und Wireframes", "Gestaltung der Oberflächen", "Produktmanagement", "Projektorganisation"])}
           <p class="links"><a href="https://www.linkedin.com/in/karin-krech-63ab86291/" target="_blank" rel="noopener">LinkedIn</a></p>
