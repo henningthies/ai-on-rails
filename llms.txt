@@ -1,18 +1,24 @@
 # ai-on-rails
 
-> Agentur für Produktentwicklung aus der Region Hamburg (Negernbötel, Schleswig-Holstein). Wir testen Produktideen in 12 Wochen auf echten Daten und entwickeln weiter, was sich bewährt: Anforderungen, UX- und UI-Design und Entwicklung mit Ruby on Rails. Dazu Modernisierung und Weiterentwicklung bestehender Rails-Anwendungen. Projekte zum Festpreis, Weiterentwicklung zum Monatspreis. Sprache der Website: Deutsch.
+> Agentur für Produktentwicklung aus der Region Hamburg (Negernbötel, Schleswig-Holstein). Wir testen Produktideen in 12 Wochen mit den Nutzern des Kunden und entwickeln weiter, was sich bewährt: Anforderungen, UX- und UI-Design und Entwicklung mit Ruby on Rails. Dazu Modernisierung und Weiterentwicklung bestehender Webanwendungen, mit Schwerpunkt Ruby on Rails. Projekte zum Festpreis, Weiterentwicklung zu einem festen Monatsbetrag. Sprache der Website: Deutsch.
 
 ## Leistungen
 
-- [Product Bets](https://ai-on-rails.com/product-bets): Eine Produktidee in 12 Wochen als lauffähige Software auf den Daten des Kunden, mit vorab freigegebenem Erfolgskriterium und Entscheidungsvorlage in Woche 12 (weiterbauen, umbauen, stoppen). Enthält Anforderungen, UX-Konzept, UI-Design und Entwicklung. Workshop-Tag 2.900 € (wird angerechnet), Festpreis ab 90.000 €, üblich 90.000 bis 150.000 €.
-- [Rails-Modernisierung](https://ai-on-rails.com/rails-modernisierung): Bestandsaufnahme (2 Wochen, ab 9.800 €), danach Rails- und Ruby-Upgrades, Performance und Neubau in Etappen, die einzeln live gehen. Festpreis je Etappe.
-- [Rails-Weiterentwicklung](https://ai-on-rails.com/rails-weiterentwicklung): Laufende Weiterentwicklung und Wartung von Rails-Anwendungen. Einrichtung 2.900 €, ab 4.900 € pro Monat, Mindestlaufzeit 3 Monate, danach monatlich kündbar. Reaktion bei Ausfall am selben Arbeitstag (Mo–Fr, 9–17 Uhr), keine 24/7-Bereitschaft.
+- [Product Bets](https://ai-on-rails.com/product-bets): Eine Produktidee in 12 Wochen als laufende Anwendung auf den Daten des Kunden, getestet mit Testnutzern, mit vorab freigegebenem Erfolgskriterium und Entscheidungsvorlage in Woche 12 (weiterbauen, umbauen, stoppen). Enthält Anforderungen, UX-Konzept, Design und Entwicklung. Einstieg über einen Workshop-Tag, danach Festpreis.
+- [Modernisierung](https://ai-on-rails.com/rails-modernisierung): Technisches Audit (2 Wochen) mit Bericht, bewerteten Risiken und Plan. Danach Rails- und Ruby-Upgrades, Performance oder schrittweiser Neubau älterer Anwendungen (auch aus anderen Technologien) in Rails, in Meilensteinen, die einzeln live gehen. Festpreis je Meilenstein.
+- [Weiterentwicklung](https://ai-on-rails.com/rails-weiterentwicklung): Laufende Weiterentwicklung und Wartung von Webanwendungen, Schwerpunkt Ruby on Rails, andere Technologien nach Prüfung. Fester Monatsbetrag je nach Umfang, Mindestlaufzeit 3 Monate, danach monatlich kündbar. Reaktion bei Ausfall am selben Arbeitstag (Mo–Fr, 9–17 Uhr), keine 24/7-Bereitschaft.
 
-Alle Preise netto zzgl. USt.
+Preise nennt ai-on-rails je Projekt im ersten Gespräch.
+
+## Projekte (anonym)
+
+- KI-Produkt für Modemarken (E-Commerce, seit März 2026): Produktbilder für Onlineshops, aus einem internen Test entstanden. Weiterentwicklung als kleines externes Team mit Ruby on Rails; der Kunde baut inzwischen ein eigenes Team auf.
+- Sicherheits- und Architektur-Audit einer KI-Plattform (Juli 2026): 37 Auffälligkeiten geprüft, 20 mit Empfehlung im Bericht, darunter eine kritische Lücke zwischen Mandanten über Prompt-Injection.
 
 ## Arbeitsweise
 
 - Entwicklung mit KI; Werkzeuge und Abläufe wählt ai-on-rails selbst. Ein Mensch prüft jede Änderung, bevor sie live geht.
+- Neue Anwendungen entstehen mit Ruby on Rails: feste Struktur und Konventionen, in denen KI verlässlich arbeitet und Änderungen schnell prüfbar sind (daher der Name).
 - Quellcode, Designs und Zugänge gehören dem Kunden. Übergabe an ein eigenes Team des Kunden ist möglich, inklusive Unterstützung bei der Auswahl von Entwicklern.
 
 ## Team

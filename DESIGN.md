@@ -203,6 +203,16 @@ Dieser Nachtrag geht allen Farb-, Typo- und Button-Angaben weiter unten vor. Wo 
 - **Buttons:** Grotesk 800, 0.88rem, Versalien, +0.07em Laufweite, 14px 22px. Primär Tinte gefüllt, Sekundär Tinte-Kontur. Kein gelber Button mehr (`button-ship` entfällt).
 - **Reiter:** Text Grotesk 700 0.78rem, Versalien, +0.08em; auf dem Telefon 0.64rem/+0.03em, damit alle fünf Reiter in 390px passen.
 
+## Nachtrag 19.11.2026 (2): Registerleiste entfernt
+
+Gilt vor allen Angaben weiter unten zur Registerleiste, zur Rail Rule, zu `--rail` und zum Abschnitt "Für alle Register".
+
+- Die feste Registerleiste rechts (Desktop) bzw. oben (Telefon) ist entfernt, ebenso das Skript, das den aktiven Reiter setzte. Die Register sind nur noch die farbigen Bänder mit Registername in der Marginalie. Die Seite nutzt die volle Breite.
+- Der Abschnitt nach den Registern (Zusammenhang, Arbeitsweise, Projekte, Team) hat keine Marginalie mehr ("Für alle Register" ist gestrichen) und läuft über die ganze Containerbreite. "Wie wir arbeiten" ist dreispaltig (`.three`, mittlere Breiten zwei-, Telefon einspaltig).
+- Projekte zeigen Ausgangslage, Arbeit und Stand/Ergebnis als `dl.facts` (Label Grotesk 600 0.8rem Tinte, Text Tinte 2).
+- Telefon: Die Kopfnavigation zeigt die drei Textlinks unter der Wortmarke; der kleine Button entfällt dort (Startblock und Kontakt tragen den Aufruf).
+- Inhaltsverzeichnis im Startblock: nur noch die drei Leistungen.
+
 ## Overview
 
 **Creative North Star: "Das Handbuch mit Registern"**

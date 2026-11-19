@@ -14,11 +14,11 @@ web
 
 ## Product Purpose
 
-ai-on-rails ist eine Ruby-on-Rails-Agentur aus Hamburg mit drei Leistungen:
+ai-on-rails ist eine Agentur für Produktentwicklung aus der Region Hamburg. Neue Anwendungen entstehen mit Ruby on Rails ("KI auf festen Schienen": Rails' feste Struktur macht KI-Arbeit verlässlich und prüfbar). Bestehende Anwendungen übernimmt sie auch in anderen Technologien (Henning, 19.11.: mit KI ist die Technologie weniger entscheidend). Drei Leistungen:
 
-- **Ship Fast / Product Bets:** das volle Produktpaket. Anforderungen mit dem Fachbereich (Discovery), UX-Konzept (Nutzerflüsse, Wireframes), UI-Design und Entwicklung; erste testbare Version ab Woche 4, kein Klickdummy: eine Produktidee in 12 Wochen als lauffähige Software auf den Daten des Kunden, mit vorab freigegebenem Erfolgskriterium und Entscheidungsvorlage (weiterbauen, umbauen, stoppen). Festpreis nach einem Workshop-Tag. Modernisierung und Weiterentwicklung bleiben technische Leistungen.
-- **Get Fast / Modernisierung:** Bestandsaufnahme (2 Wochen, Festpreis), Empfehlung, Umsetzung in Etappen, die einzeln live gehen.
-- **Stay Fast / Weiterentwicklung:** laufende Weiterentwicklung zum Monatspreis. Das wiederkehrende Geschäft, in das Bets und Modernisierung idealerweise übergehen.
+- **Ship Fast / Product Bets:** das volle Produktpaket. Anforderungen mit dem Fachbereich (Discovery), UX-Konzept (Nutzerflüsse, Wireframes), UI-Design und Entwicklung; erste testbare Version ab Woche 4, kein Klickdummy: eine Produktidee in 12 Wochen als laufende Anwendung auf den Daten des Kunden, mit vorab freigegebenem Erfolgskriterium und Entscheidungsvorlage (weiterbauen, umbauen, stoppen). Festpreis nach einem Workshop-Tag. Modernisierung und Weiterentwicklung bleiben technische Leistungen.
+- **Get Fast / Modernisierung:** Technisches Audit (2 Wochen, Festpreis; früher "Bestandsaufnahme", klang zu klein), Bericht mit Risiken und Plan, Umsetzung in Meilensteinen (früher "Etappen", unverständlich), die einzeln live gehen. Rails-Upgrades und schrittweiser Neubau älterer Anwendungen anderer Technologien in Rails.
+- **Stay Fast / Weiterentwicklung:** laufende Weiterentwicklung zu einem festen Monatsbetrag, Rails als Schwerpunkt, andere Technologien nach Prüfung bei der Einrichtung. Das wiederkehrende Geschäft, in das Bets und Modernisierung idealerweise übergehen.
 
 Erfolg der Website: Ein Bereichsleiter versteht nach einem Gespräch, was er kauft, glaubt jedem Satz und bucht den nächsten Termin.
 
@@ -38,7 +38,7 @@ Statische HTML-Seiten auf GitHub Pages, kein Build-Schritt. Termine über einen 
 
 - Firmenstimme "wir". Keine erfundenen Teamgrößen, keine Personen außer Henning und Karin namentlich.
 - Team auf der Website (Entscheidung 19.11.2026, abends): Henning Thies (Gründer, Product Engineering) und **Karin namentlich** mit Rolle "UX, Produkt und Management"; Netzwerk für Entwicklung und Vertretung ohne Zahlen, Partner nur nach Zusage. Nutzertests/QS werden nicht als eigene Leistung beworben.
-- Preise (netto, Stand 19.11.2026): Workshop-Tag 2.900 € (wird bei Beauftragung der Bet angerechnet); Product Bet ab 90.000 €, üblich 90.000–150.000 €, Festpreis nach Workshop-Tag; Bestandsaufnahme ab 9.800 €; Etappen Festpreis nach Bestandsaufnahme; Weiterentwicklung Einrichtung 2.900 € + ab 4.900 €/Monat, Mindestlaufzeit 3 Monate, danach monatlich kündbar. Keine Tagessätze, kein Aufwand in Tagen auf der Seite.
+- **Keine Beträge auf der Website (Henning, 19.11.: Preis ist je Projekt unterschiedlich).** Die Seite erklärt nur, wie der Preis entsteht: Festpreis nach Workshop-Tag bzw. Audit, je Meilenstein, fester Monatsbetrag; Preisrahmen im ersten Gespräch. Interne Richtwerte (Stand 19.11.): Workshop-Tag 2.900 €, Bet 90.000–150.000 €, Audit ab 9.800 €, Weiterentwicklung Einrichtung 2.900 € + ab 4.900 €/Monat. Keine Tagessätze auf der Seite.
 - Reaktionszeit Stay Fast: bei Ausfall am selben Arbeitstag (Mo–Fr, 9–17 Uhr), keine 24/7-Bereitschaft.
 - `/factory` bleibt als separate, nicht verlinkte Seite bestehen.
 

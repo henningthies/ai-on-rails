@@ -1,6 +1,7 @@
 /* ai-on-rails: Handbuch mit Registern.
    Zwei Farben: helle Register in Gelb (Start blass, Ship Fast Chromgelb), dunkle Register in Petrol-Stufen
    (OKLCH, Farbton 220; Get mittel, Stay dunkel, Kontakt fast schwarz). Papier, Linien und Tinte 2 leicht petrol. Bewusst kein Beige und kein Orange (Farbwelt typischer KI-Oberflächen).
+   Keine Registerleiste mehr (19.11.): die Register sind nur noch die Bänder auf der Seite.
    Bewegung nur in zwei Stufen (steps(2), 90 ms), kein Easing. */
 
 :root {
@@ -19,7 +20,6 @@
   --serif: "Source Serif 4", Georgia, serif;
   --sans: "Hanken Grotesk", system-ui, sans-serif;
   --mono: "JetBrains Mono", ui-monospace, monospace;
-  --rail: 64px;
   --step: 90ms steps(2);
   color-scheme: light;
 }
@@ -39,28 +39,6 @@ h1, h2, h3 { font-family: var(--sans); font-weight: 700; line-height: 1.15; lett
 /* Offene Angabe: Errata-Zettel */
 .open { font: 500 .8em var(--mono); color: var(--errata); border: 1px dashed currentColor; padding: 0 5px; white-space: nowrap; }
 
-/* Registerleiste */
-.tabs { position: fixed; right: 0; top: 0; bottom: 0; width: var(--rail); display: flex; flex-direction: column; z-index: 30; }
-/* Alle Reiter füllen die Leiste lückenlos. Inaktive liegen "hinter" der Seite (Schatten an der Innenkante),
-   der aktive liegt obenauf und geht ohne Kante in die Seite über. */
-.tabs a {
-  flex: var(--ext, 1); display: flex; align-items: center; justify-content: center;
-  color: rgba(255, 255, 255, .9); text-decoration: none; font: 700 .78rem var(--sans); letter-spacing: .08em; text-transform: uppercase;
-  writing-mode: vertical-rl; box-shadow: inset 8px 0 10px -8px rgba(0, 0, 0, .45);
-  transition: box-shadow var(--step), color var(--step);
-}
-.tabs a:hover, .tabs a[aria-current="true"], .tabs a[aria-current="page"] { box-shadow: none; color: #fff; }
-.tabs a:focus-visible { outline-color: #fff; outline-offset: -4px; }
-.t-start, .t-ship, .t-get { color: var(--ink) !important; }
-.t-start:hover, .t-start[aria-current], .t-ship:hover, .t-ship[aria-current], .t-get:hover, .t-get[aria-current] { color: var(--ink) !important; }
-.t-start:focus-visible, .t-ship:focus-visible, .t-get:focus-visible { outline-color: var(--ink); }
-.t-start { background: var(--start); }
-.t-ship { background: var(--ship); }
-.t-get { background: var(--get); }
-.t-stay { background: var(--stay); }
-.t-kontakt { background: var(--dark); }
-
-.page { margin-right: var(--rail); }
 .in { max-width: 1120px; margin: 0 auto; padding-inline: clamp(16px, 4vw, 48px); }
 
 /* Kopf */
@@ -137,7 +115,10 @@ h1, h2, h3 { font-family: var(--sans); font-weight: 700; line-height: 1.15; lett
 .track .t { font-size: 1.0625rem; color: var(--ink-2); display: block; }
 
 .two { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
-.two h3 { font-size: 1.2rem; margin-bottom: 8px; }
+.two h3, .three h3 { font-size: 1.2rem; margin-bottom: 8px; }
+.three { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; }
+.three .body { color: var(--ink-2); }
+@media (max-width: 1100px) and (min-width: 861px) { .three { grid-template-columns: 1fr 1fr; } }
 ul.list { padding-left: 1.1em; display: flex; flex-direction: column; gap: 5px; color: var(--ink-2); }
 ul.list li::marker { color: var(--hue-ink); }
 
@@ -170,6 +151,9 @@ ul.list li::marker { color: var(--hue-ink); }
 .case .m { font: 500 .88rem var(--sans); color: var(--ink-2); display: block; margin-bottom: 6px; }
 .case h3 { font-size: 1.2rem; margin: 0 0 2px; }
 .case p { color: var(--ink-2); }
+.facts div + div { margin-top: 12px; }
+.facts dt { font: 600 .8rem var(--sans); letter-spacing: .04em; color: var(--ink); }
+.facts dd { margin: 2px 0 0; color: var(--ink-2); max-width: 62ch; }
 .person { display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 22px; align-items: start; }
 .person img { width: 120px; height: 150px; object-fit: cover; display: block; }
 .person h3 { font-size: 1.2rem; }
@@ -192,15 +176,13 @@ footer a { text-decoration: none; }
 footer a:hover { text-decoration: underline; }
 
 @media (max-width: 860px) {
-  :root { --rail: 0px; }
-  .tabs { position: sticky; top: 0; bottom: auto; width: 100%; height: 40px; flex-direction: row; }
-  .tabs a { writing-mode: horizontal-tb; font-size: .64rem; letter-spacing: .03em; box-shadow: inset 0 -8px 10px -8px rgba(0, 0, 0, .45); }
-  .startgrid, .grid, .two, .prices { grid-template-columns: 1fr; }
+  .startgrid, .grid, .two, .three, .prices { grid-template-columns: 1fr; }
   .margin { padding-top: 0; }
   .brief { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .plain .margin { display: none; }
-  .top nav a:not(.btn) { display: none; }
-  .top .in { flex-wrap: nowrap; }
+  .top .in { padding-block: 14px; }
+  .top nav { width: 100%; gap: 6px 18px; font-size: .92rem; }
+  .top nav .btn { display: none; }
   .brief div:nth-child(3) { padding-left: 0; border-left: 0; }
   .brief div:nth-child(n+3) { margin-top: 10px; border-top: 1px solid var(--rule); }
   .track.w-bet, .track.w-3 { grid-template-columns: 1fr; }
