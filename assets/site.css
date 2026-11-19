@@ -1,20 +1,20 @@
 /* ai-on-rails: Handbuch mit Registern.
-   Graustufen: Die Register unterscheiden sich nur in der Helligkeit, von hell (Start) bis fast schwarz (Kontakt).
-   Einzige Farbe ist das Gelb im Logo. Bewusst kein Beige und kein Orange (Farbwelt typischer KI-Oberflächen).
+   Ein Farbton in Abstufungen: alle Flächen sind Stufen desselben Blaus (OKLCH, Farbton 265), von hell (Start)
+   bis fast schwarz (Kontakt). Die Register unterscheiden sich in der Helligkeit. Gelb nur im Logo als Gegenfarbe. Bewusst kein Beige und kein Orange (Farbwelt typischer KI-Oberflächen).
    Bewegung nur in zwei Stufen (steps(2), 90 ms), kein Easing. */
 
 :root {
-  --paper: #eceef1;
+  --paper: #edf0f6;
   --leaf: #ffffff;
   --ink: #15181e;
-  --ink-2: #474d57;
-  --rule: #cfd4db;
-  --start: #d4d7dc;
-  --ship: #b4b9c0;
-  --get: #868c95;
-  --stay: #4a5059;
+  --ink-2: #4a5364;
+  --rule: #ced4e2;
+  --start: #d4def3;
+  --ship: #abbee5;
+  --get: #6885c3;
+  --stay: #2c488e;
   --brand: #f0bf1a;
-  --dark: #15181e;
+  --dark: #0d1528;
   --errata: #b4232f;
   --serif: "Source Serif 4", Georgia, serif;
   --sans: "Hanken Grotesk", system-ui, sans-serif;
@@ -178,12 +178,12 @@ ul.list li::marker { color: var(--hue-ink); }
 .h2-plain { font-size: clamp(1.3rem, 2vw, 1.5rem); margin-bottom: 14px; }
 
 /* Kontakt-Register */
-.dark .margin { color: #eef0f3; }
-.dark .leaf { background: #22262d; color: #eef0f3; box-shadow: none; border: 1px solid #383d46; }
-.dark .leaf .lead { color: #c3c8cf; }
+.dark .margin { color: #ebeef5; }
+.dark .leaf { background: #1d263a; color: #ebeef5; box-shadow: none; border: 1px solid #333d52; }
+.dark .leaf .lead { color: #bcc4d5; }
 .dark .btn { background: #fff; color: var(--ink); border-color: #fff; }
 .dark .btn:hover { background: transparent; color: #fff; }
-.dark .btn.ghost { background: transparent; color: #fff; border-color: #6b717b; }
+.dark .btn.ghost { background: transparent; color: #fff; border-color: #66728a; }
 .dark .btn.ghost:hover { border-color: #fff; }
 
 footer .in { display: flex; justify-content: space-between; gap: 12px 24px; flex-wrap: wrap; padding-block: 22px; font: 500 .88rem var(--sans); color: var(--ink-2); }
