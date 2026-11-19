@@ -41,16 +41,14 @@ h1, h2, h3 { font-family: var(--sans); font-weight: 700; line-height: 1.15; lett
 .open { font: 500 .8em var(--mono); color: var(--errata); border: 1px dashed currentColor; padding: 0 5px; white-space: nowrap; }
 
 /* Registerleiste */
-.tabs { position: fixed; right: 0; top: 0; bottom: 0; width: var(--rail); display: flex; flex-direction: column; z-index: 30; }
+.tabs { position: fixed; right: 0; top: 0; bottom: 0; width: var(--rail); display: flex; flex-direction: column; align-items: flex-start; z-index: 30; }
+/* Reiter liegen bündig an der Seite; der aktive ragt nach außen weiter heraus (wie am Buchschnitt). */
 .tabs a {
-  flex: var(--ext, 1); display: flex; align-items: center; justify-content: center;
+  flex: var(--ext, 1); width: calc(100% - 12px); display: flex; align-items: center; justify-content: center;
   color: #fff; text-decoration: none; font: 600 .8rem var(--sans); letter-spacing: .06em;
-  writing-mode: vertical-rl; transform: translateX(12px); transition: transform var(--step);
+  writing-mode: vertical-rl; transition: width var(--step);
 }
-.tabs a:hover, .tabs a[aria-current] { transform: translateX(0); }
-.tabs a[aria-current="false"] { transform: translateX(12px); }
-.tabs a[aria-current="false"]:hover { transform: translateX(0); }
-.tabs a[aria-current="true"], .tabs a[aria-current="page"] { box-shadow: -6px 0 12px -6px rgba(0, 0, 0, .4); }
+.tabs a:hover, .tabs a[aria-current="true"], .tabs a[aria-current="page"] { width: 100%; }
 .tabs a:focus-visible { outline-color: #fff; outline-offset: -4px; }
 .t-start { background: var(--start); }
 .t-ship { background: var(--ship); }
@@ -190,9 +188,9 @@ footer a:hover { text-decoration: underline; }
 
 @media (max-width: 860px) {
   :root { --rail: 0px; }
-  .tabs { position: sticky; top: 0; bottom: auto; width: 100%; height: 40px; flex-direction: row; }
-  .tabs a, .tabs a[aria-current="false"] { writing-mode: horizontal-tb; transform: translateY(-4px); font-size: .72rem; letter-spacing: .02em; }
-  .tabs a:hover, .tabs a[aria-current="true"], .tabs a[aria-current="page"] { transform: none; }
+  .tabs { position: sticky; top: 0; bottom: auto; width: 100%; height: 40px; flex-direction: row; align-items: flex-end; background: var(--paper); }
+  .tabs a { width: auto; height: 34px; writing-mode: horizontal-tb; font-size: .72rem; letter-spacing: .02em; transition: height var(--step); }
+  .tabs a:hover, .tabs a[aria-current="true"], .tabs a[aria-current="page"] { width: auto; height: 100%; }
   .startgrid, .grid, .two, .prices { grid-template-columns: 1fr; }
   .margin { padding-top: 0; }
   .brief { grid-template-columns: repeat(2, minmax(0, 1fr)); }

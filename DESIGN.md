@@ -288,7 +288,7 @@ Alle Überschriften: Grotesk 700, Zeilenhöhe 1.15, −0.015em, `text-wrap: bala
 **Button-Reihe.** 10px Abstand, 26px über der Reihe, umbrechend.
 
 **Responsive (≤ 860px).**
-- Die Registerleiste wird zu einer horizontalen Leiste, sticky oben, 40px hoch; Reiter waagrecht, 0.72rem; inaktive Reiter 4px nach oben eingeschoben, aktiver Reiter bündig. `--rail` wird 0.
+- Die Registerleiste wird zu einer horizontalen Leiste, sticky oben, 40px hoch; Reiter waagrecht, 0.72rem; Reiter liegen bündig an der Unterkante der Leiste (zur Seite hin); inaktive Reiter sind 34px hoch, der aktive füllt die 40px und ragt nach oben heraus. `--rail` wird 0.
 - Alle Zweispalter (Start, Register, Zweispalter, Preise) werden einspaltig; die Marginalie verliert ihren Versatz, auf Papier-Abschnitten wird sie ausgeblendet.
 - Steckbrief wird 2×2, die zweite Zeile mit 1px-Linie oben und ohne linke Linie in der ersten Spalte.
 - Ablauf wird einspaltig, Schritte durch 1px-Linie oben getrennt.
@@ -302,15 +302,14 @@ Alle Überschriften: Grotesk 700, Zeilenhöhe 1.15, −0.015em, `text-wrap: bala
 
 ## Elevation & Depth
 
-Hybrid aus flacher Fläche und genau einem physischen Schatten. Papier, Registerbänder, Tabellen und Buttons sind flach. Tiefe entsteht durch das Bild "Blatt liegt auf Karton": Blätter tragen einen kurzen, weichen Schatten, und der ausgezogene Reiter wirft einen schmalen Schatten nach links auf die Seite.
+Hybrid aus flacher Fläche und genau einem physischen Schatten. Papier, Registerbänder, Tabellen und Buttons sind flach. Tiefe entsteht durch das Bild "Blatt liegt auf Karton": Blätter tragen einen kurzen, weichen Schatten. Der aktive Reiter bleibt flach und geht auf Unterseiten nahtlos in sein Registerband über.
 
 ### Shadow Vocabulary
 - **Blattschatten** (`box-shadow: 0 1px 1px rgba(0, 0, 0, .08), 0 10px 24px -12px rgba(0, 0, 0, .35)`): jedes Blatt auf einem Register oder auf Papier.
-- **Reiterschatten** (`box-shadow: -6px 0 12px -6px rgba(0, 0, 0, .4)`): nur der aktive, ausgezogene Reiter.
 - Im Kontakt-Register haben Blätter keinen Schatten, sondern eine 1px-Kante in Kontakt-Linie.
 
 ### Named Rules
-**The Leaf On Board Rule.** Nur Blätter und der aktive Reiter haben Schatten. Buttons, Tabellen, Bilder und Register bleiben flach; ein Schatten heißt immer "das liegt obenauf".
+**The Leaf On Board Rule.** Nur Blätter haben Schatten. Buttons, Tabellen, Bilder und Register bleiben flach; ein Schatten heißt immer "das liegt obenauf".
 
 ## Shapes
 
@@ -337,7 +336,7 @@ Klar und satt; beim Hover kippt der Button in zwei Stufen in seine Kontur.
 
 ### Registerleiste (Signatur)
 - Feste Spalte rechts, 64px, volle Höhe; fünf Reiter Start / Ship Fast / Get Fast / Stay Fast / Kontakt in ihren Farben, Text weiß, vertikal (`writing-mode: vertical-rl`), 0.8rem/600/+0.06em.
-- In Ruhe sind Reiter 12px nach rechts eingeschoben; aktiver Reiter (`aria-current`) und Hover ziehen auf 0 aus, in zwei Stufen. Aktiver Reiter trägt den Reiterschatten.
+- Alle Reiter liegen bündig an der linken Kante der Leiste, also direkt an der Seite; es gibt nie eine Papierfuge zwischen Inhalt und Reiter. In Ruhe sind Reiter 52px breit (64px − 12px); aktiver Reiter (`aria-current`) und Hover ziehen nach außen auf die volle Breite aus, in zwei Stufen (`width`, `steps(2)`). Auf Unterseiten geht der aktive Reiter damit nahtlos in das Registerband gleicher Farbe über.
 - Startseite: der Reiter folgt per IntersectionObserver dem Register in der Bildschirmmitte. Unterseiten: `aria-current="page"` am eigenen Reiter.
 - Focus: weißer Ring, 4px nach innen versetzt.
 - Mobil: siehe Layout.
@@ -404,7 +403,8 @@ Klar und satt; beim Hover kippt der Button in zwei Stufen in seine Kontur.
 - **Don't** setze Überschriften, Fließtext, Steckbrief oder Buttons direkt auf ein Registerband.
 - **Don't** runde Ecken; der Radius ist 0px.
 - **Don't** verwende Easing-Kurven, weiche Übergänge oder andere Dauern als 90ms steps(2).
-- **Don't** gib Elementen außer Blättern und dem aktiven Reiter einen Schatten.
+- **Don't** gib Elementen außer Blättern einen Schatten.
+- **Don't** verschiebe Reiter zur Seite hin (z.B. per `translateX`); zwischen Inhalt und Leiste darf keine Fuge entstehen.
 - **Don't** nutze Rostrot für etwas anderes als offene Angaben, und verstecke offene Angaben nicht.
 - **Don't** trage eine Registerfarbe in ein fremdes Register oder führe eine vierte Akzentfarbe ein.
 - **Don't** baue Hero-Bild, drei gleiche Karten oder eine Logoleiste; Leistungen sind Register, keine Kacheln.

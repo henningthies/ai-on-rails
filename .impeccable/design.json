@@ -351,7 +351,7 @@
       },
       {
         "name": "tab-offset",
-        "value": "translateX(12px) -> translateX(0)",
+        "value": "width calc(100% - 12px) -> 100%, flush to the page edge",
         "purpose": "Reiter in Ruhe eingeschoben, aktiv/Hover ausgezogen. Mobil translateY(-4px) -> none."
       },
       {
@@ -404,7 +404,7 @@
       "refersTo": "tab-ship",
       "description": "Feste Reiterleiste; aktiver Reiter in zwei Stufen ausgezogen.",
       "html": "<nav class=\"ds-tabs\" aria-label=\"Register\"><a class=\"ds-t\" style=\"background:var(--start);--ext:1.1\" href=\"#\">Start</a><a class=\"ds-t\" style=\"background:var(--ship);--ext:1.6\" href=\"#\" aria-current=\"page\">Ship Fast</a><a class=\"ds-t\" style=\"background:var(--get);--ext:1.15\" href=\"#\">Get Fast</a><a class=\"ds-t\" style=\"background:var(--stay);--ext:1.15\" href=\"#\">Stay Fast</a><a class=\"ds-t\" style=\"background:var(--dark);--ext:.8\" href=\"#\">Kontakt</a></nav>",
-      "css": ":host{--paper:#f3efe4;--leaf:rgba(255,255,253,.95);--ink:#1b1b1d;--ink-2:#4b4a47;--rule:#d8d2c3;--start:#6e685c;--ship:#c4471a;--ship-ink:#a83a12;--get:#1d6f55;--stay:#2a3d9a;--dark:#1b1b1d;--errata:#9a3412;--serif:\"Source Serif 4\",Georgia,serif;--sans:\"Hanken Grotesk\",system-ui,sans-serif;--mono:\"JetBrains Mono\",ui-monospace,monospace;--step:90ms steps(2);} .ds-tabs{width:64px;height:420px;display:flex;flex-direction:column;margin-left:auto;}.ds-t{flex:var(--ext,1);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font:600 .8rem var(--sans);letter-spacing:.06em;writing-mode:vertical-rl;transform:translateX(12px);transition:transform var(--step);}.ds-t:hover,.ds-t[aria-current]{transform:translateX(0);}.ds-t[aria-current]{box-shadow:-6px 0 12px -6px rgba(0,0,0,.4);}.ds-t:focus-visible{outline:2px solid #fff;outline-offset:-4px;}"
+      "css": ":host{--paper:#f3efe4;--leaf:rgba(255,255,253,.95);--ink:#1b1b1d;--ink-2:#4b4a47;--rule:#d8d2c3;--start:#6e685c;--ship:#c4471a;--ship-ink:#a83a12;--get:#1d6f55;--stay:#2a3d9a;--dark:#1b1b1d;--errata:#9a3412;--serif:\"Source Serif 4\",Georgia,serif;--sans:\"Hanken Grotesk\",system-ui,sans-serif;--mono:\"JetBrains Mono\",ui-monospace,monospace;--step:90ms steps(2);} .ds-tabs{width:64px;height:420px;display:flex;flex-direction:column;align-items:flex-start;margin-left:auto;}.ds-t{flex:var(--ext,1);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font:600 .8rem var(--sans);letter-spacing:.06em;writing-mode:vertical-rl;width:calc(100% - 12px);transition:width var(--step);}.ds-t:hover,.ds-t[aria-current]{width:100%;}.ds-t:focus-visible{outline:2px solid #fff;outline-offset:-4px;}"
     },
     {
       "name": "Register mit Blatt und Steckbrief",
