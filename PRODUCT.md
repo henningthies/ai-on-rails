@@ -40,7 +40,7 @@ Statische HTML-Seiten auf GitHub Pages, kein Build-Schritt. Termine über einen 
 - Team auf der Website (Entscheidung 19.11.2026, abends): Henning Thies (Gründer, Product Engineering) und **Karin namentlich** mit Rolle "UX, Produkt und Management"; Netzwerk für Entwicklung und Vertretung ohne Zahlen, Partner nur nach Zusage. Nutzertests/QS werden nicht als eigene Leistung beworben.
 - **Keine Beträge auf der Website (Henning, 19.11.: Preis ist je Projekt unterschiedlich).** Die Seite erklärt nur, wie der Preis entsteht: Festpreis nach Workshop-Tag bzw. Audit, je Meilenstein, fester Monatsbetrag; Preisrahmen im ersten Gespräch. Interne Richtwerte stehen bewusst nicht in diesem öffentlichen Repo, sondern im PAI-Business-Case. Keine Tagessätze auf der Seite.
 - Reaktionszeit Stay Fast: bei Ausfall am selben Arbeitstag (Mo–Fr, 9–17 Uhr), keine 24/7-Bereitschaft.
-- `/factory` bleibt als separate, nicht verlinkte Seite bestehen.
+- `/factory` ist seit 24.11.2026 vom Netz (Henning: so nicht direkt anbieten); `factory.html` leitet nur noch auf `/` weiter.
 
 ## Brand Commitments
 
