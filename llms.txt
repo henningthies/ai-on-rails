@@ -1,6 +1,6 @@
 # ai-on-rails
 
-> Agentur für Produktentwicklung aus der Region Hamburg (Negernbötel, Schleswig-Holstein). Wir testen Produktideen in 12 Wochen mit den Nutzern des Kunden und entwickeln weiter, was sich bewährt: Anforderungen, UX- und UI-Design und Entwicklung mit Ruby on Rails. Dazu Modernisierung und Weiterentwicklung bestehender Webanwendungen, mit Schwerpunkt Ruby on Rails. Projekte zum Festpreis, Weiterentwicklung zu einem festen Monatsbetrag. Sprache der Website: Deutsch.
+> Agentur für Produktentwicklung aus der Region Hamburg (Negernbötel, Schleswig-Holstein). Wir entwickeln Webanwendungen mit KI, ohne dass der Kunde die Kontrolle abgibt: neue Produktideen (Product Bets, 12 Wochen, mit Anforderungen, UX- und UI-Design und Entwicklung mit Ruby on Rails), Modernisierung und Weiterentwicklung bestehender Webanwendungen, auf Wunsch im Team mit den Entwicklern des Kunden. Schwerpunkt Ruby on Rails. Projekte zum Festpreis, Weiterentwicklung zu einem festen Monatsbetrag. Sprache der Website: Deutsch.
 
 ## Leistungen
 
